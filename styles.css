@@ -7,15 +7,15 @@
 :root{
   /* surfaces */
   --bg:#0a0c18; --bg2:#101430;
-  --glow-a:rgba(124,140,255,.20); --glow-b:rgba(167,139,250,.16);
+  --glow-a:rgba(251,113,133,.20); --glow-b:rgba(192,132,252,.16);
   --card:rgba(26,31,56,.72); --card2:rgba(255,255,255,.045);
   --card-solid:#171c33;
   /* text */
   --ink:#eaedff; --muted:#9aa6cf;
   /* lines & accents */
   --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.16);
-  --brand:#7c8cff; --brand2:#a78bfa; --brand-ink:#0a0c18;
-  --grad:linear-gradient(135deg,#7c8cff 0%,#a78bfa 100%);
+  --brand:#fb7185; --brand2:#c084fc; --brand-ink:#0a0c18;
+  --grad:linear-gradient(135deg,#fb7185 0%,#c084fc 100%);
   --ok:#34d399; --ok-bg:rgba(52,211,153,.13);
   --bad:#fb7185; --bad-bg:rgba(251,113,133,.13);
   --warn:#fbbf24;
@@ -23,7 +23,7 @@
   --radius:18px; --radius-sm:12px; --radius-xs:9px;
   --shadow:0 14px 44px rgba(0,0,0,.45);
   --shadow-sm:0 4px 16px rgba(0,0,0,.28);
-  --ring:0 0 0 3px rgba(124,140,255,.30);
+  --ring:0 0 0 3px rgba(251,113,133,.30);
 
   font-family:"Segoe UI",system-ui,-apple-system,"Noto Sans Hebrew",Arial,sans-serif;
   color-scheme:dark;
@@ -32,35 +32,35 @@
 /* ---- light palette (shared by explicit toggle + system pref) ---- */
 :root[data-theme="light"]{
   --bg:#eef1fb; --bg2:#e3e9fb;
-  --glow-a:rgba(124,140,255,.22); --glow-b:rgba(167,139,250,.18);
+  --glow-a:rgba(251,113,133,.22); --glow-b:rgba(192,132,252,.18);
   --card:rgba(255,255,255,.82); --card2:rgba(20,30,80,.04);
   --card-solid:#ffffff;
   --ink:#161b30; --muted:#5a648a;
   --line:rgba(20,30,80,.10); --line-strong:rgba(20,30,80,.18);
-  --brand:#5a6ee0; --brand2:#8b5cf6; --brand-ink:#ffffff;
-  --grad:linear-gradient(135deg,#5a6ee0 0%,#8b5cf6 100%);
+  --brand:#e11d48; --brand2:#9333ea; --brand-ink:#ffffff;
+  --grad:linear-gradient(135deg,#e11d48 0%,#9333ea 100%);
   --ok:#0f9d68; --ok-bg:rgba(15,157,104,.12);
   --bad:#e5484d; --bad-bg:rgba(229,72,77,.10);
   --shadow:0 14px 40px rgba(40,60,120,.16);
   --shadow-sm:0 4px 16px rgba(40,60,120,.10);
-  --ring:0 0 0 3px rgba(90,110,224,.25);
+  --ring:0 0 0 3px rgba(225,29,72,.25);
   color-scheme:light;
 }
 @media (prefers-color-scheme: light){
   :root:not([data-theme]){
     --bg:#eef1fb; --bg2:#e3e9fb;
-    --glow-a:rgba(124,140,255,.22); --glow-b:rgba(167,139,250,.18);
+    --glow-a:rgba(251,113,133,.22); --glow-b:rgba(192,132,252,.18);
     --card:rgba(255,255,255,.82); --card2:rgba(20,30,80,.04);
     --card-solid:#ffffff;
     --ink:#161b30; --muted:#5a648a;
     --line:rgba(20,30,80,.10); --line-strong:rgba(20,30,80,.18);
-    --brand:#5a6ee0; --brand2:#8b5cf6; --brand-ink:#ffffff;
-    --grad:linear-gradient(135deg,#5a6ee0 0%,#8b5cf6 100%);
+    --brand:#e11d48; --brand2:#9333ea; --brand-ink:#ffffff;
+    --grad:linear-gradient(135deg,#e11d48 0%,#9333ea 100%);
     --ok:#0f9d68; --ok-bg:rgba(15,157,104,.12);
     --bad:#e5484d; --bad-bg:rgba(229,72,77,.10);
     --shadow:0 14px 40px rgba(40,60,120,.16);
     --shadow-sm:0 4px 16px rgba(40,60,120,.10);
-    --ring:0 0 0 3px rgba(90,110,224,.25);
+    --ring:0 0 0 3px rgba(225,29,72,.25);
     color-scheme:light;
   }
 }
