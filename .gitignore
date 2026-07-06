@@ -1,0 +1,13 @@
+tools/node_modules/
+tools/package-lock.json
+tools/package.json
+tools/raw/*.png
+missing-questions.html
+*.pdf
+
+# build-pipeline staging dirs — not needed to run or rebuild the site
+tools/raw/zip_extracted/
+tools/raw/docx2025_media/
+tools/raw/_figtmp/
+__pycache__/
+*.pyc

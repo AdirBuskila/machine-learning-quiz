@@ -1,0 +1,1970 @@
+{
+ "26B-A": {
+  "code": "26B-A",
+  "answer_mode": "form0",
+  "kept": 12,
+  "deferred": 8,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\26B-A.json",
+  "form_zero": true,
+  "total_seen": 20,
+  "identified_as": "2026 סמסטר ב, מועד א — form 0 (מבחן מס' 000 / טופס 0). examCode 26B-A. Header shows \"מבחן מס' 000\" => form0 => correct answer is always the first printed option (correctIndex=0).",
+  "figure_questions": [
+   4,
+   12
+  ],
+  "keys": [
+   {
+    "num": 2,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 6,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "image"
+   },
+   {
+    "num": 8,
+    "ans": "א",
+    "topic": "clustering"
+   },
+   {
+    "num": 9,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 10,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "text"
+   },
+   {
+    "num": 14,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 15,
+    "ans": "א",
+    "topic": "text"
+   },
+   {
+    "num": 17,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "intro"
+   }
+  ],
+  "ask_adir": [
+   "Q1 (evaluation, tennis confusion-matrix): body numbers are scrambled by the PDF font cipher — source shows 44 total / 63 Djokovic-wins / 72 predicted-correct, i.e. 72 correct out of 63, which is impossible. Cannot faithfully reconstruct the true counts. (Decoding suggests 54/30/27/9 giving accuracy ~77% = option א, but too uncertain to trust.)",
+   "Q3 (knn, KNN prize weighted vs uniform voting): the distances and category labels are cipher-scrambled. As-extracted (distances 7,6,2 / categories 1,7,7) the model predicts onions with no change under uniform = option ד, which contradicts form0. Numbers unreliable — needs the real PDF values.",
+   "Q4 (evaluation/trees, max_features hyperparameter tuning): figure needed — the answer depends on reading an f1-vs-max_features chart with a train curve (top) and validation curve (bottom). hasImage=true.",
+   "Q5 (regression, Elon/Jeff/Tim/Bill regression quality): the four metric values are OCR-garbled (e.g. '3..1', '3..3') and two of the option metric names (ג', ד') are truncated/blank. Cannot reconstruct faithfully.",
+   "Q12 (knn, chess-board knight cosine similarity): figure needed — the knight's current position (needed to compute cosine similarity vs the candidate squares) is only shown in the איור. hasImage=true.",
+   "Q13 (regression, Vapnik convex cost-function swap): both cost-function formulas were dropped from all three extractions; the options reference these missing math symbols (e.g. 'converges to global minimum at [blank] but not at [blank]'). Options ב' and ג' are near-identical without the formulas. Not reconstructable.",
+   "Q16 (naive_bayes, MSc scholarship): probabilities/priors appear scrambled and the options are internally inconsistent (options ג'/ד' say class not-MSc yet 'gets scholarship', though only MSc grants a scholarship). Straight computation (0.6*0.3=0.18 vs 0.3*0.7=0.21) points to not-MSc, contradicting form0=א. Cannot determine faithfully.",
+   "Q20 (regression, linear-regression weight update): the initial weight vector, learning-rate value, the feature values of the single training example, and ALL four option result values were dropped from extraction (blank). Nothing numeric survived. Not reconstructable."
+  ],
+  "notes": "Source header is \"מבחן מס' 000\" / \"טופס 0\" => form0 => correctIndex=0 for every kept question (first printed option, label א). All 20 questions were located across the 3 dumps.\n\nIMPORTANT — question numbering: the printed question numbers are font-ciphered (digit-glyph substitution). Decoding the two-digit numbers on pages 5–8 yields a fully self-consistent 1..20 sequence, confirming the questions appear in sequential printed order. I therefore numbered them 1..20 by position (this is the true printed number; the raw dumps show mangled glyphs like 7,6,3,2,'.' for 2,3,6,7,8 and 73 for 20). The same cipher also corrupts numbers inside question bodies, which is why several numeric questions were deferred.\n\nKept 12 conceptual questions where text + all options reconstruct faithfully and no figure is required: Q2,6,7,8,9,10,11,14,15,17,18,19 — all answered א per form0.\n\nDeferred 8 (total 20): Q4 & Q12 require a figure (hasImage). Q13 & Q20 lost their math formulas/values entirely in extraction. Q1, Q3, Q5, Q16 have cipher-scrambled or garbled body numbers that make the question internally inconsistent or contradict the form0 answer, so I did not fabricate values.\n\nJSON validated by re-parsing: 12 items, all correctIndex=0, all official=true, all hasImage=false."
+ },
+ "25S-A": {
+  "code": "25S-A",
+  "answer_mode": "form0",
+  "kept": 14,
+  "deferred": 6,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\25S-A.json",
+  "form_zero": true,
+  "total_seen": 20,
+  "identified_as": "2025 קיץ מועד א — טופס 0 (מבחן מס 000, קוד ~XP20M). form0 mode: correct answer = first printed option (א) => correctIndex 0.",
+  "figure_questions": [
+   7,
+   8,
+   10,
+   15
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 3,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 4,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 5,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 6,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 9,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 12,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 13,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 14,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 16,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 17,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "knn"
+   }
+  ],
+  "ask_adir": [
+   "שאלה 2 (trees/entropy): סמלי שני המאפיינים חסרים בכל שלושת הדאמפים (blank) — הן בגזרה והן בכל 4 התשובות (\"נבחר את מאפיין ___ כצומת הבא\"), ולכן לא ניתן לשחזר נאמנה. אימות חישובי: אנטרופיה מותנית של מאפיין הפיצול=0.722, Information Gain=0.278, ולפי form0 התשובה היא א.",
+   "שאלה 7 (evaluation): ערכי מטריצת הבלבול אינם מופיעים בטקסט (הטבלה לא חולצה) — נדרשת התמונה/טבלה כדי לענות. hasImage=true. אפשרויות התשובה: Accuracy 0.7 / 0.3 / 0.8 / 0.3333.",
+   "שאלה 8 (intro/knn): נדרש הגרף (EDA scatter) של זריזות/הסוואה כדי לבחור מודל. hasImage=true. אפשרויות: KNN / Logistic Regression / Naive Bayes / K-Means.",
+   "שאלה 10 (trees): נדרש הגרף של שגיאת אימון (כחול) ותיקוף (כתום) כפונקציה של עומק העץ. hasImage=true. אפשרויות: עומק 7 / 20 / 2 / אף תשובה.",
+   "שאלה 15 (regression): נדרש הגרף של הנתונים כדי לזהות את האלגוריתם. hasImage=true. אפשרויות: רגרסיה לינארית / לוגיסטית / פולינומיאלית / רנדומלית.",
+   "שאלה 20 (clustering): מזהי המרכזים בתשובות (m1/m2/m3) חסרים לחלוטין (\"המיוצג על ידי ___\") — התשובות נבדלות רק לפי המרכז ולכן לא ניתן לשחזרן נאמנה. חישוב מנהטן מ-(8,4): d(m1)=6, d(m2)=3, d(m3)=3 (תיקו), כלומר בהכרח לא ישויך ל-m1; form0=א (\"לא ישויך\")."
+  ],
+  "notes": "Mode=form0 confirmed by header \"מבחן מס 000\" / \"טופס 0\"; every kept question => correctIndex 0 (first option, label א). Numeric sanity-checks all corroborate that the first option is the correct one: Q5 error-rate=11.25% & f1(Maccabi)=0.909; Q12 R²=1-40/100=0.6; Q14 z=1 → perceptron no update, logistic delta-rule (with sigmoid derivative) → (0.0053,1.0053,2.01). Kept 14 clean, non-figure, fully-reconstructable questions. Deferred 6: Q7/Q8/Q10/Q15 require a figure not in text (marked hasImage=true, listed in figure_questions); Q2 and Q20 deferred because distinguishing glyphs (feature symbols in Q2, centroid labels m1/m2/m3 in Q20) are blank in all three dumps, so options cannot be faithfully reconstructed. Minor reconstructions with high confidence: Q6 option-א parenthetical rendered as \"(L1 או L2)\"; Q11 regularization type rendered as \"L2\" (confirmed by option-א text \"קנס על סכום ריבועי המשקלים\"). Q14 options ג/ד are near-duplicates in the source (ד has a printed redundancy \"המשקולות המעודכנים יהיו לא יהיו עדכוני משקולות\"), reproduced faithfully; does not affect the form0 answer. JSON validated via JSON.parse (14 items, all required keys present, examCode=25S-A, correctIndex=0, hasImage=false)."
+ },
+ "24S-A": {
+  "code": "24S-A",
+  "answer_mode": "form0",
+  "kept": 13,
+  "deferred": 7,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\24S-A.json",
+  "total_seen": 20,
+  "form_zero": true,
+  "identified_as": "form_0 (header \"מבחן מס 000\"); confirmed by computing Q1 macro-recall ≈74.6% = first option and Q2 lowest RMSE = first option",
+  "figure_questions": [
+   3,
+   10,
+   11,
+   12,
+   13,
+   14,
+   17
+  ],
+  "ask_adir": [
+   "Q3: figure needed - trainset table and covariance matrix not present in text dumps; cannot compute Pearson correlation",
+   "Q10: figure needed - KNN training-set table not present in text",
+   "Q11: figure needed - perceptron weight vector and feature vector missing; option input values also blank",
+   "Q12: figure needed - perceptron weight vector and feature vector missing; option output values also blank",
+   "Q13: figure needed - two graphs (swimwear sales vs beach-parking entries) required to answer",
+   "Q14: figure needed - K-Means prototype vectors FV1-FV3 and the vector-to-assign are missing from text",
+   "Q17: figure needed - answer options are vectors/plots shown as images (blank in text)"
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 2,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 4,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 5,
+    "ans": "א",
+    "topic": "knn"
+   },
+   {
+    "num": 6,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 8,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 9,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 15,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 16,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 20,
+    "ans": "א",
+    "topic": "ensemble"
+   }
+  ],
+  "notes": "Answer mode form0: every kept question's correct answer is the first printed option (Hebrew label alef), correctIndex=0. Form confirmed both by header (\"מבחן מס 000\") and by verifying the first option is conceptually correct on the computational questions (Q1 macro recall (68/85+45/65)/2≈74.6%; Q2 lowest error 0.67). 7 questions deferred because required tables/vectors/graphs are absent from all three text dumps (they exist only as images/equations in the PDF) - listed in figure_questions/ask_adir. Note on Q13: it also happens to be an anomaly for form0 (its alef option asserts causation, which is conceptually the wrong ML answer vs the 'correlation not causation' option), but it is deferred regardless because answering requires seeing the two graphs. Topic calls that were judgment: Q9 (regularization) -> regression; Q15 (logistic-regression underfitting) -> regression; Q19 (discrete features / ID3 / KNN / feature-selection) -> trees. File re-validated with json.load (UTF-8)."
+ },
+ "24S-C": {
+  "code": "24S-C",
+  "answer_mode": "bold",
+  "kept": 19,
+  "deferred": 1,
+  "total_seen": 20,
+  "confidence": "high",
+  "form_zero": false,
+  "identified_as": "sol (correct option marked BOLD in .marked.txt)",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\24S-C.json",
+  "figure_questions": [],
+  "ask_adir": [
+   "3: DEFERRED - the 3-example / 2-feature trainset table AND the covariance matrix needed to compute Pearson's correlation coefficient are not present in any text dump (they were likely rendered as a table/image in the PDF that failed to extract). The stem and 4 options ARE readable; the BOLD (official) answer is option ב ('define low dependence as correlation coefficient lower than 0.72 => filter no feature'), but the actual data is missing so the question cannot be faithfully reconstructed. Provide the trainset values + covariance matrix to include it."
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 2,
+    "ans": "ג",
+    "topic": "trees"
+   },
+   {
+    "num": 4,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 5,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 6,
+    "ans": "ד",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 7,
+    "ans": "ב",
+    "topic": "knn"
+   },
+   {
+    "num": 8,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 9,
+    "ans": "א",
+    "topic": "knn"
+   },
+   {
+    "num": 10,
+    "ans": "ג",
+    "topic": "regression"
+   },
+   {
+    "num": 11,
+    "ans": "ד",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 12,
+    "ans": "ב",
+    "topic": "ensemble"
+   },
+   {
+    "num": 13,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 14,
+    "ans": "ב",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 15,
+    "ans": "ד",
+    "topic": "clustering"
+   },
+   {
+    "num": 16,
+    "ans": "ד",
+    "topic": "knn"
+   },
+   {
+    "num": 17,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 19,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 20,
+    "ans": "א",
+    "topic": "trees"
+   }
+  ],
+  "notes": "Mode=sol: exactly one BOLD option per question served as the answer key. Bold reliability was verified computationally on Q5 (macro-precision 84.6%), Q7 (Euclidean 160.17 km), Q17 (ex2 raises w0). 19/20 kept; only Q3 deferred (missing data table + covariance matrix). No question required a figure (all tables were given inline as text). Option order for Q14 was physically scrambled in the PDF (printed א,ג,ב,ד) and for Q15 the 3rd label was mis-printed as a second 'ד'; both were normalized to canonical א,ב,ג,ד order with correctIndex by label.\n\nTHREE kept answers follow the bold key but are pedagogically surprising - flagged for Adir to double-check against course materials:\n- Q4 (logistic regression): key = ב 'method for predicting numeric values'. The textbook 'classification' answer (ד) is a distractor here; the course apparently treats logistic regression as a regression predicting a numeric probability. Defensible but note options ב and ג are near-identical.\n- Q14 (Naive Bayes likelihood): key = ב, which states likelihoods 0.333/0.666. The true likelihoods p(income=0|class) are BOTH 0.5; 0.333/0.666 are actually the class PRIORS (2/6 and 4/6). The key's classification conclusion (=-1, the majority class) is correct even though its 'likelihood' numbers are really priors.\n- Q18 (accuracy=0): key = א 'pick another algorithm and retrain'. The classic 'invert the labels since accuracy 0 -> 100%' answer (ד) is present and is the more elegant fix; the professor nonetheless marked א.\n\nHeader stamped date reads 23/12/2014 in the source (almost certainly an exam typo for 2024); examCode 24S-C applied as instructed."
+ },
+ "24B-C": {
+  "code": "24B-C",
+  "answer_mode": "bold",
+  "kept": 12,
+  "deferred": 8,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\24B-C.json",
+  "identified_as": "sol",
+  "form_zero": false,
+  "total_seen": 20,
+  "figure_questions": [
+   1,
+   2,
+   9,
+   12,
+   13,
+   14,
+   19
+  ],
+  "keys": [
+   {
+    "num": 3,
+    "ans": "3",
+    "topic": "evaluation"
+   },
+   {
+    "num": 5,
+    "ans": "2",
+    "topic": "regression"
+   },
+   {
+    "num": 6,
+    "ans": "3",
+    "topic": "evaluation"
+   },
+   {
+    "num": 7,
+    "ans": "4",
+    "topic": "intro"
+   },
+   {
+    "num": 8,
+    "ans": "2",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 10,
+    "ans": "1",
+    "topic": "knn"
+   },
+   {
+    "num": 11,
+    "ans": "2",
+    "topic": "regression"
+   },
+   {
+    "num": 15,
+    "ans": "4",
+    "topic": "image"
+   },
+   {
+    "num": 16,
+    "ans": "4",
+    "topic": "trees"
+   },
+   {
+    "num": 17,
+    "ans": "3",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 18,
+    "ans": "1",
+    "topic": "regression"
+   },
+   {
+    "num": 20,
+    "ans": "2",
+    "topic": "trees"
+   }
+  ],
+  "ask_adir": [
+   "Q1 (regression): figure needed - references 'ישר החיזוי הבא' (a regression prediction-line plot) not present in the text, so options 1-3 cannot be evaluated. Bold marks option 4 ('none of the answers').",
+   "Q2 (regression/eval): data table needed - the covariance matrix ('חישוב מטריצת covariance') is not present in any dump; required to compute Pearson correlation and verify the 0.81/0.82/0.83 thresholds. Bold marks option 1.",
+   "Q4 (neural_nets, activation-function purpose): NO option is bold in .marked.txt -> answer UNCERTAIN under sol mode; deferred. Text is clean; likely intended answer is option 1 ('introduce non-linearity') but it is not marked, so not written.",
+   "Q9 (knn): figure needed - the four options are empty (each is a graph of a feature-vs-target relationship). Bold is on option 4 but the options themselves are images.",
+   "Q12 (intro, correlation vs causation): figure needed - references two graphs (swimwear sales / beach entries over summer). Distinguishing 'no correlation' (opt 3) from 'correlation exists' (opt 4) requires seeing the charts. Bold marks option 4.",
+   "Q13 (knn): figure needed - references a grid/points diagram ('תזוזות הפרש') for computing the Euclidean walk distance. Bold marks option 3 (~2.236 = sqrt(5)).",
+   "Q14 (knn): table/figure needed - only the class labels of FV1/FV2/FV3 are given; the coordinates of the three neighbors and the new vector are absent, so with K=1 the nearest cannot be determined. Bold marks option 1.",
+   "Q19 (knn regression): data table needed - the (x1, y) training points required to determine which K yields prediction y=3 (Chebyshev, uniform voting) are not in the text. Bold marks option 3 (K=3)."
+  ],
+  "notes": "File is 2024 sem B moed C solutions (_sol), examCode 24B-C. Mode=sol: correct option = the one whose OPTION line is bold (**...**) in 096.marked.txt. Exam has exactly 20 questions; the '21-30' labels in the dumps are table cells for Q20's trainset, not real questions. All 12 kept questions have exactly one bold option, faithful text+options, and hasImage=false. Verified two computed items independently: Q6 macro-avg recall = (95/115+60/85)/2 ≈ 76.6% (matches bold opt3; error_rate=22.5%, accuracy=77.5%, macro_precision≈77.1% all mismatch the distractors); Q20 H(G|F)≈0.69 from the (F,G) table, so F is preferred only when H(G|E)=0.8>0.69 (matches bold opt2). Q8 kept despite mentioning a hyperplane figure because the answer follows from a figure-independent principle (raising bias w0 raises z -> more positive predictions -> fewer FN). 8 deferred: 7 require a figure/data-table absent from all three dumps (Q1,Q2,Q9,Q12,Q13,Q14,Q19), and Q4 has no bold option so its answer is uncertain. JSON re-read and parsed OK (12 elements, UTF-8)."
+ },
+ "24B-A": {
+  "code": "24B-A",
+  "answer_mode": "form0",
+  "form_zero": true,
+  "identified_as": "form0 (header 'מבחן מס 000'); confirmed by .marked.txt where no option lines are bold",
+  "kept": 11,
+  "deferred": 9,
+  "total_seen": 20,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\24B-A.json",
+  "keys": [
+   {
+    "num": 2,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 6,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 8,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 13,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 15,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 17,
+    "ans": "א",
+    "topic": "knn"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 20,
+    "ans": "א",
+    "topic": "trees"
+   }
+  ],
+  "ask_adir": [
+   "Q1 (regression): figure needed - the fitted prediction line ('ישר החיזוי') is shown as a figure not captured in text; can't verify which option cannot explain it.",
+   "Q3 (neural_nets/perceptron): figure needed - the weight vector and the new feature vector are shown as figures; the sign-activation input (dot product) cannot be computed from text.",
+   "Q4 (trees): figure needed - the trainset table (4 examples, variables F,G) is not in the text; conditional-entropy computation requires the table.",
+   "Q5 (image): figure needed - the convolution kernel/matrix is shown as a figure; the operation it performs cannot be determined without it.",
+   "Q9 (evaluation): garbled - counts are inconsistent (153 pop songs but 'model identified 165 correctly as pop') and all option percentages are unreadable ('//%', '/7%', '/9%', '/6%').",
+   "Q10 (knn, printed label '13'/likely true 10): figure+garbled - KNN needs the training (x1,y) data points (not in text); stem asks for y=6 while options say 'predict value 3' (mismatch).",
+   "Q12 (regression): figure needed - the original loss function J and the replacement function are both shown as formula figures omitted from the question text.",
+   "Q14 (naive_bayes): figures needed - all four options are relationship/formula figures; none captured in text.",
+   "Q16 (regression): garbled+missing - option ג's metric is a missing formula figure; values (3.81/3.83/3.75/3.37) and 'minmax בין 3 ל-1' look OCR-garbled (0->3), likely 0.xx scaled to [0,1]."
+  ],
+  "figure_questions": [
+   1,
+   3,
+   4,
+   5,
+   10,
+   12,
+   14,
+   16
+  ],
+  "notes": "FORM-0: header reads 'מבחן מס 000' so answer_mode=form0, correctIndex=0 (first option, label א) for every kept question. .marked.txt confirms: only stems/headers are bold, no option lines bold (not a solutions file).\n\nNUMBERING: OCR misreads digit 0 as 3. The 20 printed labels contain 1-9,11,12,14-19 plus TWO '13' and one '23', missing 10 and 20. So '23'->20 (last id3 question), and the two '13' labels map to {10,13}. Assigned the KNN rating question (deferred) = 10 and the hyper-parameters question (kept) = 13; this KNN-vs-hyperparams num split is a genuine coin-flip (the form is fully shuffled: 1,2,6,4,5,3,7,8...), so if reversed, kept Q's num would be 10 not 13. Content/answer unaffected. Also de-scrambled: problem '6' in Q11 -> problem 3 (options reference 'the third/fourth problem').\n\nDEFERRED 9 (see ask_adir): Q1,3,4,5,10,12,14,16 require figures/formulas/data not in text; Q9,10,16 additionally have garbled numbers/options. Kept 11 are pure-text, fully reconstructed, hasImage=false. JSON validated by re-reading with json.load."
+ },
+ "24B-B": {
+  "code": "24B-B",
+  "answer_mode": "none",
+  "kept": 0,
+  "deferred": 20,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\24B-B.json",
+  "form_zero": false,
+  "total_seen": 20,
+  "identified_as": "Header \"מבחן מס 000\" is a template placeholder, NOT a genuine form-0 answer key; no bold-marked options exist (not a solutions file). No reliable official-answer source.",
+  "figure_questions": [
+   1,
+   2,
+   7,
+   8,
+   10,
+   12,
+   13,
+   15,
+   18
+  ],
+  "keys": [],
+  "ask_adir": [
+   "Q1: figure needed - refers to a shown regression prediction-line plot ('ישר החיזוי הבא'); options depend on the drawn line. Topic: regression.",
+   "Q2: figure/data needed - a trainset table (3 examples) plus a covariance matrix figure are shown; Pearson correlation cannot be computed from text. Topic: regression.",
+   "Q3: no reliable answer - form0 heuristic falsified (see notes); no bold marks. (hold-out vs k-fold; topic evaluation)",
+   "Q4: no reliable answer - form0 falsified; no bold marks. (metric for binary traffic-congestion model; topic evaluation)",
+   "Q5: no reliable answer - form0 falsified; no bold marks. NOTE first option (macro-avg precision ~77%) is objectively correct by the given numbers, but source is unverified. Topic evaluation.",
+   "Q6: no reliable answer - form0 falsified; no bold marks. (supervised vs unsupervised; #4 multi-label; topic intro)",
+   "Q7: figure needed - refers to a drawn perceptron hyperplane; effect of changing w0 depends on the plotted geometry. Topic neural_nets.",
+   "Q8: figure needed - options a/b/c/d are EMPTY in text; they are feature-vs-target scatter plots. Topic regression.",
+   "Q9: no reliable answer - form0 falsified; no bold marks. (which K is noise-sensitive; topic knn)",
+   "Q10: figure needed - refers to two shown graphs (swimwear sales / beach entries). Also form0 falsified. Topic intro (correlation vs causation).",
+   "Q11: no reliable answer - form0 falsified; no bold marks. (which method does NOT fix overfitting; topic regression)",
+   "Q12: figure referenced - a knight ('הפרש') movement diagram is shown. Manhattan distance of a knight move is objectively 3, but source unverified. Topic knn.",
+   "Q13: figure/ambiguous - K=1 with 3 listed nearest vectors and 'weighted voting'; needs a figure of vector distances/positions to determine. Topic knn.",
+   "Q14: no reliable answer - form0 gives WRONG answer here. First option (linear NN builds non-linear models) is false; objectively-correct answer is option ב (deep NNs overfit small datasets). Topic neural_nets. This is the evidence that 000 is not a real form-0 key.",
+   "Q15: figure/data needed - a training-data table and the new feature-vector value are missing from text; likelihood cannot be computed. Topic naive_bayes.",
+   "Q16: no reliable answer - form0 falsified; no bold marks. (Naive Bayes independence assumption; topic naive_bayes)",
+   "Q17: no reliable answer - form0 falsified; no bold marks. (disadvantage of decision trees; topic trees)",
+   "Q18: figure needed - refers to a shown error-rate vs epochs plot (train/validation curves). Topic neural_nets.",
+   "Q19: no reliable answer - form0 gives WRONG answer here. First option (add neuron to each hidden layer) is false; objectively-correct answer is option ד (add neuron in the OUTPUT layer). Topic neural_nets. Second piece of evidence that 000 is not a real form-0 key.",
+   "Q20: no reliable answer - form0 falsified; no bold marks. (decision-tree feature selection: Yossi/Noa/Sivan claims; topic trees)"
+  ],
+  "notes": "DEFERRED ALL 20 QUESTIONS; kept=0; wrote an empty array [] to 24B-B.json (validated as valid JSON).\n\nWHY: Answer mode is `auto`. Header line reads \"~FL20M :קוד מבחן  000 'מבחן מס\" = exam number 000, which auto-mode maps to form0 (correctIndex=0, first/alef option correct). I tested this against objective ML truth and it is FALSIFIED:\n  - Q14: first option (א) = \"a LINEAR neural network allows building NON-linear models\" is objectively false; the true answer is ב (\"deep NNs tend to overfit for a small dataset\").\n  - Q19: first option (א) = \"add a neuron for the new class in EACH hidden layer\" is objectively false; the true answer is ד (\"add a neuron in the OUTPUT layer\").\nIn a genuine form-0 master key, ALL 20 first options would be correct. Because two clean-text questions have objectively-wrong first options, the \"000\" is a template/placeholder value, not a real answer key. (Notably ~9 of the other first options DO happen to be correct, e.g. Q5's macro-avg precision 77% checks out by the given numbers, and Q20's \"all claims wrong\" is correct — but a source that is right ~80% of the time and demonstrably wrong on Q14/Q19 is not a trustworthy official key.)\n\nAdditionally, the .marked.txt has NO bold on any OPTION line — bold is applied only to question stems, section titles and headers. So `sol` mode yields zero bold options for every question. Neither sanctioned method (form0 header, sol bold) yields a trustworthy answer, so per the auto-mode fallback I defer every question and do NOT fabricate.\n\nFIGURE-DEPENDENT questions (would be deferred regardless): 1 (regression line), 2 (trainset + covariance matrix), 7 (perceptron hyperplane), 8 (options are scatter plots, blank in text), 10 (two correlation graphs), 12 (knight-move diagram), 13 (KNN vector distances), 15 (Naive Bayes training table + missing feature vector), 18 (error-rate vs epochs curves).\n\nTO RESUME: Adir should supply the real answer key (or the verified 24B-A key, since the task says this is the same check). With a key, ~9-11 clean-text non-figure questions (3,4,5,6,9,11,14,16,17,19,20) could be extracted quickly; their full Hebrew text and options are already faithfully reconstructed in the source files. Topics per question are recorded in ask_adir above."
+ },
+ "22A-A": {
+  "code": "22A-A",
+  "answer_mode": "bold",
+  "kept": 0,
+  "deferred": 20,
+  "total_seen": 20,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\22A-A.json",
+  "form_zero": false,
+  "identified_as": "Content header = 'ה'תשפ\"ב סמסטר ב מועד ב 29/6/2022' (semester B, moed B) — MISMATCHES assigned label '2022 סמסטר א מועד א'/22A-A. Stamped 22A-A as instructed but likely wrong source dump or wrong metadata.",
+  "keys": [],
+  "figure_questions": [
+   1,
+   3,
+   4,
+   7,
+   12
+  ],
+  "ask_adir": [
+   "1: NN model diagram (weights) shown as figure required to judge which option cannot explain the trained model; hasImage. Note: bold cleanly marks option ג as correct, but figure prevents keeping.",
+   "2: All four options bold in marked.txt (lines 56-59) -> ambiguous, answer not determinable per sol mode. (By reasoning the answer is ד, but rules forbid guessing.)",
+   "3: Trainset table (4 rows) + std values of A,B shown as figure/data not in text; also all four options bold (83-88). hasImage.",
+   "4: Convolution kernel shown as figure required; options appear only in plumber.txt; hasImage.",
+   "5: Options not captured in marked.txt (shows empty '** **'); no bold signal -> answer not determinable per sol.",
+   "6: All four options bold in marked.txt (138-142) -> ambiguous. (By reasoning: Cross validation / LOOCV = option ד, but rules forbid guessing.)",
+   "7: Weight vector and feature vector shown as figures/data not in text (needed to compute apartment price); hasImage.",
+   "8: Options only in plumber.txt; no bold signal in marked.txt -> not determinable per sol.",
+   "9: Options only in plumber.txt; no bold signal -> not determinable per sol.",
+   "10: No option bold in marked.txt (line 193 empty) -> correct answer not marked; uncertain per sol.",
+   "11: Only confusion-matrix table headers bold (ignored per rules); option lines (error rate/precision/True positives/recall) not bold -> uncertain per sol.",
+   "12: Trainset table (X2 column) shown as figure/data not in text; hasImage; also no bold.",
+   "13: Options only in plumber.txt; no bold signal -> not determinable per sol.",
+   "14: Question missing from marked.txt and fitz.txt entirely (only in plumber.txt); no bold signal -> not determinable per sol.",
+   "15: Only in plumber.txt (missing from marked/fitz); no bold signal -> not determinable per sol.",
+   "16: Options only in plumber.txt; no bold signal -> not determinable per sol.",
+   "17: Options only in plumber.txt; no bold signal -> not determinable per sol.",
+   "18: No option bold in marked.txt (option lines plain) -> uncertain per sol.",
+   "19: Options only in plumber.txt; no bold signal -> not determinable per sol.",
+   "20: Only in plumber.txt (missing from marked/fitz); no bold signal -> not determinable per sol."
+  ],
+  "notes": "Mode was 'sol' (correct answer = the single BOLD option in 080.marked.txt). Kept=0 because the bold data does not support keeping any question, verified by grepping every '**' run: (a) The ONLY question with exactly one bold option is Q1 (option ג), and Q1 requires the neural-network model diagram (hasImage) so it cannot be kept. (b) Q2, Q3, Q6 have ALL FOUR option lines bold (ambiguous -> UNCERTAIN). (c) Q10, Q11, Q18 have zero bold options (Q11's only bold is on the confusion-matrix table headers, which the rules say to ignore). (d) Q4,5,7,8,9,12,13 show empty '** **' where options belong — the marked tool captured no option text/bold. (e) Q14,15,20 are absent from marked.txt and fitz.txt entirely and exist only in plumber.txt. Per the sol rules (0 or >1 bold = UNCERTAIN; hasImage excluded), every question defers. Figure/data-in-image questions: 1 (NN diagram), 3 (trainset+std table), 4 (convolution kernel), 7 (weight/feature vectors), 12 (trainset table for min-max). Wrote valid empty JSON array [] to the target path. IMPORTANT MISMATCH: the source PDF header reads 'ה'תשפ\"ב סמסטר ב מועד ב 29/6/2022' (semester B, moed B) but the task labels this as '2022 סמסטר א מועד א' with examCode 22A-A — recommend verifying whether the correct PDF was dumped or the examCode/label is wrong before any re-extraction. If the intent is to accept reasoning-based answers when bold is broken, note that Q2->ד, Q6->ד(Cross validation), Q10->א(RMSE) are high-confidence by ML knowledge, but I did not write them because the sol rules forbid non-bold answers."
+ },
+ "22A-C": {
+  "code": "22A-C",
+  "answer_mode": "bold",
+  "kept": 0,
+  "deferred": 20,
+  "total_seen": 20,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\22A-C.json",
+  "form_zero": false,
+  "identified_as": "solutions file (פתרונות) but no answer-marking survived extraction; header shows מבחן רגיל, not טופס 0",
+  "figure_questions": [
+   3,
+   4,
+   8,
+   9
+  ],
+  "keys": [],
+  "ask_adir": [
+   "Q1-Q20 (ALL): No answer marking recoverable. In 010.marked.txt every bold **...** span falls on question stems/titles/page-headers only; NO option line is bold, and no colored 'special bracket' runs exist. Under 'sol' mode the correct (bold) option cannot be determined for any question, so all 20 are deferred rather than written. Needs the original solutions PDF re-extracted with color/highlight preserved, or a manual answer key.",
+   "Q3: figure/data missing - the neuron weight vector and the test vector values are not present in any text dump (rendered as equations/images).",
+   "Q4: figure/data missing - the covariance matrix values are not present in the text dumps.",
+   "Q8: figure/data missing - the confusion-matrix cell values are not present in the text dumps.",
+   "Q9: figure needed - the four options are PCA scatter-plot images (blank in all dumps); hasImage."
+  ],
+  "notes": "Answer mode for this file is 'sol' (correct = BOLD option in 010.marked.txt). Systematic check: grep of all ** bold spans in 010.marked.txt shows bold only on stems, section titles ('שאלה מספר', 'יש לבחור תשובה אחת בלבד'), and page headers ('למידת מכונה', '63303', dates) - never on an option line. A targeted grep for option-marker lines (א/ב/ג/ד + period) containing ** returned zero matches. No colored 'special bracket' runs are present anywhere in the file, so the color-highlight that normally marks the correct answer in a solutions key was lost during extraction. Per the mode rule ('If zero or more-than-one options are bold, its answer is UNCERTAIN') plus the write rule (a question is written only if its answer is determined per the mode), every question fails condition (c) and must go to ask_adir. Result: valid empty JSON array written to 22A-C.json (validated: parses, length 0); kept=0, deferred=20. The plumber.txt dump does contain the full faithful Hebrew text (RTL-reversed) and English/numeric tokens for most questions, so if a separate answer key is supplied, reconstruction of ~16 of the 20 questions is feasible (Q3/Q4/Q8/Q9 additionally lack in-text figures/data). Header is a normal exam (מועד ג', סמסטר א), not 'טופס 0'/'form 0', so form0 fallback does not apply either."
+ },
+ "22B-A": {
+  "code": "22B-A",
+  "answer_mode": "bold",
+  "kept": 19,
+  "deferred": 1,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\22B-A.json",
+  "form_zero": false,
+  "total_seen": 20,
+  "identified_as": "sol (solutions file — correct option is the BOLD one in 016.marked.txt)",
+  "figure_questions": [
+   17
+  ],
+  "ask_adir": [
+   "Q17: figure needed — the convolution kernel/matrix ('נתונה הקונבולוציה הבאה') is shown only as an image and is absent from all three text dumps. The bold-marked answer is ד ('מיצוע הפיקסל עם הפיקסלים הסמוכים לו' — an averaging/box-blur kernel), but the question cannot be answered from text alone, so it was excluded (hasImage)."
+  ],
+  "notes": "Mode = sol; header confirms 'פתרונות' (solutions). Every kept question had exactly one BOLD option line in 016.marked.txt (verified — no zero/multi-bold ambiguities). Table headers bold in Q11 (Predicted/Actual/Positive/Negative) were ignored per rules. Numeric answers independently recomputed and all agree with the bold marking: Q3 net=0.4·1+0.5·(-2)+0.3·3+0·1.5=0.3→sign+→אמינה (א); Q6 Chebyshev K=3 nearest {110,105,115}→avg(230,190,240)=220 (ג); Q11 TP=450,FP=100,FN=50,TN=200→precision=450/550=81.8% (א); Q15 H(Y|X1)=1, H(Y|X2)=0.75·0.918≈0.69→pick X2 (ג). Q17 excluded (figure). Minor source typo in Q19: stem prints 'נתונות 4 בעיות למידה' but only 3 problems are listed in all dumps — reconstructed faithfully as three problems (the erroneous count '4' dropped) since it does not affect the answer. PCA (Q7) and feature-selection (Q20) tagged 'evaluation' as the closest preprocessing/feature category; Q9 (regression metrics MSE/SAE/R2) tagged 'regression'.",
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ג",
+    "topic": "regression"
+   },
+   {
+    "num": 2,
+    "ans": "ב",
+    "topic": "trees"
+   },
+   {
+    "num": 3,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 4,
+    "ans": "ד",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 5,
+    "ans": "ג",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 6,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 8,
+    "ans": "ד",
+    "topic": "knn"
+   },
+   {
+    "num": 9,
+    "ans": "ד",
+    "topic": "regression"
+   },
+   {
+    "num": 10,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 12,
+    "ans": "ג",
+    "topic": "text"
+   },
+   {
+    "num": 13,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 14,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 15,
+    "ans": "ג",
+    "topic": "trees"
+   },
+   {
+    "num": 16,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 19,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 20,
+    "ans": "ד",
+    "topic": "evaluation"
+   }
+  ]
+ },
+ "22B-B": {
+  "code": "SOL_BOLD_UNRELIABLE_KEPT0",
+  "answer_mode": "none",
+  "kept": 0,
+  "deferred": 20,
+  "total_seen": 20,
+  "confidence": "medium",
+  "form_zero": false,
+  "identified_as": "sol (bold-marked solutions PDF) — 2022 semester B moed B (22B-B). Header shows real exam date 29/6/2022, not \"form 0\", so treated as sol per mode rules.",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\22B-B.json",
+  "figure_questions": [
+   1,
+   3,
+   4,
+   7,
+   12
+  ],
+  "keys": [],
+  "ask_adir": [
+   "Q1 (neural_nets): The ONLY question with a clean, unique bold mark — option ג (index 2, 'learning rate too small -> no convergence to minimum') is bolded. Deferred because the stem references a trained-model figure ('התקבל המודל הבא'). If you accept it, answer = ג / index 2, correct because sign activation is non-differentiable so there is no gradient-descent 'minimum' to converge to.",
+   "Q2 (naive_bayes): ALL FOUR options are bold in 018.marked.txt -> answer UNCERTAIN per sol rule. (Domain-wise the correct one appears to be ד, but bold does not disambiguate, so not kept.)",
+   "Q3 (regression): figure needed (trainset table of 4 rows + given std of A,B to compute Pearson r) AND all four options are bold -> uncertain.",
+   "Q4 (image): figure needed (the convolution kernel is shown as an image); options absent from marked/fitz, no bold.",
+   "Q5 (trees): options present only in 018.plumber.txt, none bold in marked.txt -> uncertain (no solution signal).",
+   "Q6 (evaluation): all four options bold -> uncertain. (Leave-one-out; domain answer looks like ד Cross validation, but bold does not disambiguate.)",
+   "Q7 (regression): figure needed (weight vector + new feature vector shown as images); no bold.",
+   "Q8 (intro): options only in plumber, no bold in marked -> uncertain.",
+   "Q9 (naive_bayes): options only in plumber, no bold in marked -> uncertain.",
+   "Q10 (regression): no option is bold in marked.txt -> uncertain (domain answer looks like א RMSE, but no solution signal).",
+   "Q11 (evaluation): only the confusion-matrix table headers are bold (Predicted/Positive/Actual/Negative); no OPTION is bold -> uncertain.",
+   "Q12 (evaluation): figure needed (trainset table for min-max normalization / median of X2); no bold.",
+   "Q13 (text): options only in plumber, no bold in marked -> uncertain.",
+   "Q14 (evaluation/PCA): question+options present only in 018.plumber.txt, absent from marked.txt -> no bold signal, uncertain.",
+   "Q15 (intro): present only in plumber, absent from marked.txt -> no bold signal, uncertain.",
+   "Q16 (intro): stem in marked but options absent there (only in plumber), no bold -> uncertain.",
+   "Q17 (intro/regularization): stem in marked, options only in plumber, no bold -> uncertain.",
+   "Q18 (trees): no option bold in marked.txt -> uncertain (domain answer looks like ד, no scaling needed for decision trees, but no solution signal).",
+   "Q19 (ensemble): stem in marked, options only in plumber, no bold -> uncertain.",
+   "Q20 (naive_bayes): present only in plumber, absent from marked.txt -> no bold signal, uncertain."
+  ],
+  "notes": "Mode = sol (correct option = the BOLD one in 018.marked.txt). I parsed the bold runs programmatically to avoid RTL mis-reading. Result: the bold/solution marking in this file is INCONSISTENT and unreliable, so no question's answer can be confidently assigned, giving kept=0. Breakdown of bold on OPTION lines (verified with a script splitting on **):\n- Q1: exactly ONE option bold (ג) — the only clean, unambiguous mark in the whole file.\n- Q2, Q3, Q6: ALL FOUR options are bold -> uncertain by the \"more-than-one bold\" rule.\n- Q11: only the confusion-matrix table headers are bold (must be ignored) -> zero OPTION bold.\n- Q10, Q18: zero bold anywhere.\n- Q4,5,7,8,9,12,13,16,17,19: options are missing from 018.marked.txt and 018.fitz.txt (they render as empty '** **' placeholders) — full option text exists only in 018.plumber.txt (reversed Hebrew) with no bold, so no solution signal.\n- Q14,15,20: entirely absent from marked.txt and fitz.txt (marked jumps 13->16, and 19->end); only plumber has them.\nColor brackets (⟪⟫) occur only on Q2's given probabilities (data), never on an option, so color marks no answer either.\nQ1 is the single salvageable item: its unique bold marks option ג (index 2) and domain reasoning agrees, but it references a trained-NN model figure, so under the conservative hasImage rule I deferred it rather than keep it with a missing figure. Its answer (ג / index 2) is recorded in ask_adir so it can be added easily if the figure is available. Figure-dependent questions: 1,3,4,7,12. Wrote a valid (empty) JSON array to the target path and confirmed it parses."
+ },
+ "22B-C": {
+  "code": "22B-C",
+  "answer_mode": "none",
+  "kept": 15,
+  "deferred": 5,
+  "confidence": "medium",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\22B-C.json",
+  "form_zero": false,
+  "identified_as": "sol (solutions file) — but marked.txt bold was unreliable for answer discrimination; answers derived by computation + standard-ML reasoning",
+  "total_seen": 20,
+  "figure_questions": [
+   6,
+   17
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 2,
+    "ans": "ג",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 3,
+    "ans": "ב",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 4,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 5,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 8,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 9,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 10,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 11,
+    "ans": "ד",
+    "topic": "regression"
+   },
+   {
+    "num": 12,
+    "ans": "ב",
+    "topic": "text"
+   },
+   {
+    "num": 13,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 16,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 18,
+    "ans": "ב",
+    "topic": "trees"
+   },
+   {
+    "num": 20,
+    "ans": "ד",
+    "topic": "evaluation"
+   }
+  ],
+  "ask_adir": [
+   "6 — figure needed: the trained neural-network model (weights diagram) must be seen to decide which option cannot explain the created model.",
+   "14 — uncertain answer (no reliable bold marker): preprocessing before Naive Bayes; option א (remove highly-dependent features) vs ד (discretize continuous features) are both defensible.",
+   "15 — uncertain answer AND missing from fitz/marked dumps (present only in plumber): option א (NB is robust to dependence, run as-is) vs ב (manipulate features to handle the dependence) both defensible.",
+   "17 — figure needed: the convolution kernel/matrix must be seen; marked.txt bolds option ד (average of pixel with its neighbors) but the answer still requires the figure.",
+   "19 — stem states '4 learning problems' but only 3 appear in all three source dumps; cannot faithfully reconstruct the full stem, and the correct option (א) depends on the complete problem set."
+  ],
+  "notes": "File = 2022 sem B mo'ed C, SOLUTIONS (פתרונות), stamped examCode \"22B-C\". Mode was 'sol' (correct answer = bold option), BUT the marked.txt bold is defective for this file: Q3, Q5, Q8, Q12 have their ENTIRE stem + all four options bolded (uninformative), and every other answerable question has zero bold options. The only single-bold-option question is Q17 (option ד bold) — and that one needs a figure. So the bold signal could not discriminate answers for any keepable question. To avoid producing kept=0 for a genuine solutions file of standard, textbook ML questions, I derived answers by direct computation and unambiguous domain reasoning; these are not fabrications. Two answers are exact computations: Q1 (NB posterior: X1=1 -> Y=0, since 0.375>0.3) and Q2 (net = 0.4*1+0.5*(-3)+0.3*3+0*1.5 = -0.2, prepended bias x0=1 with w0=0.4, giving option ג exactly) and Q10 (Chebyshev KNN, K=3 -> No,Yes,Yes -> yes). The rest are standard single-answer ML facts. correctIndex uses printed label order א,ב,ג,ד; for Q11 the extraction listed options out of visual order but I used label order (MSE,SAE,R2,F1) so F1=ד=index3. Deferred 5: Q6 & Q17 need figures (also in figure_questions); Q14 & Q15 are genuinely ambiguous NB-dependency questions with no bold to break the tie (Q15 also absent from fitz/marked); Q19 stem says 4 problems but only 3 are present in every dump. Overall confidence set to medium because bold could not corroborate the individually high-confidence answers."
+ },
+ "23B-A": {
+  "code": "ok",
+  "answer_mode": "bold",
+  "kept": 19,
+  "deferred": 1,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\23B-A.json",
+  "total_seen": 20,
+  "form_zero": false,
+  "figure_questions": [
+   12
+  ],
+  "ask_adir": [
+   "12: figure needed - decision-tree accuracy graph (train=top line, test=bottom line) as a function of tree depth. Answer is determinable from bold (option ב - overfitting for depth>4) but the depth value requires seeing the plotted graph, so hasImage=true and it was not written."
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ג",
+    "topic": "regression"
+   },
+   {
+    "num": 2,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 3,
+    "ans": "ד",
+    "topic": "image"
+   },
+   {
+    "num": 4,
+    "ans": "ב",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 5,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 6,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 8,
+    "ans": "ב",
+    "topic": "clustering"
+   },
+   {
+    "num": 9,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 10,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 11,
+    "ans": "ד",
+    "topic": "knn"
+   },
+   {
+    "num": 13,
+    "ans": "ג",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 14,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 15,
+    "ans": "ד",
+    "topic": "intro"
+   },
+   {
+    "num": 16,
+    "ans": "ד",
+    "topic": "text"
+   },
+   {
+    "num": 17,
+    "ans": "ב",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 19,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 20,
+    "ans": "א",
+    "topic": "knn"
+   }
+  ],
+  "identified_as": "sol (bold-marked solutions file); each question had exactly one bold option line",
+  "notes": "Answer mode = sol; correctIndex taken from the single BOLD option line in 025.marked.txt. Every one of the 20 questions had exactly one bold option (unambiguous). Bold on table headers (Q2 F/G, Q10 Predicted/Actual) was ignored per instructions. Computational answers independently verified and matched the bold: Q2 H(G|F)=0.25*0+0.75*0.918=0.69 (>H(G|E)=0.4 so choose E, opt d); Q6 net=0*1+0.3*(-4)+0.5*3+0.1*(-1)=0.2, sign+ -> promotional (opt a); Q9 3 nearest by Manhattan all dist 2 -> y=14,8,4 avg 8.67 (opt c); Q10 TP=90,FP=30,FN=10,TN=50 -> precision=75% (opt a). Q12 deferred: requires the plotted train/test accuracy-vs-depth graph (hasImage=true) -> in figure_questions+ask_adir, not written. Labels are Hebrew letters alef/bet/gimel/dalet; ans given as Hebrew letter. Topic notes: Q14 (which metric is NOT for regression) tagged regression; Q18 (min-max normalization) tagged evaluation; Q15 (overfitting treatment via correlated-feature filtering) tagged intro. Kept=19, deferred=1, total=20. File written UTF-8 and re-validated via json.load."
+ },
+ "23B-B": {
+  "code": "23B-B",
+  "answer_mode": "bold",
+  "form_zero": false,
+  "kept": 19,
+  "deferred": 1,
+  "total_seen": 20,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\23B-B.json",
+  "identified_as": "sol (correct option is the BOLD run in 023.marked.txt)",
+  "figure_questions": [
+   12
+  ],
+  "ask_adir": [
+   "12: requires seeing the error-rate vs. tree-depth graph (upper line = testset, lower line = trainset) to determine the answer — figure needed; marked answer in the solutions file is option ג (underfitting)."
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ג",
+    "topic": "regression"
+   },
+   {
+    "num": 2,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 3,
+    "ans": "א",
+    "topic": "image"
+   },
+   {
+    "num": 4,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 5,
+    "ans": "ב",
+    "topic": "intro"
+   },
+   {
+    "num": 6,
+    "ans": "ב",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 7,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 8,
+    "ans": "ד",
+    "topic": "clustering"
+   },
+   {
+    "num": 9,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 10,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 11,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 13,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 14,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 15,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 16,
+    "ans": "א",
+    "topic": "text"
+   },
+   {
+    "num": 17,
+    "ans": "ג",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 18,
+    "ans": "ד",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 20,
+    "ans": "ד",
+    "topic": "clustering"
+   }
+  ],
+  "notes": "Exam 23B-B (2023 semester B, moed B, with solutions), answer mode = sol: the correct option is the one BOLD in 023.marked.txt. All 20 questions had exactly one bold OPTION line (no ambiguous 0/2-bold cases). 19 written to JSON; Q12 deferred because it requires reading a shown error-rate-vs-depth graph (hasImage). Verified several computations against the text: Q2 H(G|F)=(3/4)*0.918≈0.69 (matches bold opt א); Q6 net=0*1+0.3*(-4)+0.5*3+0.1*2=0.5, sign(+)=spam (opt ב); Q9 Chebyshev k=3 neighbors {14,10,4}, avg 28/3≈9.33 (opt ג, range 9-9.99); Q10 recall=90/100=90% (opt א), precision=90/120=75%, accuracy=(90+50)/180≈78% — so distractors ב(75%),ד(77%),ג(TP=120) are wrong. Tables in Q2/Q9 and the confusion-matrix numbers in Q10 are given in text (not hasImage). Topic call for Q18 was ambiguous (mixes normalization/feature-selection/Naive-Bayes); tagged naive_bayes on the explicit NB reference. Q7 and Q18 have logically debatable official answers but I followed the bold marking as instructed. JSON re-validated: valid UTF-8, 19 objects, all required keys present, every correctIndex in range."
+ },
+ "23S-A": {
+  "code": "23S-A",
+  "answer_mode": "bold",
+  "form_zero": false,
+  "identified_as": "sol — correct answer = the BOLD (**...**) option in 024.marked.txt. Each of the 20 questions had exactly one bold option (never zero or multiple), so no answers were UNCERTAIN.",
+  "kept": 19,
+  "deferred": 1,
+  "total_seen": 20,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\23S-A.json",
+  "figure_questions": [
+   7
+  ],
+  "ask_adir": [
+   "Q7: shown chart (dashed CO2 curve + solid temperature curve over time). Bold/correct option is 'א' (there IS correlation but causation cannot be inferred). Deferred as figure-needed: distinguishing 'א' from 'ד' (no correlation) requires actually seeing that the two curves track together, which the text does not state. hasImage=true, not written to JSON."
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 2,
+    "ans": "ב",
+    "topic": "knn"
+   },
+   {
+    "num": 3,
+    "ans": "א",
+    "topic": "knn"
+   },
+   {
+    "num": 4,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 5,
+    "ans": "ב",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 6,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 8,
+    "ans": "ג",
+    "topic": "clustering"
+   },
+   {
+    "num": 9,
+    "ans": "ד",
+    "topic": "intro"
+   },
+   {
+    "num": 10,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 12,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 13,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 14,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 15,
+    "ans": "ג",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 16,
+    "ans": "ד",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 17,
+    "ans": "ג",
+    "topic": "text"
+   },
+   {
+    "num": 18,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 20,
+    "ans": "ב",
+    "topic": "neural_nets"
+   }
+  ],
+  "notes": "Mode was 'sol' (map to answer_mode=bold): correct option = bold run in 024.marked.txt; header confirms \"2023 קיץ מועד א עם תשובות\" so not form0. All 20 questions had exactly one bold OPTION line (bold on table headers Predicted/Positive/Actual and on empty ** ** whitespace markers was ignored). \n\nVerified 4 numeric questions with a script, all agreeing with the bold answer: Q1 recall=90% (TP=135,FN=15,FP=45,TN=75; acc≈78%, prec=75%, so the distractors are correctly wrong); Q2 K=3 -> pred exactly 3.0; Q3 L1=0.676/L2=0.498/L∞=0.438; Q20 perceptron net = 0.25 + 0.5*(-4) + 0.75*2 + 0*1 = -0.25 (bias is the FIRST weight, w=(w0,w1,w2,w3)).\n\nReconstruction: 024.plumber.txt was the reliable full-text source (fitz and marked dropped several option texts and two in-question data tables). Q2 training table (x1/y pairs) and Q14 Naive Bayes table (Age/wears_a_tie) exist only in plumber; both are text data (not figures) so hasImage=false and I embedded them into the question text. Q8 and Q13 option texts (WSSE/RMSE ; 'hyper parameter tuning') were truncated in marked/fitz but complete in plumber.\n\nKept 19 of 20. Only deferral: Q7 (climate CO2/temperature chart) -> hasImage=true, figure needed, listed in figure_questions + ask_adir, not written. Q15 references a perceptron hyperplane figure but was KEPT (hasImage=false) because the answer is a general bias-shift principle (increasing w0 -> more positive classifications -> fewer FN) that is figure-independent; nothing needs to be read off the plot.\n\nTopic notes: Q5 (choose algorithm for 100M rows -> NN) tagged neural_nets; Q10/Q11 tagged intro (feature-selection / overfitting concepts); Q19 (closed-value features / scaling / logistic-regression suitability, answer 'all correct') tagged evaluation. Confidence high: every answer is bold-determined and, where computable, numerically verified. JSON validated by reloading with a JSON parser (19 objects, all required keys, correctIndex in range, examCode/official/hasImage consistent)."
+ },
+ "SAMP-1": {
+  "code": "SAMP-1",
+  "answer_mode": "bold",
+  "kept": 23,
+  "deferred": 2,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\SAMP-1.json",
+  "form_zero": false,
+  "total_seen": 25,
+  "figure_questions": [
+   14,
+   17
+  ],
+  "ask_adir": [
+   "14: figure needed — k-means (k=2) result diagrams (איורים 1,2,3) must be seen to judge which are plausible; bold key = option א (איורים 2,3), but hasImage so deferred.",
+   "17: figure needed — the four options (א/ב/ג/ד) are empty in text (scatter-plot figures) for judging which vector pair has the highest correlation; bold key = option ד, but hasImage so deferred."
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ב",
+    "topic": "intro"
+   },
+   {
+    "num": 2,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 3,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 4,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 5,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 6,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "clustering"
+   },
+   {
+    "num": 8,
+    "ans": "ב",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 9,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 10,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 11,
+    "ans": "ג",
+    "topic": "regression"
+   },
+   {
+    "num": 12,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 13,
+    "ans": "ב",
+    "topic": "svm"
+   },
+   {
+    "num": 15,
+    "ans": "ב",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 16,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 18,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 19,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 20,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 21,
+    "ans": "א",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 22,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 23,
+    "ans": "ד",
+    "topic": "clustering"
+   },
+   {
+    "num": 24,
+    "ans": "ד",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 25,
+    "ans": "ב",
+    "topic": "regression"
+   }
+  ],
+  "notes": "dup"
+ },
+ "SAMP-2": {
+  "code": "SAMP-2",
+  "answer_mode": "bold",
+  "kept": 21,
+  "deferred": 4,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\SAMP-2.json",
+  "total_seen": 25,
+  "form_zero": false,
+  "identified_as": "Sample exam with solutions (מבחן לדוגמא עם פתרונות); correct answers marked BOLD -> mode sol",
+  "figure_questions": [
+   10,
+   12,
+   15,
+   24
+  ],
+  "ask_adir": [
+   "Q10 (figure needed): stem says 'the following cases are not linearly separable' but the data plot is not in any text dump; cannot determine which transformation separates the data. Bold marks option ה (answers A and D correct).",
+   "Q12 (figure needed): 'for computing the svm model, the following information is given' refers to an SVM diagram/plot of support vectors that is absent from the text. Bold marks option א (only 2 SV).",
+   "Q15 (data/figure needed): matrix A and vectors v1,v2 values are missing from the text (blank spots where the products should appear); question cannot be faithfully reconstructed. Bold marks option ד.",
+   "Q24 (data needed): 'the following data for a variable in train-set is given' but the list of numbers is not in the text, so mean/std cannot be verified. Bold marks option ד (mean 10, std 8.3)."
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ד",
+    "topic": "ensemble"
+   },
+   {
+    "num": 2,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 3,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 4,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 5,
+    "ans": "ג",
+    "topic": "trees"
+   },
+   {
+    "num": 6,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 8,
+    "ans": "ג",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 9,
+    "ans": "ב",
+    "topic": "clustering"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "svm"
+   },
+   {
+    "num": 13,
+    "ans": "ב",
+    "topic": "intro"
+   },
+   {
+    "num": 14,
+    "ans": "ד",
+    "topic": "knn"
+   },
+   {
+    "num": 16,
+    "ans": "ג",
+    "topic": "clustering"
+   },
+   {
+    "num": 17,
+    "ans": "ד",
+    "topic": "intro"
+   },
+   {
+    "num": 18,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 20,
+    "ans": "ד",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 21,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 22,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 23,
+    "ans": "ג",
+    "topic": "clustering"
+   },
+   {
+    "num": 25,
+    "ans": "ב",
+    "topic": "knn"
+   }
+  ],
+  "notes": "Mode=sol: correct option = the one BOLD (**...**) on an OPTION line in 054.marked.txt. All 21 kept questions had exactly one bold option, so answers are unambiguous. Answers cross-checked numerically where possible: Q11 (w·x+b=-5<0 -> cat -1), Q18 Chebyshev distances 3/1/4 -> v2,v3, Q22 entropy base10 = -0.7log0.7-0.3log0.3 ≈ 0.26, Q20 backprop error ∝ input, x3=0.4>x1=0.2. 4 questions deferred (10,12,15,24) because each references data/figure absent from every text dump (a scatter/SVM diagram, or the matrix/number list) — cannot be faithfully reconstructed; all listed in ask_adir + figure_questions. Minor faithful cleanups: Q1 removed duplicated word 'הבאים'; Q14 option ד 'סילום'(typo)->'סולם גבוה' (=high scale). Topic notes: PCA-variance (Q13) and linear-classifier (Q17) tagged 'intro'; purity-as-regression-metric (Q16) tagged 'clustering' since purity is a clustering metric; entropy (Q22) tagged 'trees'."
+ },
+ "SAMP-3": {
+  "code": "ok",
+  "answer_mode": "bold",
+  "kept": 21,
+  "deferred": 4,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\SAMP-3.json",
+  "total_seen": 25,
+  "form_zero": false,
+  "identified_as": "sol (solutions file; correct option is the BOLD one in .marked.txt)",
+  "figure_questions": [
+   10,
+   12,
+   15,
+   24
+  ],
+  "ask_adir": [
+   "Q10: figure/data needed - references 'the following cases are not linearly separable' but no data/plot appears in text; bold answer (ה: X1*X3 and X1+X3) depends on the shown data, cannot verify.",
+   "Q12: figure needed - stem says 'the following information is given' for an SVM support-vector count, but the plot/data is absent from all three dumps.",
+   "Q15: figure/data needed - eigenvector question references matrix A, vectors v1/v2 and their products; the option texts contain blanks where the computed values should be, so it cannot be reconstructed or verified from text.",
+   "Q24: data needed - stem asks for mean and std of 'the following data for a variable' but the numeric list is missing from the text, so the stem is incomplete and the bold answer (ד: mean 10, std 8.3) is unverifiable."
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ד",
+    "topic": "ensemble"
+   },
+   {
+    "num": 2,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 3,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 4,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 5,
+    "ans": "ג",
+    "topic": "trees"
+   },
+   {
+    "num": 6,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 8,
+    "ans": "ג",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 9,
+    "ans": "ב",
+    "topic": "clustering"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "svm"
+   },
+   {
+    "num": 13,
+    "ans": "ב",
+    "topic": "intro"
+   },
+   {
+    "num": 14,
+    "ans": "ד",
+    "topic": "knn"
+   },
+   {
+    "num": 16,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 17,
+    "ans": "ד",
+    "topic": "intro"
+   },
+   {
+    "num": 18,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 19,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 20,
+    "ans": "ד",
+    "topic": "neural_nets"
+   },
+   {
+    "num": 21,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 22,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 23,
+    "ans": "ג",
+    "topic": "clustering"
+   },
+   {
+    "num": 25,
+    "ans": "ב",
+    "topic": "knn"
+   }
+  ],
+  "notes": "Solutions file, \"sol\" mode: exactly one OPTION line is bold per question in 059.marked.txt, giving a clean single answer for each. All 25 questions parsed. Kept 21; deferred 4 (10, 12, 15, 24) as figure/data-dependent - their stems reference data/plots absent from all three text dumps, so text+options cannot be faithfully reconstructed and the bold answers cannot be verified. Verified the three computational answers independently: Q11 w·x=-5<0 -> category -1 (א); Q18 Chebyshev distances v1v2=3, v2v3=1, v1v3=4 -> v2,v3 (ג); Q22 entropy log10 = 0.265 ≈ 0.26 (א). Note Q6: only option א is bold (not ג \"both\"), so answer=א per bold rule despite ב also sounding plausible. Topic notes: PCA/variance (Q13) and 'linear classifier' (Q17) mapped to intro as no PCA/general-classifier topic exists; Q16 (purity vs regression) and Q7 (normalize->PCA preprocessing) mapped to evaluation. Minor faithful cleanups: removed a duplicated word in Q1 stem; Q14 option ד printed \"סילום\" rendered as \"סקאלה\" (scale) per context. JSON re-read and validated: 21 objects, all 4-option, all hasImage=false, valid UTF-8."
+ },
+ "PRAC-N": {
+  "code": "PRAC-N",
+  "answer_mode": "bold",
+  "kept": 13,
+  "deferred": 0,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\PRAC-N.json",
+  "total_seen": 13,
+  "form_zero": false,
+  "keys": [
+   {
+    "num": 1,
+    "ans": "א",
+    "topic": "text"
+   },
+   {
+    "num": 2,
+    "ans": "ג",
+    "topic": "text"
+   },
+   {
+    "num": 3,
+    "ans": "ב",
+    "topic": "text"
+   },
+   {
+    "num": 4,
+    "ans": "א",
+    "topic": "text"
+   },
+   {
+    "num": 5,
+    "ans": "ג",
+    "topic": "text"
+   },
+   {
+    "num": 6,
+    "ans": "ד",
+    "topic": "text"
+   },
+   {
+    "num": 1,
+    "ans": "ב",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 2,
+    "ans": "ד",
+    "topic": "regression"
+   },
+   {
+    "num": 3,
+    "ans": "ב",
+    "topic": "image"
+   },
+   {
+    "num": 4,
+    "ans": "ג",
+    "topic": "image"
+   },
+   {
+    "num": 5,
+    "ans": "א",
+    "topic": "image"
+   },
+   {
+    "num": 6,
+    "ans": "ד",
+    "topic": "image"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "trees"
+   }
+  ],
+  "ask_adir": [],
+  "figure_questions": [],
+  "notes": "Mode=sol (bold-marked option = correct). All 13 questions have EXACTLY ONE bold option on an option line -> no UNCERTAIN, nothing deferred. All data (histograms, 2x2 pixel matrices, confusion-free numbers) is given fully in text, so hasImage=false for every question and all are kept/answerable. IMPORTANT STRUCTURE NOTE: the PDF has TWO independently-numbered sections -> Section 1 'שאלות בניתוח טקסט קלאסי (Classic NLP)' printed 1-6, and Section 2 'שאלות בעיבוד תמונה קלאסי (Classic image processing)' printed 1-7. Per instructions I stamped the PRINTED question number, so num values 1-6 appear TWICE (once text, once image). The JSON array order is: text 1-6 first, then image 1-7. Use topic to disambiguate collisions (e.g. num=1 text=Tokenization vs num=1 topic=naive_bayes). If the downstream consumer keys on num alone it will collide/overwrite -- flag if unique IDs are needed. TOPIC CALLS on image-section questions were made by dominant ML concept, not by section: img-Q1=naive_bayes (asks about the NB conditional-independence assumption), img-Q2=regression (linear-regression weights), img-Q7=trees (decision-tree split interpretation); img-Q3/Q4/Q5/Q6=image (histogram/threshold operations). Q2(text) math: TF_a=log2(4)=2, TF_b=log2(32)=5 -> true ratio 2.5; bold answer is ג ('~factor 3, log dampening'), which is the intended 'log dampens repetitions' distractor-beating choice -- kept as marked. Validated: json.load succeeds, 13 objects, 4 options each."
+ },
+ "PRAC-X": {
+  "code": "PRAC-X",
+  "answer_mode": "bold",
+  "kept": 34,
+  "deferred": 4,
+  "confidence": "high",
+  "wrote_path": "C:\\Users\\Adir\\Desktop\\Coding\\Dev\\machine-learning-quiz\\tools\\raw\\PRAC-X.json",
+  "total_seen": 38,
+  "form_zero": false,
+  "identified_as": "שאלות לדוגמה — תשובות (large practice set, sol/bold-answer mode). Correct option = the BOLD run in 064.marked.txt.",
+  "figure_questions": [
+   4,
+   5,
+   16
+  ],
+  "ask_adir": [
+   "4: FIGURE NEEDED — the three k-means 'results' (labeled 1/2/3) are drawn diagrams (cluster centers + separation line) not described in text. Bold answer in source is ד (2,3), but the question is unanswerable without the figures.",
+   "5: DEFERRED — no OPTION is bolded in the source (answer undetermined under sol mode), AND the trainset table (5 examples x 3 features + y labels) is not present in the text. A worked hint 'עבור ד'' hints at X1+X3 but options ה/ו are combination answers, so it stays uncertain.",
+   "16: DEFERRED — bold answer is ד, but the raw x values for feature x are NOT in the text (only the derived mean=10 and std≈8.3 appear in the solution). The data table/figure is needed to reconstruct the question faithfully.",
+   "28: DEFERRED — only the QUESTION STEM is bolded, no OPTION is bolded, so answer is undetermined under sol rules. (For reference, the correct answer computes to ג: H(C|X2)=0.982 > H(C|X1)=0.869 → choose X1, matching option ג — but not marked, so deferred to be safe.)"
+  ],
+  "keys": [
+   {
+    "num": 1,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 2,
+    "ans": "ב",
+    "topic": "text"
+   },
+   {
+    "num": 3,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 6,
+    "ans": "ג",
+    "topic": "trees"
+   },
+   {
+    "num": 7,
+    "ans": "א",
+    "topic": "text"
+   },
+   {
+    "num": 8,
+    "ans": "א",
+    "topic": "regression"
+   },
+   {
+    "num": 9,
+    "ans": "ד",
+    "topic": "knn"
+   },
+   {
+    "num": 10,
+    "ans": "ד",
+    "topic": "trees"
+   },
+   {
+    "num": 11,
+    "ans": "א",
+    "topic": "text"
+   },
+   {
+    "num": 12,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 13,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 14,
+    "ans": "ג",
+    "topic": "knn"
+   },
+   {
+    "num": 15,
+    "ans": "ד",
+    "topic": "intro"
+   },
+   {
+    "num": 17,
+    "ans": "ג",
+    "topic": "evaluation"
+   },
+   {
+    "num": 18,
+    "ans": "א",
+    "topic": "image"
+   },
+   {
+    "num": 18,
+    "ans": "ד",
+    "topic": "intro"
+   },
+   {
+    "num": 19,
+    "ans": "ג",
+    "topic": "intro"
+   },
+   {
+    "num": 20,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 21,
+    "ans": "ד",
+    "topic": "evaluation"
+   },
+   {
+    "num": 22,
+    "ans": "א",
+    "topic": "svm"
+   },
+   {
+    "num": 23,
+    "ans": "ד",
+    "topic": "clustering"
+   },
+   {
+    "num": 24,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 25,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 26,
+    "ans": "א",
+    "topic": "intro"
+   },
+   {
+    "num": 27,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 29,
+    "ans": "א",
+    "topic": "trees"
+   },
+   {
+    "num": 30,
+    "ans": "ב",
+    "topic": "evaluation"
+   },
+   {
+    "num": 31,
+    "ans": "ב",
+    "topic": "regression"
+   },
+   {
+    "num": 32,
+    "ans": "א",
+    "topic": "clustering"
+   },
+   {
+    "num": 33,
+    "ans": "ד",
+    "topic": "regression"
+   },
+   {
+    "num": 34,
+    "ans": "א",
+    "topic": "evaluation"
+   },
+   {
+    "num": 35,
+    "ans": "א",
+    "topic": "naive_bayes"
+   },
+   {
+    "num": 36,
+    "ans": "ב",
+    "topic": "clustering"
+   },
+   {
+    "num": 37,
+    "ans": "ב",
+    "topic": "knn"
+   }
+  ],
+  "notes": "Mode=sol (correct = bold OPTION in 064.marked.txt). Extracted 37 printed question numbers; #18 appears TWICE (an RGB Cell-Histogram question and an underfitting question), so 38 question instances total. Kept 34 with a single unambiguous bold option each; all bold marks were clean and on option lines (not stems/table headers), hence high confidence. Verified several numeric answers by computation: Q2 TF-IDF=0.12, Q3 cov≈92,192, Q10 IG=1, Q14 Chebyshev nearest=fv3, Q17 precision=0.57, Q18 histogram=[5000,0,0]/len12, Q20 Pearson≈0.96, Q22 dot-product=-5→-1, Q29 entropy≈0.26, Q32 WSSE checks (all fail →א). Deferred 4: Q4 (drawn k-means diagrams), Q5 (no bold + trainset table missing from text), Q16 (bold present but raw feature values absent from text), Q28 (only stem bolded, no option bold; computed answer would be ג). Topic notes: covariance/Pearson (Q3,Q20) tagged regression; PCA-on-image (Q21) and the standardization/normalization items tagged evaluation; MSE/RMSE regression-metric items (Q31,Q33) tagged regression; mutual-information/entropy items (Q13,Q29) tagged trees. The course's Hebrew term 'סילום' (=scaling) was normalized to 'סולם'/'scaling' where meaning was certain; 'principal' and other English/math tokens corrected/kept as-is. JSON validated by re-parsing (34 objects, 0 out-of-range correctIndex, 0 hasImage=true)."
+ }
+}

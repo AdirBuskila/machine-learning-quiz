@@ -1,0 +1,103 @@
+  1 loose pdf  p=  11 pl=  2006 fz=  2008 img= 18 thin | מבחנים\2022\מועד א 19.1.22 - 95 מתוך 100.pdf
+  2 loose pdf  p=   9 pl=   144 fz=   144 img= 18 SCAN | מבחנים\2022\סמסטר א מועד א (2).pdf
+  3 loose pdf  p=   9 pl=   144 fz=   144 img= 18 SCAN | מבחנים\2022\סמסטר א מועד א פתרונות (2).pdf
+  4 loose pdf  p=   9 pl=   144 fz=   144 img= 18 SCAN | מבחנים\2022\סמסטר א מועד א פתרונות.pdf
+  5 loose pdf  p=   9 pl=   144 fz=   144 img= 18 SCAN | מבחנים\2022\סמסטר א מועד א.pdf
+  6 loose pdf  p=   8 pl=   128 fz=   128 img= 13 SCAN | מבחנים\2022\סמסטר א מועד ב (2).pdf
+  7 loose pdf  p=   8 pl=   128 fz=   128 img= 13 SCAN | מבחנים\2022\סמסטר א מועד ב פתרונות (2).pdf
+  8 loose pdf  p=   8 pl=   128 fz=   128 img= 13 SCAN | מבחנים\2022\סמסטר א מועד ב פתרונות.pdf
+  9 loose pdf  p=   8 pl=   128 fz=   128 img= 13 SCAN | מבחנים\2022\סמסטר א מועד ב.pdf
+ 10 loose pdf  p=   6 pl=  8821 fz=  8411 img= 11 text | מבחנים\2022\סמסטר א מועד ג - פתרונות 2022.pdf
+ 11 loose pdf  p=   6 pl=  8821 fz=  8401 img= 11 text | מבחנים\2022\סמסטר א מועד ג 19.10 (2).pdf
+ 12 loose pdf  p=   6 pl=  8821 fz=  8401 img= 11 text | מבחנים\2022\סמסטר א מועד ג 19.10.pdf
+ 13 loose pdf  p=   7 pl= 11437 fz= 11244 img=  3 text | מבחנים\2022\סמסטר א מועד ג פתרונות 19.10.pdf
+ 14 loose pdf  p=   6 pl= 10104 fz= 11301 img=  2 text | מבחנים\2022\סמסטר ב מועד א 2.6.22.pdf
+ 15 loose pdf  p=   6 pl= 10104 fz= 11301 img=  2 text | מבחנים\2022\סמסטר ב מועד א 2.6.pdf
+ 16 loose pdf  p=   6 pl= 10110 fz= 11310 img=  2 text | מבחנים\2022\סמסטר ב מועד א פתרונות 2.6.22.pdf
+ 17 loose pdf  p=   6 pl= 10110 fz= 11310 img=  2 text | מבחנים\2022\סמסטר ב מועד א פתרונות 2.6.pdf
+ 18 loose pdf  p=   6 pl=  9558 fz=  6203 img=  7 text | מבחנים\2022\סמסטר ב מועד ב + פתרונות 29.6.22.pdf
+ 19 loose pdf  p=   6 pl=  9558 fz=  6203 img=  7 text | מבחנים\2022\סמסטר ב מועד ב 29.6.22.pdf
+ 20 loose pdf  p=   6 pl=  9558 fz=  6203 img=  7 text | מבחנים\2022\סמסטר ב מועד ב 29.6.pdf
+ 21 loose pdf  p=   7 pl= 10489 fz=  8823 img=  4 text | מבחנים\2022\סמסטר ב מועד ג 14.8.22.pdf
+ 22 loose pdf  p=   7 pl= 10489 fz=  8823 img=  4 text | מבחנים\2022\סמסטר ב מועד ג פתרונות 14.8.22.pdf
+ 23 loose pdf  p=   6 pl= 10035 fz= 11140 img=  3 text | מבחנים\2023\2023 ב_ מועד ב_ - כולל פתרונות.pdf
+ 24 loose pdf  p=   7 pl= 11437 fz= 11244 img=  3 text | מבחנים\2023\למידת_מכונה_2023_קיץ_מועד_א_עם_תשובות.pdf
+ 25 loose pdf  p=   6 pl=  9906 fz= 10993 img=  3 text | מבחנים\2023\סמסטר ב מועד א + פתרונות .pdf
+ 26 loose pdf  p=   6 pl=  9905 fz= 10900 img=  3 text | מבחנים\2023\סמסטר ב מועד א .pdf
+ 27 loose pdf  p=   6 pl= 10035 fz= 11140 img=  3 text | מבחנים\2023\סמסטר ב מועד ב + פתרונות.pdf
+ 28 loose pdf  p=   6 pl= 10620 fz= 12113 img=  3 text | מבחנים\2023\סמסטר ב מועד ב ללא תשובות.pdf
+ 29 loose pdf  p=   7 pl= 11437 fz= 11244 img=  3 text | מבחנים\2023\סמסטר קיץ מועד א + פתרונות 19.10.23.pdf
+ 30 loose pdf  p=   7 pl= 12021 fz= 13648 img=  3 text | מבחנים\2023\קיץ מועד א׳ ללא פתרונות.pdf
+ 31 loose pdf  p=   9 pl= 11143 fz= 11210 img= 20 text | מבחנים\2024\מועד ב_ אביב 2024.pdf
+ 32 loose pdf  p=   8 pl= 11749 fz= 11853 img= 57 text | מבחנים\2024\מועד ב_ קיץ 2024.pdf
+ 33 loose pdf  p=   8 pl= 10285 fz=  9979 img= 16 text | מבחנים\2024\מועד ג_ אביב 2024.pdf
+ 34 loose pdf  p=   9 pl= 11379 fz= 12520 img= 14 text | מבחנים\2024\סמסטר ב מועד א 11.7.24.pdf
+ 35 loose pdf  p=  11 pl=  8513 fz=  9264 img= 29 text | מבחנים\2024\סמסטר ב מועד א לא טופס 0.pdf
+ 36 loose pdf  p=   9 pl= 11143 fz= 11210 img= 20 text | מבחנים\2024\סמסטר ב מועד ב 4.8.24.pdf
+ 37 loose pdf  p=  11 pl=  8255 fz=  8958 img= 12 text | מבחנים\2024\סמסטר ב מועד ב לא טופס 0.pdf
+ 38 loose pdf  p=   8 pl= 10285 fz=  9979 img= 16 text | מבחנים\2024\סמסטר ב מועד ג 4.9.24.pdf
+ 39 loose pdf  p=  10 pl=  8114 fz=  9019 img=  8 text | מבחנים\2024\סמסטר ב מועד ג לא טופס 0.pdf
+ 40 loose pdf  p=   9 pl= 11708 fz= 11780 img= 25 text | מבחנים\2024\סמסטר קיץ מועד א 9.10.24.pdf
+ 41 loose pdf  p=   9 pl=  8855 fz=  9558 img= 11 text | מבחנים\2024\סמסטר קיץ מועד א לא טופס 0.pdf
+ 42 loose pdf  p=   8 pl= 11749 fz= 11853 img= 57 text | מבחנים\2024\סמסטר קיץ מועד ב 4.11.24.pdf
+ 43 loose pdf  p=  10 pl=  9067 fz=  9803 img=  7 text | מבחנים\2024\סמסטר קיץ מועד ב לא טופס 0.pdf
+ 44 loose pdf  p=   7 pl=  9302 fz=  9050 img=  8 text | מבחנים\2024\סמסטר קיץ מועד ג 23.12.24.pdf
+ 45 loose pdf  p=   8 pl=  7333 fz=  8023 img=  3 text | מבחנים\2024\סמסטר קיץ מועד ג לא טופס 0.pdf
+ 46 loose docx p=None pl=     0 fz=     0 img=  0 SCAN | מבחנים\2025\למידת מכונה סמסטר ב 2025 מועד א.docx
+ 47 loose pdf  p=   8 pl= 12750 fz= 12842 img= 18 text | מבחנים\2025\למידת מכונה קיץ 2025 טופס 0.pdf
+ 48 loose pdf  p=   8 pl= 12736 fz= 13986 img=  5 text | מבחנים\2026\ML 2026b moedA. form0.pdf
+ 49 loose pdf  p=  18 pl=   297 fz=  4175 img= 18 text | מבחנים\2026\הערות סטודנט מועד א.pdf
+ 50 loose pdf  p=   2 pl=  2544 fz=  2810 img= 15 thin | מבחנים\דף נוסחאות מורחב לזכאים.pdf
+ 51 loose pdf  p=   1 pl=  1859 fz=  1254 img= 10 thin | מבחנים\דף נוסחאות.pdf
+ 52 loose pdf  p=  29 pl=  7494 fz=  7707 img= 37 text | מבחנים\מבחן לדוגמה\מבחן לדוגמא בלי פתרונות 2020.pdf
+ 53 loose pdf  p=  29 pl=  7494 fz=  7707 img= 37 text | מבחנים\מבחן לדוגמה\מבחן לדוגמא בלי פתרונות.pdf
+ 54 loose pdf  p=  27 pl=  6941 fz=  7167 img= 35 text | מבחנים\מבחן לדוגמה\מבחן לדוגמא עם פתרונות.pdf
+ 55 loose pdf  p=   9 pl= 12770 fz= 14186 img=  5 text | מבחנים\מבחן לדוגמה\מבחן לדוגמה (2).pdf
+ 56 loose pdf  p=   9 pl= 12725 fz= 14192 img=  5 text | מבחנים\מבחן לדוגמה\מבחן לדוגמה פתרונות (2).pdf
+ 57 loose pdf  p=   9 pl= 12725 fz= 14192 img=  5 text | מבחנים\מבחן לדוגמה\מבחן לדוגמה פתרונות.pdf
+ 58 loose pdf  p=   9 pl= 12770 fz= 14186 img=  5 text | מבחנים\מבחן לדוגמה\מבחן לדוגמה.pdf
+ 59 loose pdf  p=  27 pl=  6941 fz=  7167 img= 35 text | מבחנים\מבחן לדוגמה\שאלות לדוגמה + פתרונות.pdf
+ 60 loose pdf  p=  69 pl= 27508 fz= 27972 img= 81 text | מבחנים\מבחן לדוגמה\תרגילים 2022.pdf
+ 61 loose pdf  p=  69 pl= 27508 fz= 27972 img= 81 text | מבחנים\מבחן לדוגמה\תרגילים.pdf
+ 62 loose pdf  p=   5 pl=  9119 fz=  9761 img=  0 text | קבצי תרגול למבחנים\ניתוח טקסט ועיבוד תמונה - שאלות חזרה - תשובות.pdf
+ 63 loose pdf  p=   5 pl=  8950 fz=  9598 img=  0 text | קבצי תרגול למבחנים\ניתוח טקסט ועיבוד תמונה - שאלות חזרה.pdf
+ 64 loose pdf  p=  80 pl= 36018 fz= 36739 img= 88 text | קבצי תרגול למבחנים\שאלות לדוגמה - תשובות.pdf
+ 65 loose pdf  p=  39 pl= 16822 fz= 17200 img= 42 text | קבצי תרגול למבחנים\שאלות לדוגמה.pdf
+ 66 loose pdf  p=   4 pl=  4484 fz=  5011 img=  0 text | קבצי תרגול למבחנים\שאלות נוספות.pdf
+ 67 loose docx p=None pl= 14102 fz= 14102 img=  0 text | קבצי תרגול למבחנים\תרגילים של מירה המתרגלת.docx
+ 68 loose pdf  p=  12 pl=169801 fz= 11019 img=  1 text | קבצי תרגול למבחנים\תשובות סטודנט 1 (תרגילים של מירה המתרגלת).pdf
+ 69 loose pdf  p=  11 pl= 14532 fz= 15957 img=  0 text | קבצי תרגול למבחנים\תשובות סטודנט 2 (מבחן של מירה המתרגלת).pdf
+ 70 zip  pdf  p=  11 pl= 11907 fz= 11850 img= 18 text | ZIP/2022 19.1/מבחן בלמידת מכונה - מועד א - חמישי (19 לינואר) - 9_00_ סקירת ניסיון מענה.pdf
+ 71 zip  pdf  p=  11 pl=  2006 fz=  2008 img= 18 thin | ZIP/2022 19.1/מבחן בלמידת מכונה - מועד א - חמישי (19 לינואר) - 9-00- סקירת ניסיון מענה.pdf
+ 72 zip  pdf  p=  11 pl=  2073 fz=  2081 img= 18 thin | ZIP/2022 19.1/מבחן בלמידת מכונה - מועד א - חמישי (19 לינואר) .pdf
+ 73 zip  pdf  p=   7 pl= 10489 fz=  8823 img=  4 text | ZIP/2022/למיד_מכונה_63303_2022ב_מועד_ג_תשובות.pdf
+ 74 zip  pdf  p=   6 pl=  8821 fz=  8401 img= 11 text | ZIP/2022/למידת_מכונה_2022_סמ_א_מועד_ג.pdf
+ 75 zip  pdf  p=   6 pl=  8821 fz=  8411 img= 11 text | ZIP/2022/למידת_מכונה_2022_סמ_א_מועד_ג-עם_תשובות.pdf
+ 76 zip  pdf  p=   6 pl= 10110 fz= 11310 img=  2 text | ZIP/2022/למידת_מכונה_2022_סמ_ב_מועד_א_כולל_תשובות (1).pdf
+ 77 zip  pdf  p=   6 pl= 10104 fz= 11301 img=  2 text | ZIP/2022/למידת_מכונה_2022_סמ_ב_מועד_א_ללא_תשובות.pdf
+ 78 zip  pdf  p=   8 pl=   128 fz=   128 img= 13 SCAN | ZIP/2022/למידת_מכונה_2022_סמסטר_א_מועד_ב.pdf
+ 79 zip  pdf  p=   9 pl=   144 fz=   144 img= 18 SCAN | ZIP/2022/למידת_מכונה_63303_2022א_מועד_א.pdf
+ 80 zip  pdf  p=   6 pl=  9558 fz=  6203 img=  7 text | ZIP/2022/למידת_מכונה_63303_2022א_מועד_א_עם_תשובות.pdf
+ 81 zip  pdf  p=   6 pl=  9558 fz=  6203 img=  7 text | ZIP/2022/למידת_מכונה_63303_2022ב_מועד_ב_עם_תשובות.pdf
+ 82 zip  pdf  p=  57 pl= 22565 fz= 23362 img= 63 text | ZIP/2023/Ex10-Review (1).pdf
+ 83 zip  pdf  p=  28 pl= 10355 fz= 10763 img= 30 text | ZIP/2023/Ex10-Review-no-answers (1).pdf
+ 84 zip  pdf  p=   7 pl= 10489 fz=  8823 img=  4 text | ZIP/2023/למיד_מכונה_63303_2022ב_מועד_ג_תשובות.pdf
+ 85 zip  pdf  p=   7 pl= 11437 fz= 11244 img=  3 text | ZIP/2023/למידת_מכונה_2023_קיץ_מועד_א_עם_תשובות.pdf
+ 86 zip  pdf  p=   6 pl= 11446 fz= 10517 img=  3 text | ZIP/2023/למידת_מכונה_2023ב_מועד_א_ללא_תשובותת.pdf
+ 87 zip  pdf  p=   6 pl=  9906 fz= 10993 img=  3 text | ZIP/2023/למידת_מכונה-2023ב_מועד_א-עם_תשובות.pdf
+ 88 zip  pdf  p=   6 pl= 10035 fz= 11140 img=  3 text | ZIP/2023/למידת-מכונה_2023ב_מועד_ב.pdf
+ 89 zip  pdf  p=   6 pl=  9980 fz=  7508 img=  3 text | ZIP/2023/למידת-מכונה_2023ב_מועד_ב.pdf ללא פיתרון.pdf
+ 90 zip  docx p=None pl=    15 fz=    15 img=  0 SCAN | ZIP/2023/מועד ג 2023.docx
+ 91 zip  pdf  p=   9 pl= 11708 fz= 11780 img= 25 text | ZIP/2024 קיץ/ML-2024c_moed_a_form_0.pdf
+ 92 zip  pdf  p=   8 pl= 11749 fz= 11853 img= 57 text | ZIP/2024 קיץ/ML-2024c_moed_b.pdf
+ 93 zip  pdf  p=   7 pl=  9302 fz=  9050 img=  8 text | ZIP/2024 קיץ/ML-2024c_moed_c_sol.pdf
+ 94 zip  pdf  p=   9 pl= 11379 fz= 12520 img= 14 text | ZIP/מבחני 2024 סמס ב/ML_2024b_moedA.pdf
+ 95 zip  pdf  p=   9 pl= 11143 fz= 11210 img= 20 text | ZIP/מבחני 2024 סמס ב/ml_2024b_moedB.pdf
+ 96 zip  pdf  p=   8 pl= 10285 fz=  9979 img= 16 text | ZIP/מבחני 2024 סמס ב/ml_2024b_moedC_sol.pdf
+ 97 zip  pdf  p=  29 pl=  7494 fz=  7707 img= 37 text | ZIP/מבחני דוגמה/מבחן לדוגמא בלי פתרונות.pdf
+ 98 zip  pdf  p=  27 pl=  6941 fz=  7167 img= 35 text | ZIP/מבחני דוגמה/מבחן לדוגמא עם פתרונות.pdf
+ 99 zip  pdf  p=  12 pl= 12821 fz= 14239 img=114 text | ZIP/מבחני דוגמה/מבחן לדוגמה (1).pdf
+100 zip  pdf  p=   9 pl= 12770 fz= 14186 img=  5 text | ZIP/מבחני דוגמה/מבחן-לדוגמה-למידת_מכונה (1).pdf
+101 zip  pdf  p=   9 pl= 12770 fz= 14186 img=  5 text | ZIP/מבחני דוגמה/מבחן-לדוגמה-למידת_מכונה.pdf
+102 zip  pdf  p=   9 pl= 12725 fz= 14192 img=  5 text | ZIP/מבחני דוגמה/מבחן-לדוגמה-למידת_מכונה-פתרונות (1).pdf
+103 zip  pdf  p=   9 pl= 12725 fz= 14192 img=  5 text | ZIP/מבחני דוגמה/מבחן-לדוגמה-למידת_מכונה-פתרונות.pdf

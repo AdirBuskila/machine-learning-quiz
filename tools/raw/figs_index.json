@@ -1,0 +1,162 @@
+[
+ {
+  "code": "24B-C",
+  "stem": "096",
+  "mode": "sol",
+  "pdf": "tools\\raw\\zip_extracted\\______2024_______ml_2024b_moedC_sol.pdf",
+  "exists": true,
+  "qnums": [
+   1,
+   2,
+   9,
+   12,
+   13,
+   14,
+   19
+  ]
+ },
+ {
+  "code": "26B-A",
+  "stem": "048",
+  "mode": "form0",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\2026\\ML 2026b moedA. form0.pdf",
+  "exists": true,
+  "qnums": [
+   4,
+   12
+  ]
+ },
+ {
+  "code": "23B-B",
+  "stem": "023",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\2023\\2023 ב_ מועד ב_ - כולל פתרונות.pdf",
+  "exists": true,
+  "qnums": [
+   12
+  ]
+ },
+ {
+  "code": "24S-A",
+  "stem": "091",
+  "mode": "form0",
+  "pdf": "tools\\raw\\zip_extracted\\2024_____ML-2024c_moed_a_form_0.pdf",
+  "exists": true,
+  "qnums": [
+   3,
+   10,
+   11,
+   12,
+   13,
+   14,
+   17
+  ]
+ },
+ {
+  "code": "22B-C",
+  "stem": "022",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\2022\\סמסטר ב מועד ג פתרונות 14.8.22.pdf",
+  "exists": true,
+  "qnums": [
+   6,
+   17
+  ]
+ },
+ {
+  "code": "SAMP-2",
+  "stem": "054",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\מבחן לדוגמה\\מבחן לדוגמא עם פתרונות.pdf",
+  "exists": true,
+  "qnums": [
+   10,
+   12,
+   15,
+   24
+  ]
+ },
+ {
+  "code": "25S-A",
+  "stem": "047",
+  "mode": "form0",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\2025\\למידת מכונה קיץ 2025 טופס 0.pdf",
+  "exists": true,
+  "qnums": [
+   7,
+   8,
+   10,
+   15
+  ]
+ },
+ {
+  "code": "23B-A",
+  "stem": "025",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\2023\\סמסטר ב מועד א + פתרונות .pdf",
+  "exists": true,
+  "qnums": [
+   12
+  ]
+ },
+ {
+  "code": "23S-A",
+  "stem": "024",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\2023\\למידת_מכונה_2023_קיץ_מועד_א_עם_תשובות.pdf",
+  "exists": true,
+  "qnums": [
+   7
+  ]
+ },
+ {
+  "code": "PRAC-X",
+  "stem": "064",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\קבצי תרגול למבחנים\\שאלות לדוגמה - תשובות.pdf",
+  "exists": true,
+  "qnums": [
+   4,
+   5,
+   16
+  ]
+ },
+ {
+  "code": "SAMP-1",
+  "stem": "057",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\מבחן לדוגמה\\מבחן לדוגמה פתרונות.pdf",
+  "exists": true,
+  "qnums": [
+   14,
+   17
+  ]
+ },
+ {
+  "code": "22B-A",
+  "stem": "016",
+  "mode": "sol",
+  "pdf": "C:\\Users\\Adir\\Desktop\\BSC\\שנה ב\\סמסטר ג\\למידת מכונה\\מבחנים\\2022\\סמסטר ב מועד א פתרונות 2.6.22.pdf",
+  "exists": true,
+  "qnums": [
+   17
+  ]
+ },
+ {
+  "code": "24B-A",
+  "stem": "094",
+  "mode": "form0",
+  "pdf": "tools\\raw\\zip_extracted\\______2024_______ML_2024b_moedA.pdf",
+  "exists": true,
+  "qnums": [
+   1,
+   3,
+   4,
+   5,
+   10,
+   12,
+   14,
+   16
+  ]
+ }
+]
