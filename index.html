@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>משחק תרגול — למידת מכונה</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=1">
+<link rel="stylesheet" href="styles.css?v=2">
 <script>
   // Apply saved theme before first paint to avoid a flash of the wrong theme.
   (function(){ try{ var t=localStorage.getItem("mlq_theme"); if(t==="light"||t==="dark") document.documentElement.dataset.theme=t; }catch(e){} })();
@@ -148,6 +148,10 @@
   <span id="datasetInfo"></span> ·
   <button id="resetProgress" class="linkbtn">איפוס התקדמות</button>
   <span class="disclaimer">תשובות המסומנות "לא רשמי" נגזרו מחומר הקורס — מומלץ לאמת מול המקור.</span>
+  <a class="deck-link" href="https://adirbuskila.github.io/">
+    <span class="deck-arrow" aria-hidden="true">↗</span>
+    עוד כלי תרגול לקורסים אחרים
+  </a>
 </footer>
 
 <script src="questions.js?v=1"></script>
