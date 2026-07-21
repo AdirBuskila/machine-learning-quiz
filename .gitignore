@@ -11,3 +11,7 @@ tools/raw/docx2025_media/
 tools/raw/_figtmp/
 __pycache__/
 *.pyc
+
+# scratch crops produced while checking figures
+*_tmp.png
+tools/_*.png

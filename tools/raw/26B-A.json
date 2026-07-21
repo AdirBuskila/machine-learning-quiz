@@ -11,7 +11,7 @@
       "ככל שהעץ עמוק יותר כך הסיכוי ל-overfitting גדול יותר"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "הטענות ב', ג' ו-ד' כולן נכונות לגבי ID3, ולכן אין ביניהן טענה שאינה נכונה — התשובה הנכונה היא שכל הטענות נכונות.",
     "hasImage": false
   },
@@ -27,7 +27,7 @@
       "המודל מזהה כמעט את כל החיוביים אבל יש הרבה false negatives"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "precision גבוה (0.96) מעיד על מעט false positives, בעוד recall נמוך (0.6) מעיד על הרבה false negatives.",
     "hasImage": false
   },
@@ -43,7 +43,7 @@
       "הוא משנה את ערכי הפיקסלים בצורה כזו שהם הופכים למאפיינים לינאריים לחלוטין, דבר שחיוני לפעולת ה-KNN."
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "Cell Histogram מחלק את התמונה לתאים ולכן שומר מידע מרחבי על מיקום הצבעים, בניגוד להיסטוגרמה גלובלית ששומרת רק את הכמות הכוללת של כל צבע.",
     "hasImage": false
   },
@@ -59,7 +59,7 @@
       "את ה-K שבו ה-WSSE שווה לממוצע הנתונים. זוהי הנקודה שבה הפיצול מייצג בצורה מתמטית את המרכז של כל הסט."
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "שיטת המרפק מחפשת את ה-K שבו הירידה ב-WSSE מתמתנת (ה'מרפק') — נקודת איזון בין מספר אשכולות קטן לבין שגיאה נמוכה.",
     "hasImage": false
   },
@@ -75,7 +75,7 @@
       "הבעיות הראשונה והרביעית הם בעיות רגרסיה ואילו הבעיות השנייה והשלישית הם בעיות סיווג"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "כל ארבע הבעיות מונחות (יש תוויות מטרה); בעיה 4 חוזה מספר שפות במקביל ולכן היא סיווג multi-label, בעוד השאר רגרסיה, סיווג בינארי וסיווג רב-מחלקתי.",
     "hasImage": false
   },
@@ -91,7 +91,7 @@
       "קבוצת אימון (train-set) וקבוצת בדיקות (test-set)"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "הקלט לתהליך האימון הוא קבוצת האימון (train-set), והפלט הוא המודל המאומן (machine learning model).",
     "hasImage": false
   },
@@ -107,7 +107,7 @@
       "כדי להבטיח שמטריצת התכונות תהיה סימטרית וחיובית לחלוטין לצורך הרצת אלגוריתם רגרסיה לינארית"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "הסולם הלוגריתמי משקף את ההנחה שהופעה חוזרת של מילה אינה מגדילה את חשיבותה באופן לינארי.",
     "hasImage": false
   },
@@ -123,7 +123,7 @@
       "מדד Sum of Square Error (SSE)"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "R^2, MAE ו-SSE הם מדדים מקובלים לשערוך רגרסיה, בעוד 'Mean Chebyshev Error' אינו מדד סטנדרטי לשערוך מודל רגרסיה.",
     "hasImage": false
   },
@@ -139,7 +139,7 @@
       "מפני שפונקציית הקוסינוס מבצעת שינוי לינארי של ערכי התכונות עצמן בתוך הווקטור לטווח קבוע של [0,1]."
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "דמיון קוסינוס מודד את הזווית בין הווקטורים ולכן מנטרל את השפעת אורך המסמך, בעוד מרחק אוקלידי מושפע מאורכי המסמכים.",
     "hasImage": false
   },
@@ -155,7 +155,7 @@
       "נשתמש ב-testset, בלי שנבצע validation, כדי לוודא שהמודל איכותי, בגלל מיעוט הנתונים"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "כאשר יש מעט נתונים, k-fold cross validation מנצל את כל הדוגמאות לאימון ולוולידציה ונותן הערכה אמינה תוך מניעת overfitting.",
     "hasImage": false
   },
@@ -171,7 +171,7 @@
       "פונקציית PreCision"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "MinMax היא פונקציית סקיילינג (נרמול) שמעבירה ערכים לטווח קבוע, בעוד השאר אינן פונקציות סקיילינג.",
     "hasImage": false
   },
@@ -187,7 +187,7 @@
       "נשמור על 85% מהשונות; המשמעות היא שנאלץ לדחות את ההשארה ולהישאר עם המאפיינים המקוריים."
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "שני הרכיבים הראשונים שומרים 0.5+0.3=0.8, כלומר 80% מהשונות המקורית — רוב המידע נשמר אך ייתכן שכדאי להוסיף עוד רכיבים.",
     "hasImage": false
   },
@@ -203,7 +203,7 @@
       "שאר התשובות שגויות"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "עבור max_features הגדול או שווה ל-10, ה-f1 על ה-train-set ממשיך לעלות לעבר 1.0 בעוד ה-f1 על ה-validation-set מתייצב ואף יורד — פער זה מעיד על התאמת יתר (overfitting).",
     "hasImage": true
   },
@@ -219,7 +219,7 @@
       "עליו לסגת למצודה שבמשבצת (7,1)"
     ],
     "correctIndex": 0,
-    "official": true,
+    "official": false,
     "explanation": "בוחרים את המצודה בעלת דמיון הקוסינוס הגבוה ביותר לוקטור המיקום הנוכחי של הפרש (6,3). המצודה (8,4) קולינארית לוקטור (6,3) ולכן דמיון הקוסינוס שלה שווה ל-1 — הגבוה ביותר מבין האפשרויות.",
     "hasImage": true
   }

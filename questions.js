@@ -10,7 +10,7 @@ window.QUESTIONS = [
    "את ה-K שבו ה-WSSE שווה לממוצע הנתונים. זוהי הנקודה שבה הפיצול מייצג בצורה מתמטית את המרכז של כל הסט."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "שיטת המרפק מחפשת את ה-K שבו הירידה ב-WSSE מתמתנת (ה'מרפק') — נקודת איזון בין מספר אשכולות קטן לבין שגיאה נמוכה.",
   "hasImage": false,
   "source": "exam",
@@ -60,6 +60,26 @@ window.QUESTIONS = [
   "topicLabel": "אשכול (K-Means / היררכי)"
  },
  {
+  "examCode": "25S-A",
+  "topic": "clustering",
+  "question": "הגב' ג'וי שמח, מפתחת ML בחברת Happy rsum, הוטלה משימה, לחלק את הלקוחות הפוטנציאלים של החברה בשוק לפי הדמיון שלהם אחד לשני. באלגוריתם k-means (תוך שימוש בפונקציית מרחק מנהטן עם K=3), כדי לחלק את הלקוחות, ע\"י 2 מאפיינים, ל-3 אשכולות (clusters).\nבמהלך הרצת K-means באיטרציה ה5, בשלב 2, שלב שיוך הווקטורים עלינו לשייך את הווקטור (8,4). להלן 3 המרכזים: m1=(5,7), m2=(10,3), m3=(7,6)\nמה ניתן בהכרח לטעון לגבי השיוך של הווקטור לאשכול?",
+  "options": [
+   "הווקטור לא ישויך ל-cluster המיוצג על ידי m1",
+   "הווקטור לא ישויך ל-cluster המיוצג על ידי m2",
+   "הווקטור ישויך ל-cluster המיוצג על ידי m1",
+   "הווקטור ישויך ל-cluster המיוצג על ידי m2"
+  ],
+  "correctIndex": 0,
+  "official": false,
+  "explanation": "מרחק מנהטן של הווקטור (8,4) מכל מרכז: מ-m1=(5,7) הוא |8-5|+|4-7|=6, מ-m2=(10,3) הוא |8-10|+|4-3|=3, ומ-m3=(7,6) הוא |8-7|+|4-6|=3. m2 ו-m3 שווים במרחק המינימלי ולכן לא ניתן לקבוע לאיזה מהם ישויך הווקטור. הדבר היחיד שניתן לטעון בהכרח הוא שהווקטור לא ישויך לאשכול של m1, המרוחק ביותר.",
+  "hasImage": false,
+  "source": "exam",
+  "sourceLabel": "2025 קיץ מועד א׳",
+  "year": 2025,
+  "id": "25S-A-Q20",
+  "topicLabel": "אשכול (K-Means / היררכי)"
+ },
+ {
   "examCode": "24S-A",
   "topic": "clustering",
   "question": "יו\"ר חברת המדיה Happy résumé, הגב' ביו נסה, מעוניינת לחלק את הלקוחות הפוטנציאלים בשוק לפי הדמיון שלהם אחד לשני. לצורך כך, היא בקשה מצוות A שלה להשתמש באלגוריתם K-Means (תוך שימוש בפונקציית מרחק אוקלידי עם K=3), כדי לחלק את האנשים הנסקרים, ע\"י 2 מאפיינים, ל-3 אשכולות (clusters). באמצע הרצת K-Means באיטרציה ה-5, בשלב 2 (שלב שיוך הוקטורים), עלינו לשייך את הוקטור (7,6). להלן ה-3 prototypes: FV1 = (10,3); FV2 = (8,4); FV3 = (5,7). נניח ש-FV1 מייצג את אשכול 1, FV2 מייצג את אשכול 2 ו-FV3 מייצג את אשכול 3. מה ניתן בהכרח לטעון לגבי השיוך של הוקטור לאשכול?",
@@ -70,7 +90,7 @@ window.QUESTIONS = [
    "שהוא ישויך לאשכול 2"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "מרחק אוקלידי מהוקטור (7,6): ל-FV1 √((7-10)²+(6-3)²)=√18≈4.24, ל-FV2 √((7-8)²+(6-4)²)=√5≈2.24, ל-FV3 √((7-5)²+(6-7)²)=√5≈2.24; FV1 הרחוק ביותר (ויש שוויון בין FV2 ל-FV3), ולכן בהכרח הוקטור לא ישויך לאשכול 1.",
   "hasImage": false,
   "source": "exam",
@@ -183,7 +203,7 @@ window.QUESTIONS = [
  {
   "examCode": "SAMP-1",
   "topic": "clustering",
-  "question": "נתונים ווקטורים המפוזרים באופן אחיד בתוך מעגל. הרצנו אלגוריתם k-means, עם k=2, עד להתכנסות. באיורים הבאים הנקודות מייצגות את מרכזי האשכולות (של ה-clustering הנ“ל), והקווים מייצגים הפרדה בין הווקטורים של האשכולות. אילו מהתוצאות הבאות סבירות, בהינתן הנתונים והאיורים הנ“ל? (יש לבחור תשובה אחת בלבד, הכוללת ביותר)",
+  "question": "נתונים ווקטורים המפוזרים באופן אחיד בתוך מעגל. הרצנו אלגוריתם k-means, עם k=2, עד להתכנסות. באיורים הבאים הנקודות מייצגות את מרכזי האשכולות (של ה-clustering הנ“ל), והקווים מייצגים הפרדה בין הווקטורים של האשכולות. אילו מהתוצאות הבאות אינן סבירות, בהינתן הנתונים והאיורים הנ“ל? (יש לבחור תשובה אחת בלבד, הכוללת ביותר)",
   "options": [
    "איורים 2,3",
    "איורים 1,2",
@@ -192,7 +212,7 @@ window.QUESTIONS = [
   ],
   "correctIndex": 0,
   "official": true,
-  "explanation": "עבור וקטורים המפוזרים באופן אחיד בתוך מעגל, k-means עם k=2 מתכנס לשני מרכזים סימטריים ביחס למרכז המעגל, כאשר קו ההפרדה (חוצה אנך בין המרכזים) עובר סמוך למרכז ומחלק את המעגל לשני חצאים דומים. איורים 2 ו-3 עקביים עם התכנסות סבירה כזו, בעוד איור 1 אינו סביר.",
+  "explanation": "גבול ההחלטה של k-means הוא חוצה האנך של הקטע שבין שני מרכזי האשכולות, ולכן שני המרכזים חייבים לשכון משני צדדיו ובמרחקים שווים ממנו. איור 1 סביר: קו ההפרדה עובר סמוך לקוטר המעגל ושני המרכזים ממוקמים סימטרית משני צדדיו. איור 2 אינו אפשרי, משום ששני המרכזים מונחים על קו ההפרדה עצמו — מרכז לעולם אינו יכול לשכון על חוצה האנך של הקטע שבינו לבין המרכז השני. איור 3 אינו אפשרי, משום ששני המרכזים מרוחקים מקו ההפרדה במרחקים שונים מאוד זה מזה. לכן התוצאות שאינן סבירות הן איורים 2 ו-3.",
   "hasImage": false,
   "source": "exam",
   "sourceLabel": "מבחן לדוגמה (1)",
@@ -256,7 +276,7 @@ window.QUESTIONS = [
   "explanation": "Purity הוא מדד להערכת איכות אשכולות (clustering) ואינו מדד לאיכות מודל רגרסיה; השאלה מבוססת על הנחה שגויה.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q16",
   "topicLabel": "אשכול (K-Means / היררכי)"
@@ -276,7 +296,7 @@ window.QUESTIONS = [
   "explanation": "clustering הירארכי מתאים כאשר רוצים לחשוף מבנה מורכב של האשכולות ומספר האשכולות אינו ידוע מראש.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q23",
   "topicLabel": "אשכול (K-Means / היררכי)"
@@ -296,7 +316,7 @@ window.QUESTIONS = [
   "explanation": "הרצת k-means מספר פעמים עם אתחולים אקראיים שונים ובחירת התוצאה הטובה ביותר מפחיתה את הסיכון להיתקעות באופטימום מקומי גרוע.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q9",
   "topicLabel": "אשכול (K-Means / היררכי)"
@@ -332,7 +352,7 @@ window.QUESTIONS = [
    "כדי לא ליצור הטיה לטובת מאפיין עם סולם גבוה"
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "K-means מבוסס מרחקים; ללא scaling מאפיין בעל סולם ערכים גדול ישלוט בחישוב המרחקים ויטה את האשכולות.",
   "hasImage": false,
   "source": "practice",
@@ -352,7 +372,7 @@ window.QUESTIONS = [
    "אם נוריד את x4, ה-WSSE קטן מ-7.5"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "WSSE מלא = 4+4+1+0+1 = 10; הסרת x1 נותנת 6 (לא <5.5), הסרת x5 נותנת 9 (לא <6.5), הסרת x4 נותנת 10 (לא <7.5), ולכן שאר התשובות אינן נכונות.",
   "hasImage": false,
   "source": "practice",
@@ -372,7 +392,7 @@ window.QUESTIONS = [
    "אף אחד מן הנזכרים מעלה"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "ריצות חוזרות עם אתחול אקראי שונה בכל פעם, ובחירת התוצאה הטובה ביותר, מקטינות את הסיכון להיתקע באופטימום מקומי גרוע.",
   "hasImage": false,
   "source": "practice",
@@ -394,7 +414,7 @@ window.QUESTIONS = [
    "1,2"
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "בהתפלגות אחידה בתוך מעגל, k-means עם k=2 יחלק את המרחב לשני חצאים סימטריים סביב שני המרכזים (תוצאה 1). בתוצאות 2 ו-3 קו ההפרדה אינו האנך האמצעי בין המרכזים, ולכן הן אינן הגיוניות.",
   "hasImage": false,
   "source": "practice",
@@ -415,7 +435,7 @@ window.QUESTIONS = [
    "לא, מכיוון שהוא מסוגל למצוא מפרידים לא לינארים"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "AdaBoost רגיש לרעש כי בכל איטרציה הוא מגדיל את משקל הדוגמאות שסווגו שגוי (כולל דוגמאות רועשות) ומתרכז בהן שוב ושוב.",
   "hasImage": false,
   "source": "exam",
@@ -459,7 +479,7 @@ window.QUESTIONS = [
   "explanation": "Random forest הוא אלגוריתם נפוץ המבוסס על רעיון ה-bagging - בניית עצים מרובים על תת-דגימות ואגרגציה של תוצאותיהם.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q1",
   "topicLabel": "למידת אנסמבל"
@@ -475,7 +495,7 @@ window.QUESTIONS = [
    "נשתמש ב-testset, בלי שנבצע validation, כדי לוודא שהמודל איכותי, בגלל מיעוט הנתונים"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כאשר יש מעט נתונים, k-fold cross validation מנצל את כל הדוגמאות לאימון ולוולידציה ונותן הערכה אמינה תוך מניעת overfitting.",
   "hasImage": false,
   "source": "exam",
@@ -495,7 +515,7 @@ window.QUESTIONS = [
    "פונקציית PreCision"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "MinMax היא פונקציית סקיילינג (נרמול) שמעבירה ערכים לטווח קבוע, בעוד השאר אינן פונקציות סקיילינג.",
   "hasImage": false,
   "source": "exam",
@@ -515,7 +535,7 @@ window.QUESTIONS = [
    "המודל מזהה כמעט את כל החיוביים אבל יש הרבה false negatives"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "precision גבוה (0.96) מעיד על מעט false positives, בעוד recall נמוך (0.6) מעיד על הרבה false negatives.",
   "hasImage": false,
   "source": "exam",
@@ -547,7 +567,7 @@ window.QUESTIONS = [
  {
   "examCode": "25B-A",
   "topic": "evaluation",
-  "question": "אימנתם מודל לחיזוי המנצחת במשחקים בין ספרד לפורטוגל. במשחקים אלה ניתן להניח שאחד הנבחרות ניצחה והמשחק לא הסתיים בתיקו (המנצחת היא בהכרח או ספרד או פורטוגל). החיזוי מתבצע לפי מאפיינים שונים. התוצאות הבאות התקבלו על קבוצת דוגמאות הבדיקה הכוללים 30 משחקים (בחלקם נצחה ספרד ובחלקם נצחה פורטוגל). להלן התוצאות שהתקבלו: ישנם 21 משחקים בהם נצחה פורטוגל, מתוכם המודל חזה 17 דוגמאות נכון כמשחקים בהם תנצח פורטוגל. המודל טעה ופספס את שאר המשחקים בהם נצחה פורטוגל וסיווג אותם כמשחקים בהם תנצח ספרד. המודל טעה וחזה שב-3 משחקים בהם נצחה ספרד, המנצחת היא פורטוגל. המודל צדק וחזה נכון לגבי שאר המשחקים. יש להתייחס לבעיה כבעיית multiclass (למרות שישנם רק שתי מחלקות, כיוון שהחלקות הינם בעלי חשיבות זהה). איזו תשובה מהתשובות הבאות נכונה?",
+  "question": "אימנתם מודל לחיזוי המנצחת במשחקים בין ספרד לפורטוגל. במשחקים אלה ניתן להניח שאחד הנבחרות ניצחה והמשחק לא הסתיים בתיקו (המנצחת היא בהכרח או ספרד או פורטוגל). החיזוי מתבצע לפי מאפיינים שונים. התוצאות הבאות התקבלו על קבוצת דוגמאות הבדיקה הכוללים 30 משחקים (בחלקם נצחה ספרד ובחלקם נצחה פורטוגל). להלן התוצאות שהתקבלו: ישנם 21 משחקים בהם נצחה פורטוגל, מתוכם המודל חזה 17 דוגמאות נכון כמשחקים בהם תנצח פורטוגל. המודל טעה ופספס את שאר המשחקים בהם נצחה פורטוגל וסיווג אותם כמשחקים בהם תנצח ספרד. המודל טעה וחזה שב-3 משחקים בהם נצחה ספרד, המנצחת היא פורטוגל. המודל צדק וחזה נכון לגבי שאר המשחקים. יש להתייחס לבעיה כבעיית multiclass (למרות שישנם רק שתי מחלקות, כיוון שהחלקות הינם בעלי חשיבות זהה). איזו תשובה מהתשובות הבאות נכונה?\n**רמז:** אפשר לבנות confusion matrix לכל מחלקה מהנתונים הנ\"ל, אם זה עוזר לכם לצורך החישוב.",
   "options": [
    "ה- micro-average precision הוא כ-76.7%, אולם ה- macro-average recall גבוה אף יותר",
    "ה- macro-average precision הוא כ-72.5%, אולם ה- micro-average recall גבוה אף יותר",
@@ -556,7 +576,7 @@ window.QUESTIONS = [
   ],
   "correctIndex": 1,
   "official": true,
-  "explanation": "בבעיה בינארית מאוזנת ה-micro-average precision שווה ל-accuracy (26/30 ≈ 86.7% אינו מתאים לשאר), והתשובה הנכונה מציינת macro-average precision של כ-72.5% עם micro-average recall גבוה אף יותר.",
+  "explanation": "נבנה את מטריצת הבלבול: פורטוגל — TP=17, FN=4 (מתוך 21 נצחונות), ולכן ספרד ניצחה ב-9 משחקים שמתוכם 3 סווגו בטעות כפורטוגל ו-6 סווגו נכון. סה\"כ חזוי \"פורטוגל\" = 17+3 = 20 ← precision(פורטוגל) = 17/20 = 85%; סה\"כ חזוי \"ספרד\" = 6+4 = 10 ← precision(ספרד) = 6/10 = 60%. מכאן macro-average precision = (85%+60%)/2 = **72.5%**. במשימת multiclass עם חיזוי יחיד לכל דוגמה מתקיים micro-precision = micro-recall = accuracy = (17+6)/30 = 23/30 ≈ **76.7%**, שאכן גבוה מ-72.5% — ולכן תשובה ב׳ נכונה. שאר התשובות נשללות: macro-average recall = (17/21 + 6/9)/2 ≈ 73.8% ואינו גבוה מ-76.7% (א׳); precision של ספרד הוא 60% בלבד (ג׳); ו-accuracy שווה ל-micro precision ולא גבוה ממנו (ד׳).",
   "hasImage": false,
   "source": "exam",
   "sourceLabel": "2025 סמסטר ב׳ מועד א׳",
@@ -635,7 +655,7 @@ window.QUESTIONS = [
    "לבחון את המודל על סט נתונים בלתי מוכר"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Grid Search מבצע חיפוש שיטתי על פני כל הצירופים של ערכי היפר-פרמטרים כדי למצוא את השילוב האופטימלי עבור המודל.",
   "hasImage": false,
   "source": "exam",
@@ -655,7 +675,7 @@ window.QUESTIONS = [
    "כיוון ש-Confusion Matrix מיועד רק לאלגוריתמים הלומדים מודלי רגרסיה ו-K-Means אינו אלגוריתם ללמוד מודל רגרסיה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "מטריצת בלבול משווה תוויות אמת לתחזיות סיווג; K-Means הוא אלגוריתם אשכול (unsupervised) ללא תוויות אמת, בעוד KNN הוא מסווג, ולכן המטריצה רלוונטית רק ל-KNN.",
   "hasImage": false,
   "source": "exam",
@@ -675,7 +695,7 @@ window.QUESTIONS = [
    "PCA משמש עבור מאפיינים קטגוריאליים, ו-Feature Selection עבור משתנים מספריים רציפים"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Feature Selection בוחר תת-קבוצה מהמאפיינים המקוריים, בעוד PCA יוצר מאפיינים חדשים שהם קומבינציות לינאריות (רכיבים ראשיים) של המאפיינים הקיימים.",
   "hasImage": false,
   "source": "exam",
@@ -695,7 +715,7 @@ window.QUESTIONS = [
    "מכיוון שהוא מהיר יותר לחישוב, דבר החשוב במיוחד באפליקציות בתעשייה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "F1-Score הוא הממוצע ההרמוני של precision ו-recall, ולכן שימושי במיוחד כאשר יש חוסר איזון בין המחלקות ומתמקדים במחלקה החשובה.",
   "hasImage": false,
   "source": "exam",
@@ -715,7 +735,7 @@ window.QUESTIONS = [
    "ה-accuracy הוא כ-87.85%, אולם ה-precision של מכבי ת\"א, אף מרשים יותר"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "מטריצת הבלבול היא TP=26, FN=4, FP=5, TN=45, ולכן ה-error-rate הוא 9/80≈11.25%, וה-f1 של מכבי ת\"א (כ-0.909) גבוה במיוחד.",
   "hasImage": false,
   "source": "exam",
@@ -735,7 +755,7 @@ window.QUESTIONS = [
    "ה-Accuracy=0.3333333 והמשמעות היא שהמודל עדיף על הטלת קוביה הוגנת ומיפוי הערכים הזוגיים למחלקה החיובית והערכים האי זוגיים למחלקה השלילית"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "ממטריצת הבלבול TP=40, FN=10, FP=20, TN=30, ולכן Accuracy=(40+30)/100=0.7, שהוא גבוה מ-0.5 ולכן עדיף על הטלת מטבע הוגן.",
   "hasImage": false,
   "source": "exam",
@@ -756,7 +776,7 @@ window.QUESTIONS = [
    "הם נקראים super-parameters"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הפרמטרים שהאלגוריתם מקבל כקלט לפני האימון (ולא נלמדים מהנתונים) נקראים hyper-parameters.",
   "hasImage": false,
   "source": "exam",
@@ -776,7 +796,7 @@ window.QUESTIONS = [
    "ברנאר, בהנחה שהוא טיפל בכפילויות בצורה מיטבית"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כאשר המדד הוא RMSE (שגיאה), ערך נמוך יותר מציין מודל טוב יותר. לביל הערך הנמוך ביותר (0.67), ולכן בהנחה שהמדד הוא RMSE הוא בנה את המודל הטוב ביותר.",
   "hasImage": false,
   "source": "exam",
@@ -796,7 +816,7 @@ window.QUESTIONS = [
    "נשתמש ב-testset, לצורך validation, בגלל מיעוט הדוגמאות"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כאשר יש מעט נתונים, k-fold cross validation מנצל את כל הדוגמאות ומאפשר להימנע מהתאמת יתר.",
   "hasImage": false,
   "source": "exam",
@@ -856,7 +876,7 @@ window.QUESTIONS = [
    "ה-macro average precision הינו כ-77.3%"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "recall לפופ = 68/85 = 0.8, recall לרוק = 45/65 ≈ 0.692, ולכן ה-macro average recall ≈ (0.8+0.692)/2 ≈ 0.746 = 74.6%.",
   "hasImage": false,
   "source": "exam",
@@ -876,7 +896,7 @@ window.QUESTIONS = [
    "img:images/exams/24S-A-Q17-D.png"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "רכיבי PCA (הווקטורים העצמיים של מטריצת השונות המשותפת) אורתוגונליים זה לזה, ולכן הצמד הסביר הוא זוג וקטורים מאונכים (בזווית 90°).",
   "hasImage": false,
   "source": "exam",
@@ -896,7 +916,7 @@ window.QUESTIONS = [
    "אף תשובה אינה נכונה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כאשר יש מעט נתונים, k-fold cross-validation מנצל את כל הנתונים לאימון ולתיקוף ומקטין את הסיכון להתאמת יתר.",
   "hasImage": false,
   "source": "exam",
@@ -988,7 +1008,7 @@ window.QUESTIONS = [
  {
   "examCode": "23B-A",
   "topic": "evaluation",
-  "question": "נתונה בעיית למידה בה שלושה מאפיינים המסומנים כ-X1, X2 ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו.",
+  "question": "נתונה בעיית למידה בה שלושה מאפיינים המסומנים כ-X1, X2 ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו. X1= [1, -1, 1, -1, -1, -1, 1, 1, 1], X2= [0, 1, 1, 1, 0, 0, 0, 1, 0], X3= [2, 4, 4, 4, 2, 2, 2, 4, 2].",
   "options": [
    "כנראה שזה יהיה רעיון טוב לבצע normalization min-max על המאפיינים",
    "כנראה שזה לא יהיה רעיון טוב לבצע t-distribution standardization על המאפיינים",
@@ -1128,7 +1148,7 @@ window.QUESTIONS = [
  {
   "examCode": "23S-A",
   "topic": "evaluation",
-  "question": "נתונה בעיית למידה בה שלוש המאפיינים המסומנים כ-X1, X2 ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו. איזו תשובה מהתשובות הבאות נכונה?",
+  "question": "נתונה בעיית למידה בה שלוש המאפיינים המסומנים כ-X1, X2 ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו. X1= [1, -1, 1, -1, -1, -1, 1, 1, 1], X2= [0, 1, 1, 1, 0, 0, 0, 1, 0], X3= [2, 4, 4, 4, 2, 2, 2, 4, 2]. איזו תשובה מהתשובות הבאות נכונה?",
   "options": [
    "כל התשובות נכונות",
    "כנראה שזה יהיה רעיון טוב לבצע סילום על המאפיינים",
@@ -1540,7 +1560,7 @@ window.QUESTIONS = [
   "explanation": "כאשר ה-dataset גדול מאוד, שיטת hold out (חלוקה לאימון ובדיקה) יעילה ומספיקה לשיערוך איכות המודל.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q21",
   "topicLabel": "הערכת מודל"
@@ -1560,7 +1580,7 @@ window.QUESTIONS = [
   "explanation": "Confusion matrix הוא מדד נפוץ להערכת מודל סיווג; MSE מתאים לרגרסיה ו-NMI לאשכול.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q3",
   "topicLabel": "הערכת מודל"
@@ -1580,7 +1600,7 @@ window.QUESTIONS = [
   "explanation": "דאטה סט טוב לבדיקות צריך גם להיות גדול מספיק כדי לתת תוצאות משמעותיות וגם לייצג את מערך הנתונים כולו.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q4",
   "topicLabel": "הערכת מודל"
@@ -1600,7 +1620,7 @@ window.QUESTIONS = [
   "explanation": "מטרת cross-validation היא להעריך את הביצועים החיזויים (יכולת ההכללה) של המודלים.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q6",
   "topicLabel": "הערכת מודל"
@@ -1620,7 +1640,7 @@ window.QUESTIONS = [
   "explanation": "יש לנרמל את הנתונים לפני PCA (כדי ש-PCA לא יוטה על ידי מאפיינים בסקאלה גדולה), ואז לאמן: נירמול -> PCA -> אימון.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q7",
   "topicLabel": "הערכת מודל"
@@ -1636,7 +1656,7 @@ window.QUESTIONS = [
    "ערכו של ה-accuracy הינו כ-0.62"
   ],
   "correctIndex": 2,
-  "official": true,
+  "official": false,
   "explanation": "precision = TP/(TP+FP) = 400/(400+300) = 0.571 ≈ 0.57.",
   "hasImage": false,
   "source": "practice",
@@ -1656,7 +1676,7 @@ window.QUESTIONS = [
    "מטריצת השונות המשותפת תהיה כולה אפסים, והרכיב הראשי הראשון לא יוכל להגדיר כיוון בעל שונות מקסימלית (השונות שווה ל-0)."
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "כאשר כל התמונות זהות אין שונות בין הדגימות, מטריצת השונות המשותפת היא אפס לחלוטין, ולכן PCA אינו יכול להגדיר כיוון בעל שונות מקסימלית.",
   "hasImage": false,
   "source": "practice",
@@ -1676,7 +1696,7 @@ window.QUESTIONS = [
    "במקרה כזה, נשתמש ב-validation בשיטת conditional entropy"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "כאשר ה-dataset גדול מאוד, שיטת hold out מספיקה ל-hyperparameter tuning ואין צורך ב-k-fold היקר חישובית.",
   "hasImage": false,
   "source": "practice",
@@ -1696,7 +1716,7 @@ window.QUESTIONS = [
    "זהו נרמול מצויין, אשר משפיע לטובה בכל אלגוריתם למידה."
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "הכפלת כל הוקטורים בסקלר קבוע אינה משנה את היחסים והמרחקים היחסיים בין הוקטורים, ולכן אינה צפויה להשפיע לטובה על הלמידה.",
   "hasImage": false,
   "source": "practice",
@@ -1716,7 +1736,7 @@ window.QUESTIONS = [
    "כל התשובות נכונות."
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "סטנדרטיזציה (t-score) מרכזת סביב הממוצע ומחלקת בסטיית התקן, ומקרבת את ההתפלגות להתפלגות נורמלית סטנדרטית (z); min-max רק מכווץ לטווח [0,1] ואינו יוצר התפלגות נורמלית.",
   "hasImage": false,
   "source": "practice",
@@ -1736,7 +1756,7 @@ window.QUESTIONS = [
    "ה-k של ה-k-NN"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "accuracy הוא מדד ביצועים (תוצאה) שמחושב לאחר האימון ואינו היפר-פרמטר; השאר הם היפר-פרמטרים הנקבעים לפני האימון.",
   "hasImage": false,
   "source": "practice",
@@ -1816,7 +1836,7 @@ window.QUESTIONS = [
    "בהנחה שאנחנו דורשים קרבה של עד 2 סטיות תקן, והנתון החדש שווה ל-28, נניח שמדובר ב-outlier ונסנן אותו."
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "עבור הערכים {0,8,12,20}: ממוצע=10 וסטיית תקן≈8.3. הערך 28 נמצא (28-10)/8.3≈2.16 סטיות תקן מהממוצע, מעל הסף של 2, ולכן ייחשב outlier ויסונן (בעוד 32 נמצא ≈2.65<3).",
   "hasImage": false,
   "source": "practice",
@@ -1839,7 +1859,7 @@ window.QUESTIONS = [
    "תשובות ב ו-ג נכונות"
   ],
   "correctIndex": 4,
-  "official": true,
+  "official": false,
   "explanation": "בטבלה מתקיים y=1 בדיוק כאשר x1=1 וגם x3=1. גם X1*X3 (ערכים 0/1, סף 0.5) וגם X1+X3 (ערכים 1/2, סף 1.5) מפרידים באופן מושלם בין המחלקות, ולכן תשובות א ו-ד נכונות.",
   "hasImage": false,
   "source": "practice",
@@ -1860,13 +1880,34 @@ window.QUESTIONS = [
    "הוא משנה את ערכי הפיקסלים בצורה כזו שהם הופכים למאפיינים לינאריים לחלוטין, דבר שחיוני לפעולת ה-KNN."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Cell Histogram מחלק את התמונה לתאים ולכן שומר מידע מרחבי על מיקום הצבעים, בניגוד להיסטוגרמה גלובלית ששומרת רק את הכמות הכוללת של כל צבע.",
   "hasImage": false,
   "source": "exam",
   "sourceLabel": "2026 סמסטר ב׳ מועד א׳",
   "year": 2026,
   "id": "26B-A-Q7",
+  "topicLabel": "עיבוד תמונה"
+ },
+ {
+  "examCode": "25B-A",
+  "topic": "image",
+  "question": "נתונה הקונבולוציה (הגרעין) שבתרשים. מה מבצעת קונבולוציה הנ\"ל עבור תמונה דו-ממדית כלשהיא בשחור ולבן (0 או 1 בהתאמה)?\n**הערה:** ניתן להתעלם מירידה אפשרית ברזולוציה של ה-feature map בקצוות.\nיש לבחור תשובה אחת בלבד (הנכונה ביותר):",
+  "options": [
+   "הקונבולוציה מנסה לעשות גם ממוצע אופקי וגם ממוצע אנכי של הפיקסל האמצעי, אך היא נותנת משקל גבוה יותר לממוצע האנכי",
+   "הקונבולוציה מנסה למצוא צורה של כ, כאשר הציון הגבוה ביותר להתאמה יכול להיות 5",
+   "הקונבולוציה מנסה למצוא צורה של T (מוטה שמאלה ב-90 מעלות), כאשר הציון הגבוה ביותר להתאמה יכול להיות 4",
+   "הקונבולוציה מנסה לעשות גם ממוצע אופקי וגם ממוצע אנכי של הפיקסל האמצעי, אך היא נותנת משקל גבוה יותר לממוצע האופקי"
+  ],
+  "correctIndex": 2,
+  "official": true,
+  "explanation": "בגרעין יש בדיוק ארבעה תאים בעלי ערך 1: כל העמודה השמאלית (שלושה תאים) ועוד התא המרכזי. יחד הם מציירים קו אנכי שממנו יוצאת זרוע ימינה במרכז — כלומר האות T מסובבת ב-90 מעלות שמאלה. כל שאר התאים הם 1-, ולכן פיקסל לבן (1) שנופל עליהם מוריד מהציון. הציון המקסימלי מתקבל כאשר התמונה מכילה 1 בדיוק בארבעת תאי ה-1 ו-0 בכל השאר, ואז הציון הוא 1×4 = 4 — ולכן תשובה ג׳. תשובות א׳ ו-ד׳ נשללות כי גרעין ממצע חייב משקלים חיוביים בלבד, ואילו כאן חמישה מהמשקלים שליליים; תשובה ב׳ נשללת כי צורת \"כ\" הייתה דורשת חמישה תאי 1, ובגרעין יש רק ארבעה.",
+  "hasImage": false,
+  "source": "exam",
+  "sourceLabel": "2025 סמסטר ב׳ מועד א׳",
+  "year": 2025,
+  "id": "25B-A-Q4",
+  "image": "images/exams/25B-A-Q4.png",
   "topicLabel": "עיבוד תמונה"
  },
  {
@@ -1880,7 +1921,7 @@ window.QUESTIONS = [
    "כל פיקסל ב-feature map יכיל ממוצע של הפיקסלים סביבו"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הגרעין מכיל 1/3, 1/3, 1/3 בשורה האמצעית בלבד (ואפסים מעל ומתחת), ולכן הוא ממצע כל פיקסל עם שכניו האופקיים - הפיקסל שמימינו ומשמאלו.",
   "hasImage": false,
   "source": "exam",
@@ -2003,7 +2044,7 @@ window.QUESTIONS = [
    "כל תא זוגי בהיסטוגרמה החדשה יכיל בדיוק פי 2 פיקסלים בהשוואה לתא המתאים לו בהיסטוגרמה המקורית"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "הכפלת עוצמות הפיקסלים מזיזה אותם על ציר ה-X של ההיסטוגרמה, אך מכיוון שמדובר בספירת פיקסלים אבסולוטית סך הפיקסלים נותר קבוע ושווה לשטח התמונה 100×100 = 10,000.",
   "hasImage": false,
   "source": "practice",
@@ -2023,7 +2064,7 @@ window.QUESTIONS = [
    "מפני שנרמול ההיסטוגרמה הופך את המאפיינים לבדידים, דבר המאפשר ל-KMeans לחשב מרחקים בצורה מדויקת יותר"
   ],
   "correctIndex": 2,
-  "official": true,
+  "official": false,
   "explanation": "נרמול ההיסטוגרמה מנטרל את השפעת גודל/רזולוציית התמונה, כך שהמרחק האוקלידי ב-KMeans ישקף את התפלגות הגוונים ולא את מספר הפיקסלים הכולל.",
   "hasImage": false,
   "source": "practice",
@@ -2043,7 +2084,7 @@ window.QUESTIONS = [
    "המימד של התמונה יוכפל משום שהפעלת הסף יוצרת מטריצה חדשה של ערכים בדידים עבור אלגוריתם עצי ההחלטה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הפעלת סף על ערוץ יחיד מפיקה מטריצה דו-מימדית (ערוץ יחיד) בינארית שבה ערכו של כל פיקסל הוא 0 או 1 (שחור או לבן מוחלט).",
   "hasImage": false,
   "source": "practice",
@@ -2063,7 +2104,7 @@ window.QUESTIONS = [
    "[0.25, 0.25, 0.25, 0.25], המייצג התפלגות אחידה שבה כל אחד מארבעת הפיקסלים בתמונה משויך לתא נפרד בהיסטוגרמה המנורמלת בהתאם לעוצמתו"
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "כל אחד מארבעת הפיקסלים (10, 20, 30, 40) נופל לתא נפרד; ספירה של 1 בכל תא, מנורמלת ב-4 הפיקסלים, נותנת [0.25, 0.25, 0.25, 0.25] — התפלגות אחידה לפי עוצמת הפיקסלים.",
   "hasImage": false,
   "source": "practice",
@@ -2083,13 +2124,13 @@ window.QUESTIONS = [
    "אורך הוקטור הסופי יהיה 300, כאשר הערכים משתנים בצורה לינארית ומאפשרים למודל רגרסיה לינארית לזהות את כיוון האור בתמונה."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כל Cell מכיל 25 פיקסלים עם R=200, לכן סכום R=25×200=5000 ו-G=B=0 → [5000,0,0]; 4 Cells × 3 תאים = וקטור באורך 12.",
   "hasImage": false,
   "source": "practice",
   "sourceLabel": "תרגול — שאלות לדוגמה",
   "year": null,
-  "id": "PRAC-X-Q18",
+  "id": "PRAC-X-Q28",
   "topicLabel": "עיבוד תמונה"
  },
  {
@@ -2103,7 +2144,7 @@ window.QUESTIONS = [
    "קבוצת אימון (train-set) וקבוצת בדיקות (test-set)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הקלט לתהליך האימון הוא קבוצת האימון (train-set), והפלט הוא המודל המאומן (machine learning model).",
   "hasImage": false,
   "source": "exam",
@@ -2123,7 +2164,7 @@ window.QUESTIONS = [
    "נשמור על 85% מהשונות; המשמעות היא שנאלץ לדחות את ההשארה ולהישאר עם המאפיינים המקוריים."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "שני הרכיבים הראשונים שומרים 0.5+0.3=0.8, כלומר 80% מהשונות המקורית — רוב המידע נשמר אך ייתכן שכדאי להוסיף עוד רכיבים.",
   "hasImage": false,
   "source": "exam",
@@ -2143,7 +2184,7 @@ window.QUESTIONS = [
    "הבעיות הראשונה והרביעית הם בעיות רגרסיה ואילו הבעיות השנייה והשלישית הם בעיות סיווג"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כל ארבע הבעיות מונחות (יש תוויות מטרה); בעיה 4 חוזה מספר שפות במקביל ולכן היא סיווג multi-label, בעוד השאר רגרסיה, סיווג בינארי וסיווג רב-מחלקתי.",
   "hasImage": false,
   "source": "exam",
@@ -2183,7 +2224,7 @@ window.QUESTIONS = [
    "כל הבעיות הן בעיות למידה מונחית (supervised learning), אך הבעיה הראשונה והשלישית הינן בעיות סיווג והבעיה השנייה והרביעית הינן בעיות רגרסיה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "בעיה 1 היא סיווג, בעיות 2 ו-4 הן רגרסיה, ובעיה 3 בלבד היא אשכול (cluster analysis) לא-מונחה, ולכן רק הבעיה השלישית היא בעיית cluster analysis.",
   "hasImage": false,
   "source": "exam",
@@ -2203,7 +2244,7 @@ window.QUESTIONS = [
    "הבעיות הראשונה והשנייה הינם בעיות למידה לא מונחית (unsupervised learning), לעומת זאת הבעיות השלישית והרביעית הינם בעיות למידה מונחית (supervised learning)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כל ארבע הבעיות הן למידה מונחית, ורק בעיה 3 (הצטיינות: כן/לא) היא בעיית סיווג בינארית.",
   "hasImage": false,
   "source": "exam",
@@ -2223,7 +2264,7 @@ window.QUESTIONS = [
    "קבוצת אימון (train-set) וקבוצת בדיקות (test-set)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הקלט לתהליך האימון הוא קבוצת האימון, והפלט הוא המודל הנלמד.",
   "hasImage": false,
   "source": "exam",
@@ -2284,7 +2325,7 @@ window.QUESTIONS = [
    "ניתן להסיק שיש קורלציה בין מכירות בגדי ים ולכניסות לחניוני הים התיכון, אך לא ניתן להסיק סיבתיות"
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "שני הגרפים עולים ויורדים יחד לאורך הקיץ ולכן קיימת ביניהם קורלציה חזקה, אך קורלציה אינה מעידה על סיבתיות ולכן לא ניתן להסיק קשר סיבתי בין מכירות בגדי הים לכניסות לחניוני הים.",
   "hasImage": false,
   "source": "exam",
@@ -2305,7 +2346,7 @@ window.QUESTIONS = [
    "כל הבעיות הם בעיות רגרסיה, אך רק הבעיה השלישית היא בעיית סיווג"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כל ארבע הבעיות מונחות; בעיות 1 ו-4 הן multi-class, בעיה 3 היא רגרסיה, ורק בעיה 2 (מכיר/לא מכיר python) היא סיווג בינארי.",
   "hasImage": false,
   "source": "exam",
@@ -2325,7 +2366,7 @@ window.QUESTIONS = [
    "טענה 1 ו-3 אינן נכונות"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "שלוש הטענות מתארות נכונה את overfitting, את underfitting ואת הטכניקות לטיפול בהם (עצירה מוקדמת ומודלים מורכבים יותר), ולכן כל הטענות נכונות.",
   "hasImage": false,
   "source": "exam",
@@ -2671,7 +2712,7 @@ window.QUESTIONS = [
   "explanation": "לפי הנתונים בטבלה y=X1·X3 (שקול ל-AND בין X1 ל-X3), ולכן הן הטרנספורמציה X1*X3 והן הצירוף X1+X3 מאפשרים הפרדה לינארית של הנתונים.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q10",
   "image": "images/exams/SAMP-2-Q10.png",
@@ -2692,7 +2733,7 @@ window.QUESTIONS = [
   "explanation": "ההנחה שבשאלה שגויה: ב-PCA שואפים ל-variance גבוה (הרכיבים הראשיים לוכדים את השונות המקסימלית), ולא נמוך.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q13",
   "topicLabel": "מבוא ומושגי יסוד"
@@ -2712,7 +2753,7 @@ window.QUESTIONS = [
   "explanation": "A·v2 = (12,8) = 4·v2, כלומר v2 הוא וקטור עצמי של A עם ערך עצמי 4; לעומת זאת A·v1 = (11,5) אינו מכפלה סקלרית של v1, ולכן v1 אינו וקטור עצמי.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q15",
   "image": "images/exams/SAMP-2-Q15.png",
@@ -2733,7 +2774,7 @@ window.QUESTIONS = [
   "explanation": "אף אחת מהטענות אינה נכונה: מסווג לינארי אינו מובטח למצוא פתרון אופטימלי, נוטה דווקא ל-underfitting ולא ל-overfitting, ואינו מתאים ישירות לבעיות multi-class.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q17",
   "topicLabel": "מבוא ומושגי יסוד"
@@ -2753,7 +2794,7 @@ window.QUESTIONS = [
   "explanation": "הממוצע = (0+8+12+20)/4 = 10; סטיית התקן המדגמית (חלוקה ב-n-1) = שורש(208/3) ≈ 8.3.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q24",
   "image": "images/exams/SAMP-2-Q24.png",
@@ -2770,7 +2811,7 @@ window.QUESTIONS = [
    "unsupervised learning"
   ],
   "correctIndex": 2,
-  "official": true,
+  "official": false,
   "explanation": "dialogic-learning אינו תחום בלמידת מכונה; reinforcement/supervised/unsupervised learning הם סוגי הלמידה המקובלים.",
   "hasImage": false,
   "source": "practice",
@@ -2790,7 +2831,7 @@ window.QUESTIONS = [
    "ישנה תלות גבוהה יותר מידי בהנחות יסוד מסוימות, שאינן תלויות בנתונים."
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "תלות רבה מדי בהנחות יסוד שאינן נובעות מהנתונים משמעה הטיה גבוהה (high bias), המובילה ל-underfitting.",
   "hasImage": false,
   "source": "practice",
@@ -2810,7 +2851,7 @@ window.QUESTIONS = [
    "לא נלקחו מספיק דוגמאות אימון שמתארות את כל מרחב האפשרויות."
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "מיעוט דוגמאות אימון שאינן מכסות את כל מרחב האפשרויות מוביל למודל כללי מדי שאינו לומד את הבעיה כראוי (underfitting).",
   "hasImage": false,
   "source": "practice",
@@ -2830,7 +2871,7 @@ window.QUESTIONS = [
    "אם המאפיינים לא רציפים, לא נוכל להשתמש בהם כחלק מה-training-set."
   ],
   "correctIndex": 2,
-  "official": true,
+  "official": false,
   "explanation": "איכות המודל תלויה באיכות ה-training set; אם הוא אינו מייצג היטב את המציאות, ברוב המקרים גם המודל הנלמד לא יהיה טוב מספיק.",
   "hasImage": false,
   "source": "practice",
@@ -2850,7 +2891,7 @@ window.QUESTIONS = [
    "ה-principal components אורתוגונליים אחד לשני."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כל הטענות נכונות: PCA היא שיטה בלתי מונחית, מחפשת כיוונים בעלי השונות הגדולה ביותר, והרכיבים הראשיים אורתוגונליים זה לזה.",
   "hasImage": false,
   "source": "practice",
@@ -2870,7 +2911,7 @@ window.QUESTIONS = [
    "עליו לסגת למצודה שבמשבצת (7,1)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "בוחרים את המצודה בעלת דמיון הקוסינוס הגבוה ביותר לוקטור המיקום הנוכחי של הפרש (6,3). המצודה (8,4) קולינארית לוקטור (6,3) ולכן דמיון הקוסינוס שלה שווה ל-1 — הגבוה ביותר מבין האפשרויות.",
   "hasImage": false,
   "source": "exam",
@@ -2911,7 +2952,7 @@ window.QUESTIONS = [
    "מכיוון שסילום מטפל בערכים חסרים בנתונים"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "KNN מבוסס על חישובי מרחק, ולכן ללא סילום מאפיין עם טווח ערכים גדול ישלוט על חישוב המרחק, ומכאן חשיבות הסילום.",
   "hasImage": false,
   "source": "exam",
@@ -2931,7 +2972,7 @@ window.QUESTIONS = [
    "מודל שנוצר ע\"י אלגוריתם K-Means"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הנתונים מתפרשים כשני סהרונים משתלבים (גבול החלטה לא-לינארי); KNN הוא אלגוריתם לא-פרמטרי ולא-לינארי ולכן ישיג דיוק גבוה ללא הנדסת מאפיינים, בשונה מ-Logistic Regression או Naive Bayes הלינאריים, ו-K-Means שאינו מסווג.",
   "hasImage": false,
   "source": "exam",
@@ -2952,7 +2993,7 @@ window.QUESTIONS = [
    "אלגוריתם KNN מיועד רק עבור סיווג, ולכן הוא לא מתאים לחזות את אחוזי הרייטינג"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "עם x1=3, מרחקי צ'בישב לדוגמאות הם 2.5, 0.5, 3, 4. שלושת השכנים הקרובים ביותר הם בעלי y = 2.5, 0.5, 6, וממוצעם (uniform voting) הוא (2.5+0.5+6)/3 = 3. לכן יש לבחור K=3.",
   "hasImage": false,
   "source": "exam",
@@ -2973,13 +3014,14 @@ window.QUESTIONS = [
    "מרחק צ'בישב שווה ל-1"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "מהלך הפרש (סוס) הוא L של 2 בציר אחד ו-1 בציר השני, ומרחק צ'בישב הוא המקסימום בין ההפרשים: max(2,1)=2 (2.236 הוא המרחק האוקלידי).",
   "hasImage": false,
   "source": "exam",
   "sourceLabel": "2024 סמסטר ב׳ מועד א׳",
   "year": 2024,
   "id": "24B-A-Q17",
+  "image": "images/exams/24B-A-Q17.png",
   "topicLabel": "KNN"
  },
  {
@@ -3075,7 +3117,7 @@ window.QUESTIONS = [
    "אלגוריתם KNN מיועד רק עבור סיווג, ולכן הוא לא מתאים לחזות את אחוזי הרייטינג"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "3 השכנים הקרובים ל-x1=3 (מרחק צ'בישב) הם 2.5, 0.5 ו-6 עם מרחקים 0.5, 2.5 ו-3; ממוצע משוקלל מנורמל (משקל ~ 1/מרחק) של ערכי ה-Y נותן כ-2.6, שנמוך מ-3 ולכן לא משתלם לשדר את התכנית.",
   "hasImage": false,
   "source": "exam",
@@ -3420,7 +3462,7 @@ window.QUESTIONS = [
   "explanation": "ב-KNN חישוב המרחקים מושפע מסקאלת המאפיינים; ללא scaling, מאפיין בסקאלה גדולה ישלוט בחישוב המרחק ויטה את התוצאה.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q14",
   "topicLabel": "KNN"
@@ -3440,7 +3482,7 @@ window.QUESTIONS = [
   "explanation": "מרחק צ'בישב הוא ההפרש המוחלט המקסימלי בין הרכיבים: d(v1,v2)=3, d(v2,v3)=1, d(v1,v3)=4, ולכן v2,v3 הם הקרובים ביותר.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q18",
   "topicLabel": "KNN"
@@ -3460,7 +3502,7 @@ window.QUESTIONS = [
   "explanation": "KNN הוא אלגוריתם עצלן (lazy) שאינו בונה מודל מראש, ולכן מתאים לנתונים דינמיים המתעדכנים בתדירות גבוהה - ניתן לשלב נתונים חדשים ללא אימון מחדש.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q25",
   "topicLabel": "KNN"
@@ -3496,7 +3538,7 @@ window.QUESTIONS = [
    "אם fv2 היא דוגמת ה-test, לא ניתן להכריע מהי הקטגוריה שיש לסווג"
   ],
   "correctIndex": 2,
-  "official": true,
+  "official": false,
   "explanation": "במרחק צ'בישב d(fv2,fv1)=3 ו-d(fv2,fv3)=1, לכן השכן הקרוב ביותר (K=1) הוא fv3 ונסווג את fv2 לפי הקטגוריה שלו.",
   "hasImage": false,
   "source": "practice",
@@ -3516,7 +3558,7 @@ window.QUESTIONS = [
    "כאשר פונקצית ההתפלגות של המחלקות באימון ידועה, טוב מהמתחרים"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "KNN הוא אלגוריתם עצל (lazy) שאינו בונה מודל מראש, ולכן מתאים היטב לנתונים דינמיים המתעדכנים בתדירות גבוהה.",
   "hasImage": false,
   "source": "practice",
@@ -3536,7 +3578,7 @@ window.QUESTIONS = [
    "כדי לא ליצור הטיה לטובת מאפיין עם סולם גבוה"
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "KNN מבוסס מרחקים; ללא scaling מאפיין בעל סולם ערכים גדול ישלוט בחישוב המרחק ויטה את התוצאה.",
   "hasImage": false,
   "source": "practice",
@@ -3596,7 +3638,7 @@ window.QUESTIONS = [
    "כדי לאפשר למודל לרוץ גם עם מאפיינים רציפים"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "החלקה (כגון Laplace) מונעת הסתברות אפס למאפיין שלא נצפה, שכן הסתברות אפס אחת מאפסת את כל מכפלת ההסתברויות.",
   "hasImage": false,
   "source": "exam",
@@ -3616,7 +3658,7 @@ window.QUESTIONS = [
    "אי תלות סטטיסטית מתקיימת כאשר P(A∣B)=P(A)⋅P(B)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "שני אירועים בלתי תלויים סטטיסטית אם ורק אם ההסתברות המשותפת שווה למכפלת ההסתברויות: P(A∩B)=P(A)·P(B).",
   "hasImage": false,
   "source": "exam",
@@ -3636,7 +3678,7 @@ window.QUESTIONS = [
    "img:images/exams/24B-A-Q14-D.png"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Naïve Bayes מניח אי-תלות בין המאפיינים. הקשר הכי פחות רצוי הוא זה שבו המאפיינים תלויים / מקבילים לחלוטין (זווית 0 בין הוקטורים), שכן הוא מפר בצורה החמורה ביותר את הנחת אי-התלות.",
   "hasImage": false,
   "source": "exam",
@@ -3656,7 +3698,7 @@ window.QUESTIONS = [
    "ההנחה בשאלה אינה נכונה, לא ניתן לקבוע אם הנחת חוסר התלות מתקיימת או לא"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כאשר קיימת תלות גבוהה בין המאפיינים, כדאי לבצע מניפולציה על המאפיינים (למשל הסרה/שילוב) כדי לטפל בתלות ולשפר את המודל.",
   "hasImage": false,
   "source": "exam",
@@ -3696,7 +3738,7 @@ window.QUESTIONS = [
    "ההנחה בשאלה אינה נכונה, לא ניתן לקבוע אם הנחת חוסר התלות מתקיימת או לא"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "כאשר קיימת תלות גבוהה בין מאפיינים ניתן לבצע עיבוד מקדים/מניפולציה (למשל הסרת תלות) על המאפיינים לפני הפעלת Naive Bayes, ובכך לשפר את איכות המודל.",
   "hasImage": false,
   "source": "exam",
@@ -3716,7 +3758,7 @@ window.QUESTIONS = [
    "אלגוריתם KNN"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Naive Bayes הוא מודל גנרטיבי המלמד את התפלגות הנתונים, ולכן יכול לייצר (generate) דוגמה חדשה של דוא\"ל ספאם.",
   "hasImage": false,
   "source": "exam",
@@ -3808,7 +3850,7 @@ window.QUESTIONS = [
  {
   "examCode": "23B-B",
   "topic": "naive_bayes",
-  "question": "נתונה בעיית למידה בה שלושה מאפיינים המסומנים כ-X1, X2 ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו. איזו תשובה נכונה?",
+  "question": "נתונה בעיית למידה בה שלושה מאפיינים המסומנים כ-X1, X2 ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו. X1= [1, -1, 1, -1, -1, -1, 1, 1, 1], X2= [0, 1, 1, 1, 0, 0, 0, 1, 0], X3= [2, 4, 4, 4, 2, 2, 2, 4, 2]. איזו תשובה נכונה?",
   "options": [
    "כנראה שזה יהיה רעיון טוב לבצע normalization min-max על המאפיינים",
    "כנראה שזה יהיה רעיון טוב לסנן את מאפיין X3, כיוון שיש ל-X3 ול-X1 תלות לינארית מלאה",
@@ -3817,7 +3859,7 @@ window.QUESTIONS = [
   ],
   "correctIndex": 3,
   "official": true,
-  "explanation": "לפי סימון התשובה הנכונה במבחן, כל שלוש הטענות נכונות בהקשר זה ולכן התשובה היא 'כל התשובות נכונות'.",
+  "explanation": "לפי סימון התשובה הנכונה במבחן, כל שלוש הטענות נכונות בהקשר זה ולכן התשובה היא 'כל התשובות נכונות'. שימו לב לאי-דיוק בניסוח המבחן המקורי: בנתונים המודפסים מתקיים X3 = 2·X2 + 2, כלומר התלות הלינארית המלאה היא בין X3 ל-X2 ולא בין X3 ל-X1 כפי שנכתב בחלופה ב׳. המחוון הרשמי סימן 'כל התשובות נכונות', ולכן זה המפתח שנשמר כאן.",
   "hasImage": false,
   "source": "exam",
   "sourceLabel": "2023 סמסטר ב׳ מועד ב׳",
@@ -3940,7 +3982,7 @@ window.QUESTIONS = [
   "explanation": "Naive Bayes מניח שכל המאפיינים בלתי-תלויים זה בזה (בהינתן המחלקה) וגם בעלי חשיבות זהה.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q8",
   "topicLabel": "נאיב בייס"
@@ -3956,7 +3998,7 @@ window.QUESTIONS = [
    "המודל מניח שאין תלות בין ערכי הפיקסלים השונים באותה משבצת מרחבית (Cell) בתוך התמונה"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "ב-Naive Bayes המאפיינים הם תאי ההיסטוגרמה, וההנחה ה'נאיבית' היא שההסתברות המותנית לערך בתא אחד בלתי תלויה בערכי התאים האחרים בהינתן הקטגוריה.",
   "hasImage": false,
   "source": "practice",
@@ -3976,7 +4018,7 @@ window.QUESTIONS = [
    "משתמשים בה לחיזוי (prediction)."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Naive Bayes מניחה אי-תלות בין המאפיינים; לכן הטענה שהיא עובדת היטב גם בתלות גבוהה בין המאפיינים אינה נכונה.",
   "hasImage": false,
   "source": "practice",
@@ -4036,7 +4078,7 @@ window.QUESTIONS = [
    "בפועל, אין הבדל בין השיטות הללו לטיפול ב-overfitting. ההבדל בשמות נובע בגלל הרקע המתמטי והסטטיסטי התאורטי השונה שמניחים בכל שיטה. שיטת Dropout בבסיסה היא שיטה הנובעת מאלגוריתמים הסתברותיים ואילו רגולריזציה מגיעה ממתמטיקה ווקטורית"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Dropout מכבה נוירונים באקראי כדי למנוע הסתמכות יתר, ורגולריזצית L2 מוסיפה קנס על סכום ריבועי המשקלים; שתיהן מפחיתות את מורכבות המודל ומקטינות Overfitting.",
   "hasImage": false,
   "source": "exam",
@@ -4056,7 +4098,7 @@ window.QUESTIONS = [
    "עבור המודל של perceptron המשקולות המעודכנים יהיו (0.0053,1.0053,2.01) ועבור המודל של logistic regression לא יהיו עדכוני משקולות"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "עם bias=1 מתקבל z=1; ב-perceptron sign(1)=1=y ולכן אין עדכון, וברגרסיה לוגיסטית עדכון delta עם נגזרת הסיגמואיד נותן משקולות (0.0053,1.0053,2.01).",
   "hasImage": false,
   "source": "exam",
@@ -4076,7 +4118,7 @@ window.QUESTIONS = [
    "קביעת קצב הלמידה של המודל"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "פונקציית האקטיבציה מכניסה אי-לינאריות לרשת ובכך מאפשרת לה ללמוד קשרים לא-לינאריים.",
   "hasImage": false,
   "source": "exam",
@@ -4096,7 +4138,7 @@ window.QUESTIONS = [
    "לא ניתן להכריע, כי המימדיות של הוקטורים אינה זהה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "קלט פונקציית האקטיבציה (המכפלה הסקלרית של המשקולות במאפיינים) יוצא 0.9 - ערך חיובי. פונקציית sign מחזירה חיובי, ולכן המודל חוזה שהלקוח יבצע את הקנייה.",
   "hasImage": false,
   "source": "exam",
@@ -4109,7 +4151,7 @@ window.QUESTIONS = [
  {
   "examCode": "24B-C",
   "topic": "neural_nets",
-  "question": "נתון מישור (hyper plane) שנלמד באמצעות אלגוריתם נוירון מלאכותי, עם פונקציית אקטיבציה sigmoid. איזו טענה, מבין הטענות הבאות, נכונה?",
+  "question": "נתון מישור (hyper plane) שנלמד באמצעות אלגוריתם נוירון מלאכותי, עם פונקציית אקטיבציה sigmoid: 3*x1+5*x2 -8*x3 = 0. איזו טענה, מבין הטענות הבאות, נכונה?",
   "options": [
    "אם נגדיל את ערכו של w0 ל-50, יותר וקטורים יסווגו כשליליים, ולכן צפויים פחות FN",
    "אם נגדיל את ערכו של w0 ל-50, יותר וקטורים יסווגו כחיוביים, ולכן צפויות פחות FN",
@@ -4137,7 +4179,7 @@ window.QUESTIONS = [
    "לא ניתן להכריע, כי המימדיות של הוקטורים אינה זהה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "קלט האקטיבציה = w0 + w1·x1 + w2·x2 + w3·x3 = 0 + 0.1·0.2 - 0.3·0.6 + 0.4·0.3 = -0.04; מאחר ש-sign(-0.04) שלילי, נחזה שהלקוח לא יבצע את הקנייה.",
   "hasImage": false,
   "source": "exam",
@@ -4158,7 +4200,7 @@ window.QUESTIONS = [
    "כל התשובות אינם נכונות"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "קלט האקטיבציה = 0 + 0.1·0.2 - 0.3·0.6 + 0.4·0.3 = -0.04; פונקציית Heaviside מחזירה 0 עבור קלט שלילי, ולכן פלט הפרספטרון הוא 0.",
   "hasImage": false,
   "source": "exam",
@@ -4179,7 +4221,7 @@ window.QUESTIONS = [
    "קביעת קצב הלמידה של המודל"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "פונקציית האקטיבציה מכניסה אי-לינאריות לרשת ומאפשרת לה ללמוד קשרים לא-לינאריים בין הקלט לפלט.",
   "hasImage": false,
   "source": "exam",
@@ -4291,7 +4333,7 @@ window.QUESTIONS = [
  {
   "examCode": "23S-A",
   "topic": "neural_nets",
-  "question": "נתון ה-hyper plane (מישור) הבא, אשר נלמד באמצעות אלגוריתם perceptron. איזו טענה, מבין הטענות הבאות נכונה?",
+  "question": "נתון ה-hyper plane (מישור) הבא, אשר נלמד באמצעות אלגוריתם perceptron: 3*x1+5*x2 -8*x3 = 0. איזו טענה, מבין הטענות הבאות נכונה?",
   "options": [
    "אם נקטין את ערכו של w0 ל-100- (מינוס 100), יותר וקטורים יסווגו כשליליים, ולכן צפויים פחות FN",
    "אם נקטין ערכו של w0 ל-100- (מינוס 100), יותר וקטורים יסווגו כחיוביים, ולכן צפויים פחות FN",
@@ -4544,7 +4586,7 @@ window.QUESTIONS = [
   "explanation": "בעדכון המשקלים ב-backpropagation, חלוקת הטעות לקשת פרופורציונית לערך הקלט; מאחר ש-x3=0.4 גדול מ-x1=0.2, הטעות לקשת של x3 תחלחל יותר.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q20",
   "topicLabel": "רשתות נוירונים"
@@ -4580,7 +4622,7 @@ window.QUESTIONS = [
    "מדד Sum of Square Error (SSE)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "R^2, MAE ו-SSE הם מדדים מקובלים לשערוך רגרסיה, בעוד 'Mean Chebyshev Error' אינו מדד סטנדרטי לשערוך מודל רגרסיה.",
   "hasImage": false,
   "source": "exam",
@@ -4640,7 +4682,7 @@ window.QUESTIONS = [
    "אין מספיק נתונים, כדי לענות על השאלה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "R-Squared = 1 - SSE/SST = 1 - 40/100 = 0.6, וזה גבוה מ-0.5 של הקבוצה הראשונה, ולכן הקבוצה השנייה ניצחה בתחרות.",
   "hasImage": false,
   "source": "exam",
@@ -4660,7 +4702,7 @@ window.QUESTIONS = [
    "רגרסיה רנדומלית"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "החיזוי (prediction) הוא קו ישר המותאם לנתונים (price כתלות ב-weight), המאפיין רגרסיה לינארית.",
   "hasImage": false,
   "source": "exam",
@@ -4681,7 +4723,7 @@ window.QUESTIONS = [
    "המדד conditional entropy"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "MSE מעלה בריבוע את ההפרשים בין הערך החזוי לאמיתי, ולכן מעניש שגיאות גדולות בצורה חמורה יותר מ-MAE או SAE.",
   "hasImage": false,
   "source": "exam",
@@ -4701,7 +4743,7 @@ window.QUESTIONS = [
    "הוספת מאפיינים (features) נוספים, רלוונטיים ואינפורמטיביים"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Underfitting נובע ממודל פשוט מדי; הוספת רגולריזציה רק מגבירה את ההטיה ומפשטת עוד יותר את המודל, ולכן לא תשפר את הביצועים, בעוד שאר הפעולות מגדילות את מורכבות המודל.",
   "hasImage": false,
   "source": "exam",
@@ -4721,7 +4763,7 @@ window.QUESTIONS = [
    "אף תשובה אינה נכונה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "ישר החיזוי בעל מקדמים גדולים (1000, 2000). קבוע רגולריזציה גבוה מדי דווקא מכווץ את המשקולות לכיוון אפס, ולכן הוא אינו יכול להסביר את המקדמים הגדולים שהתקבלו.",
   "hasImage": false,
   "source": "exam",
@@ -4741,7 +4783,7 @@ window.QUESTIONS = [
    "יתבדר, בגלל שינוי הכיוון בין ŷᵢ ל-yᵢ, אלא אם כן נבחר קבוע למידה שלילי"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "המעבר מ-MSE (ממוצע) ל-SSE (סכום) שקול להכפלת פונקציית המחיר בקבוע n, שאינו משנה את מיקום המינימום. לכן אם המודל התכנס למינימום גלובלי ב-J, הוא יתכנס לאותו מינימום גם ב-J₂.",
   "hasImage": false,
   "source": "exam",
@@ -4762,7 +4804,7 @@ window.QUESTIONS = [
    "הטענה נכונה, מכיוון שאנחנו מניחים שמדובר בפונקציית convex (פונקציה קמורה)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "בנקודת קיצון (מינימום) של פונקציה גזירה הגרדיאנט מתאפס, ולכן מחפשים גרדיאנט אפסי - הטענה נכונה.",
   "hasImage": false,
   "source": "exam",
@@ -4782,7 +4824,7 @@ window.QUESTIONS = [
    "המטריקה - Weighted Smoothing"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "מדובר בבעיית רגרסיה (חיזוי ערך כמותי), ולכן R2 היא המטריקה המתאימה להערכת המודל.",
   "hasImage": false,
   "source": "exam",
@@ -4904,7 +4946,7 @@ window.QUESTIONS = [
    "לבצע feature selection, על מנת לטפל במאפיינים בעלי מתאם (correlation) גבוה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "underfitting נובע ממודל שלא התכנס או פשוט מדי; שימוש במספר epochs גדול מספיק להבטחת התכנסות מקטין אותו, בעוד שאר האפשרויות (רגולריזציה, עצירה מוקדמת, הפחתת מאפיינים) דווקא מגבירות underfitting.",
   "hasImage": false,
   "source": "exam",
@@ -4924,7 +4966,7 @@ window.QUESTIONS = [
    "ביל, בהנחה שהוא טיפל בכפילויות בצורה מיטבית"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "RMSE הוא מדד שגיאה שבו ערך נמוך יותר מעיד על מודל טוב יותר; לברנאר הערך הנמוך ביותר (0.67) ולכן המודל שלו הטוב ביותר.",
   "hasImage": false,
   "source": "exam",
@@ -4944,7 +4986,7 @@ window.QUESTIONS = [
    "אלגוריתם רגרסיה לינארית, אינו מושפע ממאפיינים בעלי תלות גבוהה, לכן אין טעם לבצע עיבוד מקדים כזה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "מקדם המתאם של פירסון r = cov(X1,X2)/(σ_X1·σ_X2) = 131.2/√(12.32·2722.41) ≈ 0.716, שהוא גבוה מ-0.71 ולכן לפי סף זה קיימת תלות גבוהה ונסנן מאפיין אחד.",
   "hasImage": false,
   "source": "exam",
@@ -4965,7 +5007,7 @@ window.QUESTIONS = [
    "טענה 1 ו-3 נכונות"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "רגוליזציה מונעת התאמת יתר (לא התאמת חסר), ולכן טענה 1 שגויה וטענות 2 ו-3 נכונות.",
   "hasImage": false,
   "source": "exam",
@@ -5289,7 +5331,7 @@ window.QUESTIONS = [
   "explanation": "בנקודת קיצון (מינימום או מקסימום) של פונקציה, השיפוע (הנגזרת / gradient) שווה תמיד לאפס.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q2",
   "topicLabel": "רגרסיה ו-Gradient Descent"
@@ -5305,7 +5347,7 @@ window.QUESTIONS = [
    "w1 = 0 ו-w2 = 1, משום ששטח הלבן נקבע ישירות ובאופן בלעדי על ידי ספירת הפיקסלים הלבנים (x2)"
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "שטח הלבן שווה בדיוק למספר הפיקסלים הלבנים x2, ולכן מודל שאומן באופן מושלם ייתן w1=0 ו-w2=1.",
   "hasImage": false,
   "source": "practice",
@@ -5325,7 +5367,7 @@ window.QUESTIONS = [
    "ברגרסיה לינארית לא ניתן להשתמש באלגוריתם gradient descent למציאת הטעות המינימלית."
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "פונקציית העלות של רגרסיה לינארית קמורה, ולכן עם קבוע למידה מספיק נמוך gradient descent מובטח להתכנס למינימום הגלובלי.",
   "hasImage": false,
   "source": "practice",
@@ -5345,7 +5387,7 @@ window.QUESTIONS = [
    "ישנו מתאם נמוך בין המאפיינים, למרות שערך מקדם המתאם גדול מ-0.95"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "מקדם המתאם של Pearson ≈ 0.96 > 0.95, ולכן קיים מתאם גבוה בין המאפיינים.",
   "hasImage": false,
   "source": "practice",
@@ -5365,7 +5407,7 @@ window.QUESTIONS = [
    "להפעיל סילום, כדי לצמצם את ההבדל בין המאפיינים השונים וכך להישאר רק עם המאפיינים של הסיכוי להחלים."
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "חיזוי משך זמן (ערך רציף) הוא בעיית רגרסיה, ולכן נאמן אלגוריתם רגרסיה.",
   "hasImage": false,
   "source": "practice",
@@ -5385,7 +5427,7 @@ window.QUESTIONS = [
    "כ--3,546, ומשמעות העניין שיש תלות שלילית גבוהה בין המאפיינים."
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "cov = sum/(n-1) = 276,578/3 ≈ 92,192; ערך חיובי גבוה מעיד על תלות חיובית בין המאפיינים (אותה אוריינטציה).",
   "hasImage": false,
   "source": "practice",
@@ -5405,7 +5447,7 @@ window.QUESTIONS = [
    "כל התשובות נכונות"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "MSE הוא מדד נפוץ להערכת מודל רגרסיה; confusion matrix ו-Normalized mutual information משמשים לסיווג/אשכול ולא לרגרסיה.",
   "hasImage": false,
   "source": "practice",
@@ -5425,7 +5467,7 @@ window.QUESTIONS = [
    "ההנחה אינה נכונה, מדד ה-RMSE הינו אחד המדדים השימושיים להערכת ביצועיו של מודל רגרסיה."
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "ההנחה שבשאלה שגויה; RMSE הוא אחד המדדים השימושיים והמקובלים להערכת ביצועי מודל רגרסיה.",
   "hasImage": false,
   "source": "practice",
@@ -5445,7 +5487,7 @@ window.QUESTIONS = [
    "ערך הגרדיאנט בנקודת אורתוגונליות הוא תמיד אפס"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "בנקודת קיצון (מינימום/מקסימום) הנגזרת/הגרדיאנט מתאפסת תמיד.",
   "hasImage": false,
   "source": "practice",
@@ -5489,7 +5531,7 @@ window.QUESTIONS = [
   "explanation": "w·x+b = 2·(-1) + 3·(-1) + 0 = -5 < 0, ולכן הנקודה מסווגת לקטגוריה -1.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q11",
   "topicLabel": "SVM"
@@ -5509,7 +5551,7 @@ window.QUESTIONS = [
   "explanation": "וקטורי התמיכה הם הדגימות שעבורן מכפיל לגראנז' λi>0; בטבלה רק לשתי הדגימות הראשונות λi=65.52>0 (לשאר λi=0), ולכן יש בדיוק 2 SV.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q12",
   "image": "images/exams/SAMP-2-Q12.png",
@@ -5526,7 +5568,7 @@ window.QUESTIONS = [
    "אי אפשר לדעת לפי הנתונים"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "dot-product = 0·1 + 2·(-1) + 3·(-1) = -5 < 0, ולכן הנקודה מסווגת שלילית (קטגוריה -1).",
   "hasImage": false,
   "source": "practice",
@@ -5546,7 +5588,7 @@ window.QUESTIONS = [
    "כדי להבטיח שמטריצת התכונות תהיה סימטרית וחיובית לחלוטין לצורך הרצת אלגוריתם רגרסיה לינארית"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הסולם הלוגריתמי משקף את ההנחה שהופעה חוזרת של מילה אינה מגדילה את חשיבותה באופן לינארי.",
   "hasImage": false,
   "source": "exam",
@@ -5566,7 +5608,7 @@ window.QUESTIONS = [
    "מפני שפונקציית הקוסינוס מבצעת שינוי לינארי של ערכי התכונות עצמן בתוך הווקטור לטווח קבוע של [0,1]."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "דמיון קוסינוס מודד את הזווית בין הווקטורים ולכן מנטרל את השפעת אורך המסמך, בעוד מרחק אוקלידי מושפע מאורכי המסמכים.",
   "hasImage": false,
   "source": "exam",
@@ -5658,46 +5700,6 @@ window.QUESTIONS = [
  {
   "examCode": "PRAC-N",
   "topic": "text",
-  "question": "מהו תהליך ה-Tokenization ומה תפקידו בשלבים הראשונים של NLP Pipeline?",
-  "options": [
-   "פירוק רצף טקסטואלי רציף (מחרוזת גולמית) ליחידות בדידות כגון מילים, תתי-מילים או סימני פיסוק",
-   "הצפנה מאובטחת של מסמכי המקור והחלפת מילים רגישות בסימונים דיגיטליים לשמירה על סודיות",
-   "חישוב המשקל הסמנטי של המסמך על ידי המרת כל מילה לערך המספרי המסוים לה במילון",
-   "בניית עץ גזירה תחבירי הממפה את הקשרים המבניים בין חלקי המשפט השונים ישירות מהטקסט הגולמי"
-  ],
-  "correctIndex": 0,
-  "official": true,
-  "explanation": "Tokenization הוא פירוק מחרוזת טקסט גולמית ליחידות בדידות (טוקנים) כגון מילים, תתי-מילים או סימני פיסוק, וזהו אחד השלבים הראשונים ב-NLP Pipeline.",
-  "hasImage": false,
-  "source": "practice",
-  "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
-  "year": null,
-  "id": "PRAC-N-Q1",
-  "topicLabel": "ניתוח טקסט (NLP)"
- },
- {
-  "examCode": "PRAC-N",
-  "topic": "text",
-  "question": "בבניית מסווג לקורפוס, התברר שהמילה 'אלגוריתם' מופיעה ב-64 מסמכים מתוך 512 מסמכים. במסמך א' המילה מופיעה 3 פעמים, ובמסמך ב' היא מופיעה 31 פעמים. אם נפעיל שקלול לוגריתמי על רכיב התדירות TF = log2(1 + count) (עבור count > 0), מה יהיה היחס בין משקולות ה-TF של המילה בין שני המסמכים?",
-  "options": [
-   "ה-TF של מסמך ב' יהיה גדול פי 8 מה-TF של מסמך א', מכיוון שה-IDF של המילה במסמך ב' גדל משמעותית",
-   "ה-TF של מסמך ב' יהיה גדול פי 32 מה-TF של מסמך א', שכן הריסון הלוגריתמי ממתן את השפעת החזרות הרבות",
-   "ה-TF של מסמך ב' יהיה גדול פי 3 מה-TF של מסמך א', שכן הריסון הלוגריתמי ממתן את השפעת החזרות הרבות",
-   "המשקולות בשני המסמכים יהיו זהות לחלוטין, מכיוון שהלוגריתם מאפס את ההבדלים בין התדירויות השונות בקורפוס"
-  ],
-  "correctIndex": 2,
-  "official": true,
-  "explanation": "TF של מסמך א' = log2(1+3) = 2 ו-TF של מסמך ב' = log2(1+31) = 5; הריסון הלוגריתמי ממתן את השפעת החזרות הרבות כך שהיחס קטן (כפי 3) ואינו פרופורציוני ליחס הספירות הגולמי (פי ~10).",
-  "hasImage": false,
-  "source": "practice",
-  "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
-  "year": null,
-  "id": "PRAC-N-Q2",
-  "topicLabel": "ניתוח טקסט (NLP)"
- },
- {
-  "examCode": "PRAC-N",
-  "topic": "text",
   "question": "במסגרת מדד המשקולות TF-IDF, מה מייצג הרכיב של ה-IDF עבור מילת מפתח מסוימת?",
   "options": [
    "ההסתברות המותנית למציאת מילת המפתח במסמך כלשהו, בהינתן שהיא מסווגת כמילת עצירה (Stop Word)",
@@ -5706,13 +5708,13 @@ window.QUESTIONS = [
    "אורך המסמך הממוצע בקורפוס מחולק במספר הפעמים שהמילה הופיעה במסמך הנוכחי"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "IDF מודד את כושר ההבחנה של המילה ומפחית את משקלן של מילים נפוצות המופיעות במסמכים רבים בקורפוס.",
   "hasImage": false,
   "source": "practice",
   "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
   "year": null,
-  "id": "PRAC-N-Q3",
+  "id": "PRAC-N-Q10",
   "topicLabel": "ניתוח טקסט (NLP)"
  },
  {
@@ -5726,13 +5728,13 @@ window.QUESTIONS = [
    "המשקל יהיה log2(10), מכיוון שמטריצת התכונות עוברת נרמול קוסינוס שמאלץ את המשקל לשקף את אורך המסמך בלבד"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "IDF = log2(100/100) = log2(1) = 0, ולכן TF-IDF = TF × 0 = 0; המילה מופיעה בכל המסמכים ואינה מספקת כושר הבחנה.",
   "hasImage": false,
   "source": "practice",
   "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
   "year": null,
-  "id": "PRAC-N-Q4",
+  "id": "PRAC-N-Q11",
   "topicLabel": "ניתוח טקסט (NLP)"
  },
  {
@@ -5746,13 +5748,13 @@ window.QUESTIONS = [
    "1.02, ערך אפסי המעיד כי הגרסה המיוחדת של פונקציית ה-IDF נועדה לבטל לחלוטין את חשיבותן של מילים נדירות ביותר בקורפוס"
   ],
   "correctIndex": 2,
-  "official": true,
+  "official": false,
   "explanation": "IDF = log2(8/1) + 1 = 3 + 1 = 4, TF מנורמל = 1/50 = 0.02, ולכן TF-IDF = 0.02 × 4 = 0.08 — ערך חיובי המבטא את המילה כמאפיין ייחודי למסמך.",
   "hasImage": false,
   "source": "practice",
   "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
   "year": null,
-  "id": "PRAC-N-Q5",
+  "id": "PRAC-N-Q12",
   "topicLabel": "ניתוח טקסט (NLP)"
  },
  {
@@ -5766,13 +5768,53 @@ window.QUESTIONS = [
    "מילים נפוצות בשפה אשר לרוב אינן נושאות מידע סמנטי ייחודי המסייע להבחנה בין נושאים"
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "Stop Words הן מילים נפוצות (כגון מילות קישור ויחס) שאינן נושאות מידע סמנטי ייחודי, ולכן לרוב מסוננות בשלב עיבוד מוקדם.",
   "hasImage": false,
   "source": "practice",
   "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
   "year": null,
-  "id": "PRAC-N-Q6",
+  "id": "PRAC-N-Q13",
+  "topicLabel": "ניתוח טקסט (NLP)"
+ },
+ {
+  "examCode": "PRAC-N",
+  "topic": "text",
+  "question": "מהו תהליך ה-Tokenization ומה תפקידו בשלבים הראשונים של NLP Pipeline?",
+  "options": [
+   "פירוק רצף טקסטואלי רציף (מחרוזת גולמית) ליחידות בדידות כגון מילים, תתי-מילים או סימני פיסוק",
+   "הצפנה מאובטחת של מסמכי המקור והחלפת מילים רגישות בסימונים דיגיטליים לשמירה על סודיות",
+   "חישוב המשקל הסמנטי של המסמך על ידי המרת כל מילה לערך המספרי המסוים לה במילון",
+   "בניית עץ גזירה תחבירי הממפה את הקשרים המבניים בין חלקי המשפט השונים ישירות מהטקסט הגולמי"
+  ],
+  "correctIndex": 0,
+  "official": false,
+  "explanation": "Tokenization הוא פירוק מחרוזת טקסט גולמית ליחידות בדידות (טוקנים) כגון מילים, תתי-מילים או סימני פיסוק, וזהו אחד השלבים הראשונים ב-NLP Pipeline.",
+  "hasImage": false,
+  "source": "practice",
+  "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
+  "year": null,
+  "id": "PRAC-N-Q8",
+  "topicLabel": "ניתוח טקסט (NLP)"
+ },
+ {
+  "examCode": "PRAC-N",
+  "topic": "text",
+  "question": "בבניית מסווג לקורפוס, התברר שהמילה 'אלגוריתם' מופיעה ב-64 מסמכים מתוך 512 מסמכים. במסמך א' המילה מופיעה 3 פעמים, ובמסמך ב' היא מופיעה 31 פעמים. אם נפעיל שקלול לוגריתמי על רכיב התדירות TF = log2(1 + count) (עבור count > 0), מה יהיה היחס בין משקולות ה-TF של המילה בין שני המסמכים?",
+  "options": [
+   "ה-TF של מסמך ב' יהיה גדול פי 8 מה-TF של מסמך א', מכיוון שה-IDF של המילה במסמך ב' גדל משמעותית",
+   "ה-TF של מסמך ב' יהיה גדול פי 32 מה-TF של מסמך א', שכן הריסון הלוגריתמי ממתן את השפעת החזרות הרבות",
+   "ה-TF של מסמך ב' יהיה גדול פי 3 מה-TF של מסמך א', שכן הריסון הלוגריתמי ממתן את השפעת החזרות הרבות",
+   "המשקולות בשני המסמכים יהיו זהות לחלוטין, מכיוון שהלוגריתם מאפס את ההבדלים בין התדירויות השונות בקורפוס"
+  ],
+  "correctIndex": 2,
+  "official": false,
+  "explanation": "TF של מסמך א' = log2(1+3) = 2 ו-TF של מסמך ב' = log2(1+31) = 5; הריסון הלוגריתמי ממתן את השפעת החזרות הרבות כך שהיחס קטן (כפי 3) ואינו פרופורציוני ליחס הספירות הגולמי (פי ~10).",
+  "hasImage": false,
+  "source": "practice",
+  "sourceLabel": "תרגול — ניתוח טקסט ועיבוד תמונה",
+  "year": null,
+  "id": "PRAC-N-Q9",
   "topicLabel": "ניתוח טקסט (NLP)"
  },
  {
@@ -5786,7 +5828,7 @@ window.QUESTIONS = [
    "חוסר יכולת לייצג מסמכים שאורכם הכולל עולה על גודל אוצר המילים המוגדר במערכת."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Bag of Words מתעלם מסדר המילים ומהמבנה התחבירי, ושומר רק על שכיחויות המילים.",
   "hasImage": false,
   "source": "practice",
@@ -5806,7 +5848,7 @@ window.QUESTIONS = [
    "0.02, ה-IDF גבוה יחסית המשקף מילה נדירה מאוד בקורפוס שיש לסנן אותה"
   ],
   "correctIndex": 1,
-  "official": true,
+  "official": false,
   "explanation": "IDF = log2(64/1) = 6, TF יחסי = 2/100 = 0.02, ולכן TF-IDF = 0.02 × 6 = 0.12.",
   "hasImage": false,
   "source": "practice",
@@ -5826,7 +5868,7 @@ window.QUESTIONS = [
    "על מנת להפוך את המסמכים בקורפוס למשפטים, כך שניתן יהיה למנות את כמות המשפטים בכל מסמך."
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "Count Vectorizer הופך קורפוס מסמכים למטריצת וקטורי מאפיינים המבוססת על ספירת מילים.",
   "hasImage": false,
   "source": "practice",
@@ -5846,7 +5888,7 @@ window.QUESTIONS = [
    "ככל שהעץ עמוק יותר כך הסיכוי ל-overfitting גדול יותר"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הטענות ב', ג' ו-ד' כולן נכונות לגבי ID3, ולכן אין ביניהן טענה שאינה נכונה — התשובה הנכונה היא שכל הטענות נכונות.",
   "hasImage": false,
   "source": "exam",
@@ -5866,7 +5908,7 @@ window.QUESTIONS = [
    "שאר התשובות שגויות"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "עבור max_features הגדול או שווה ל-10, ה-f1 על ה-train-set ממשיך לעלות לעבר 1.0 בעוד ה-f1 על ה-validation-set מתייצב ואף יורד — פער זה מעיד על התאמת יתר (overfitting).",
   "hasImage": false,
   "source": "exam",
@@ -5907,7 +5949,7 @@ window.QUESTIONS = [
    "אף תשובה אינה נכונה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "שגיאת התיקוף (כתום) מגיעה למינימום סביב עומק 7; עצים עמוקים יותר גורמים להתאמת יתר (השגיאה עולה) ורדודים יותר להתאמת חסר, ולכן עומק 7 מאזן בין השניים.",
   "hasImage": false,
   "source": "exam",
@@ -5915,6 +5957,26 @@ window.QUESTIONS = [
   "year": 2025,
   "id": "25S-A-Q10",
   "image": "images/exams/25S-A-Q10.png",
+  "topicLabel": "עצי החלטה"
+ },
+ {
+  "examCode": "25S-A",
+  "topic": "trees",
+  "question": "נתונה קבוצת אימון (training set) עם 100 דגימות, בהן המחלקה Y מתחלקת ל-50 דוגמאות ממחלקה A, ו-50 דוגמאות ממחלקה B. החלטתם להריץ אלגוריתם ID3 לבניית עצי החלטה, וכעת אתם מתלבטים בין 2 מאפיינים, X1 ו-X2, כאשר ל-2 המאפיינים ישנם 2 ערכים אפשריים: 0,1.\nלמאפיין X1 התקבלה אנטרופיה מותנית H(Y|X1)=0.7.\nלמאפיין X2, עבור X2=0, ישנם 40 דוגמאות ממחלקה A ו-10 דוגמאות ממחלקה B.\nלמאפיין X2, עבור X2=1, ישנם 10 דוגמאות ממחלקה A ו-40 דוגמאות ממחלקה B.\nמהו נוכל להגיד לגבי מאפיין X2 ומה משמעות הדבר?",
+  "options": [
+   "ה-Information Gain של המחלקה בהינתן המאפיין הינו כ-IG(Y|X2)=0.278, ומשמעות העניין שנבחר את מאפיין X1, כצומת הבא בעץ",
+   "ה-Information Gain של המחלקה בהינתן המאפיין הינו כ-IG(Y|X2)=0.4644, ומשמעות העניין שנבחר את מאפיין X2, כצומת הבא בעץ",
+   "האנטרופיה המותנית של המחלקה בהינתן המאפיין הינה כ-H(Y|X2)=0.361, ומשמעות העניין שנבחר את מאפיין X1, כצומת הבא בעץ",
+   "האנטרופיה המותנית של המחלקה בהינתן המאפיין הינו כ-H(Y|X2)=0.722, ומשמעות העניין שנבחר את מאפיין X2, כצומת הבא בעץ"
+  ],
+  "correctIndex": 0,
+  "official": false,
+  "explanation": "המחלקה מתחלקת 50/50 ולכן H(Y)=1. עבור X2=0 יש 40 דוגמאות A ו-10 דוגמאות B, כלומר H(0.8,0.2)=0.7219, ועבור X2=1 יש 10 דוגמאות A ו-40 דוגמאות B, כלומר גם 0.7219. מכאן H(Y|X2)=0.5*0.7219+0.5*0.7219=0.7219 ולכן IG(Y|X2)=1-0.7219=0.278. לעומת זאת IG(Y|X1)=1-0.7=0.3, וזה גדול יותר, ולכן ID3 יבחר דווקא את X1 כצומת הבא בעץ.",
+  "hasImage": false,
+  "source": "exam",
+  "sourceLabel": "2025 קיץ מועד א׳",
+  "year": 2025,
+  "id": "25S-A-Q2",
   "topicLabel": "עצי החלטה"
  },
  {
@@ -5928,7 +5990,7 @@ window.QUESTIONS = [
    "ככל שהעץ עמוק יותר כך הסיכוי ל-overfitting גדול יותר"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "הטענות ב', ג', ד' כולן נכונות לגבי id3, ולכן התשובה הנכונה היא שכל הטענות נכונות (אין טענה שאינה נכונה).",
   "hasImage": false,
   "source": "exam",
@@ -5948,7 +6010,7 @@ window.QUESTIONS = [
    "נניח ש-G מייצג את המחלקה ו-F הוא מאפיין, מכיוון שהאנטרופיה המותנית המתקבלת היא בערך H(G|F)=0.31, אם H(G|E)=0.4 נבחר את מאפיין E כמאפיין הבא בעץ החלטה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "מהטבלה מתקבל H(G|F) בערך 0.69. כאשר H(G|E)=0.8 גדול מ-H(G|F), מאפיין F מספק אנטרופיה מותנית נמוכה יותר (רווח מידע גבוה יותר), ולכן נבחר את F כמאפיין הבא בעץ.",
   "hasImage": false,
   "source": "exam",
@@ -5961,7 +6023,7 @@ window.QUESTIONS = [
  {
   "examCode": "24B-A",
   "topic": "trees",
-  "question": "נתונה בעיית למידה בה שלושה מאפיינים המסומנים כ-X1, X2, ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו. יש לבחור תשובה אחת בלבד (הנכונה ביותר):",
+  "question": "נתונה בעיית למידה בה שלושה מאפיינים המסומנים כ-X1, X2, ו-X3, עבור בעיית סיווג. לכל אחד מהמאפיינים, הערכים המוכלים ב-train set הינם היחידים האפשריים עבור מאפיינים אלו. X1= [1, -1, 1, -1, -1, -1, 1, 1, 1], X2= [0, 1, 1, 1, 0, 0, 0, 1, 0], X3= [2, 4, 4, 4, 2, 2, 2, 4, 2]. יש לבחור תשובה אחת בלבד (הנכונה ביותר):",
   "options": [
    "כל התשובות נכונות",
    "כנראה שזה יהיה רעיון טוב לבצע סילום על המאפיינים",
@@ -5969,7 +6031,7 @@ window.QUESTIONS = [
    "אם אלה הערכים של המאפיינים, ניתן להשתמש בהם לאימון מודל id3 לאימון עצי החלטה"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "במקרה זה כל ההיגדים בתשובות תקפים, ולכן התשובה הנכונה היא שכל התשובות נכונות.",
   "hasImage": false,
   "source": "exam",
@@ -6029,7 +6091,7 @@ window.QUESTIONS = [
    "המאפיינים לא רציפים ולכן לא ניתן להשתמש בהם עבור אלגוריתם id3 (לבנית עצי החלטה)"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "המאפיינים הבדידים ניתנים לשימוש גם ב-KNN וגם ב-ID3, ומספר קטן של מאפיינים אינו סיבה לוותר על feature selection; לכן כל שאר התשובות שגויות ו'אף תשובה אינה נכונה' היא הנכונה.",
   "hasImage": false,
   "source": "exam",
@@ -6375,7 +6437,7 @@ window.QUESTIONS = [
   "explanation": "mutual information גבוה בין מאפיין למחלקה מעיד שהמאפיין אינפורמטיבי, ולכן נעדיף לבחור בו כצומת פיצול בעץ החלטה.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q19",
   "topicLabel": "עצי החלטה"
@@ -6395,7 +6457,7 @@ window.QUESTIONS = [
   "explanation": "H = -0.7·log10(0.7) - 0.3·log10(0.3) ≈ 0.108 + 0.157 ≈ 0.26.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q22",
   "topicLabel": "עצי החלטה"
@@ -6415,7 +6477,7 @@ window.QUESTIONS = [
   "explanation": "עצי החלטה נוטים ל-overfitting (התאמת יתר), וזהו חיסרון מרכזי שלהם.",
   "hasImage": false,
   "source": "exam",
-  "sourceLabel": "מבחן לדוגמה (2)",
+  "sourceLabel": "מבחן לדוגמא עם פתרונות",
   "year": null,
   "id": "SAMP-2-Q5",
   "topicLabel": "עצי החלטה"
@@ -6431,7 +6493,7 @@ window.QUESTIONS = [
    "ניתן להסיק כי ערך הממוצע הלינארי של כל ארבעת ה-Cells בתמונה גדול מ-1, ולכן המודל יבחר תמיד בפיצול ימני"
   ],
   "correctIndex": 0,
-  "official": true,
+  "official": false,
   "explanation": "התנאי Bin 40 => 1 מציין שספירת התא של הערך 40 היא 1, כלומר קיים לפחות פיקסל אחד שערכו בדיוק 40 — אך אין בכך כדי ללמד על מיקומו (למשל שהפיקסל השמאלי-עליון הוא 40).",
   "hasImage": false,
   "source": "practice",
@@ -6451,7 +6513,7 @@ window.QUESTIONS = [
    "1, המשמעות היא שהמאפיין מועיל לסיווג המחלקה ולכן נרצה להשאירו."
   ],
   "correctIndex": 3,
-  "official": true,
+  "official": false,
   "explanation": "H(Class)=1 ו-H(Class|x2)=0, ולכן IG = 1-0 = 1; x2 מפריד באופן מושלם בין המחלקות ולכן מועיל לסיווג.",
   "hasImage": false,
   "source": "practice",
@@ -6471,7 +6533,7 @@ window.QUESTIONS = [
    "הערכים של כל התכונות הנותרות זהים."
   ],
   "correctIndex": 2,
-  "official": true,
+  "official": false,
   "explanation": "עלה נוצר בכל אחד מהמקרים: מחלקה אחידה בצומת, הגעה לעומק מרבי (pre-pruning), או כשכל התכונות הנותרות זהות; לכן כל התשובות נכונות.",
   "hasImage": false,
   "source": "practice",
