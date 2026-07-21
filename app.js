@@ -34,9 +34,15 @@ let P = loadProgress();
 const $ = s => document.querySelector(s);
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 function show(id){ document.querySelectorAll(".screen").forEach(s=>s.classList.add("hidden")); $("#"+id).classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); }
-function countFor(topic, opts){
-  return QS.filter(q => filterMatch(q, topic, opts)).length;
+/* practice/topic pools de-duplicate questions that recur across exams (policy A);
+   whole-exam mode keeps every question so a past test replays in full. */
+function dedupePool(arr){
+  const seen=new Set(), out=[];
+  for(const q of arr){ const k=q.dedupKey||q.id; if(seen.has(k)) continue; seen.add(k); out.push(q); }
+  return out;
 }
+function filteredPool(topic, opts){ return dedupePool(QS.filter(q => filterMatch(q, topic, opts))); }
+function countFor(topic, opts){ return filteredPool(topic, opts).length; }
 function filterMatch(q, topic, opts){
   if(topic!=="all" && q.topic!==topic) return false;
   if(opts.officialOnly && !q.official) return false;
@@ -100,7 +106,7 @@ function updatePoolInfo(){
   }
   const opts=selectedOpts();
   const n=countFor(S.topic,opts);
-  const off=QS.filter(q=>filterMatch(q,S.topic,opts)&&q.official).length;
+  const off=filteredPool(S.topic,opts).filter(q=>q.official).length;
   $("#poolInfo").textContent = `נבחרו ${n} שאלות (${off} עם מחוון רשמי, ${n-off} נגזרו).`;
   $("#startBtn").disabled = n===0;
 }
@@ -134,7 +140,7 @@ function startSession(){
     // whole-test mode: all questions of one exam, original order (options still shuffled per-question)
     pool = examQuestions(pickedExam).slice().sort((a,b)=>qNum(a)-qNum(b));
   } else {
-    pool = shuffle(QS.filter(q=>filterMatch(q,S.topic,opts)));
+    pool = shuffle(filteredPool(S.topic,opts));
   }
   if(S.mode==="exam"){
     if(pickedExam){
@@ -155,7 +161,10 @@ function startSession(){
 }
 
 function makeView(q){
-  const order = shuffle(q.options.map((_,i)=>i));   // Fisher–Yates: defeats "always-first"
+  // Fisher–Yates: defeats "always-first". Skipped when an option cites its siblings by
+  // printed letter ("תשובות א ו-ג נכונות") — shuffling would make that reference nonsense.
+  const idx = q.options.map((_,i)=>i);
+  const order = q.lockOrder ? idx : shuffle(idx);
   return { q, order, correctDisplay: order.indexOf(q.correctIndex), answered:false, chosen:null };
 }
 

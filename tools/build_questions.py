@@ -87,6 +87,21 @@ def norm(s):
     return re.sub(r"\s+", " ", str(s)).strip().lower()
 
 
+def dedup_key(q):
+    """Stable identity for 'the same question', independent of which exam it sits in."""
+    return norm(q["question"]) + " || " + "|".join(sorted(norm(o) for o in q["options"]))
+
+
+# Options like "תשובות א ו-ג נכונות" point at their SIBLINGS by printed letter. Shuffling
+# such a question makes the reference land on whatever happens to fall in those slots, so
+# the option becomes meaningless. Those questions keep the source's printed order instead.
+LETTER_REF = re.compile(r"(תשובות|תשובה|סעיפים|סעיף)\s+[אבגדה]['׳]?\s*[,ו]")
+
+
+def locks_order(options):
+    return any(LETTER_REF.search(str(o)) for o in options)
+
+
 def find_image(code, num):
     for ext in ("png", "jpg", "jpeg", "PNG", "JPG", "JPEG"):
         if (OUT / "images" / "exams" / f"{code}-Q{num}.{ext}").exists():
@@ -155,20 +170,25 @@ def main():
             q["hasImage"] = False
         kept.append(q)
 
-    # aggressive content dedup: keep the most-canonical copy
+    # Cross-exam duplicates are KEPT, not merged (policy A, matching the SE and DB builds).
+    # Whole-exam mode has to replay a past test in full, so dropping a repeated question
+    # here silently truncates whichever exam lost the coin-flip — that is how SAMP-3 came
+    # to show 3 questions out of 21. Each question carries a stable dedupKey instead, and
+    # the app de-duplicates only the topic/random practice pools at runtime.
     kept.sort(key=lambda q: priority(q["examCode"]))
-    seen = {}
-    final = []
+    final = kept
+    seen = set()
     dup = 0
-    for q in kept:
-        key = norm(q["question"]) + " || " + "|".join(sorted(norm(o) for o in q["options"]))
+    for q in final:
+        key = dedup_key(q)
         if key in seen:
             dup += 1
-            continue
-        seen[key] = q["id"]
-        final.append(q)
+        seen.add(key)
 
     for q in final:
+        q["dedupKey"] = dedup_key(q)
+        if locks_order(q["options"]):
+            q["lockOrder"] = True
         q["topicLabel"] = TOPIC_LABEL.get(q["topic"], q["topic"])
         q.pop("num", None)
     final.sort(key=lambda q: (q["topic"], priority(q["examCode"]), q["id"]))
