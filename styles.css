@@ -24,6 +24,7 @@
   --shadow:0 14px 44px rgba(0,0,0,.45);
   --shadow-sm:0 4px 16px rgba(0,0,0,.28);
   --ring:0 0 0 3px rgba(251,113,133,.30);
+  --scroll-hint:rgba(0,0,0,.55);
 
   font-family:"Segoe UI",system-ui,-apple-system,"Noto Sans Hebrew",Arial,sans-serif;
   color-scheme:dark;
@@ -44,6 +45,7 @@
   --shadow:0 14px 40px rgba(40,60,120,.16);
   --shadow-sm:0 4px 16px rgba(40,60,120,.10);
   --ring:0 0 0 3px rgba(225,29,72,.25);
+  --scroll-hint:rgba(40,60,120,.30);
   color-scheme:light;
 }
 @media (prefers-color-scheme: light){
@@ -61,6 +63,7 @@
     --shadow:0 14px 40px rgba(40,60,120,.16);
     --shadow-sm:0 4px 16px rgba(40,60,120,.10);
     --ring:0 0 0 3px rgba(225,29,72,.25);
+    --scroll-hint:rgba(40,60,120,.30);
     color-scheme:light;
   }
 }
@@ -382,6 +385,10 @@ main{max-width:840px;margin:1.6rem auto;padding:0 1rem}
 }
 .learn-toc button:hover{background:var(--card2);color:var(--ink)}
 .learn-toc button.active{background:color-mix(in srgb,var(--brand) 16%,var(--card2));color:var(--ink);font-weight:700}
+/* a companion chapter (ID3 theory under Decision Trees) reads as a child of it */
+.learn-toc button.sub{font-size:.8rem;padding-inline-start:1.5rem;position:relative}
+.learn-toc button.sub::before{content:"";position:absolute;inset-inline-start:.72rem;top:50%;
+  width:.42rem;height:1px;background:var(--line-strong)}
 
 /* reading pane */
 .learn-content{padding:1.6rem 1.8rem;min-height:60vh;animation:rise .3s ease both;
@@ -408,6 +415,106 @@ main{max-width:840px;margin:1.6rem auto;padding:0 1rem}
 .learn-content thead th{background:var(--card2);color:var(--ink);font-weight:800}
 .learn-content tbody tr:nth-child(even){background:var(--card2)}
 
+/* ---- exam briefs (docs/briefs -> learn.js) ---- */
+
+/* chapter title sits beside its "drill this topic" entry point */
+.learn-head{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;
+  padding-bottom:.7rem;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.learn-head h2.learn-h{margin:0;padding:0;border:none;flex:1;min-width:0}
+.learn-drill{white-space:nowrap;font-size:.86rem;padding:.5rem .9rem;flex:none}
+.learn-drill .n{display:inline-block;margin-inline-start:.35rem;padding:.05em .45em;border-radius:20px;
+  background:rgba(255,255,255,.22);font-size:.82em;font-weight:800}
+
+/* the "39 שאלות · תווית באפליקציה: KNN" strip under the title */
+.brief-meta{font-size:.84rem;color:var(--muted);line-height:1.75;
+  background:var(--card2);border:1px solid var(--line);border-radius:12px;
+  padding:.7rem .9rem;margin:0 0 1.3rem !important}
+.brief-meta strong{color:var(--muted);font-weight:700}
+
+/* section headings generated from the briefs' own "## " / "### " structure */
+.learn-content h2:not(.learn-h){font-size:1.22rem;font-weight:800;color:var(--ink);
+  margin:2.1rem 0 .7rem;padding-inline-start:.7rem;border-inline-start:4px solid var(--brand);line-height:1.4}
+.learn-content h2:not(.learn-h):first-child{margin-top:.4rem}
+
+/* cross-reference to another brief, and a pointer to a doc we don't ship */
+.xref{color:var(--brand);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.xref:hover{color:var(--brand2)}
+.xref-dead{color:var(--muted);opacity:.72}
+
+/* a question id: click to peek at the real question */
+.qref{
+  font-family:"Consolas",ui-monospace,monospace;font-size:.84em;direction:ltr;unicode-bidi:isolate;
+  background:color-mix(in srgb,var(--brand) 13%,transparent);color:var(--brand);
+  border:1px solid color-mix(in srgb,var(--brand) 34%,transparent);
+  border-radius:6px;padding:.08em .45em;margin-inline:.1em;cursor:pointer;font-weight:700;
+  transition:background .12s,color .12s,border-color .12s
+}
+.qref:hover,.qref:focus-visible{background:var(--brand);color:var(--brand-ink);border-color:transparent}
+
+/* tables scroll inside their own box so a wide one never stretches the page.
+   --cols comes from the builder, so narrow tables never scroll needlessly. */
+.tbl-wrap{overflow-x:auto;margin:1.1rem 0;border:1px solid var(--line);border-radius:10px;
+  -webkit-overflow-scrolling:touch}
+/* width:100% already fills the box; the min-width only bites when a table has enough
+   columns that wrapping would crush them (~5+), which is when scrolling beats wrapping. */
+.learn-content .tbl-wrap table{margin:0;border:none;border-radius:0;
+  min-width:calc(var(--cols,3) * 5.5rem)}
+/* .learn-content sets overflow-wrap:anywhere for long LTR tokens in prose; inside a
+   table that lets the browser crush a column to one character and split Hebrew words
+   mid-word ("שאלות" -> "שאלו/ת"). Cells break only between words; if the row still
+   doesn't fit, .tbl-wrap scrolls instead. */
+.learn-content .tbl-wrap th,.learn-content .tbl-wrap td{
+  border-inline:none;overflow-wrap:break-word;word-break:normal}
+.learn-content .tbl-wrap th{white-space:nowrap}
+.learn-content .tbl-wrap tr>*:first-child{border-inline-start:none}
+.learn-content .tbl-wrap tr>*:last-child{border-inline-end:none}
+
+/* callouts — the briefs' emoji vocabulary, one colour per meaning */
+.learn-content blockquote.cal{
+  margin:1.1rem 0;padding:.75rem 1rem;border-radius:12px;
+  background:var(--card2);border:1px solid var(--line);
+  border-inline-start:4px solid var(--muted)
+}
+.learn-content blockquote.cal>*:first-child{margin-top:0}
+.learn-content blockquote.cal>*:last-child{margin-bottom:0}
+.cal-trap{border-inline-start-color:color-mix(in srgb,var(--warn) 60%,var(--bad)) !important;
+  background:color-mix(in srgb,var(--warn) 11%,transparent) !important}
+.cal-alarm{border-inline-start-color:var(--bad) !important;
+  background:var(--bad-bg) !important}
+.cal-warn{border-inline-start-color:var(--warn) !important;
+  background:color-mix(in srgb,var(--warn) 8%,transparent) !important}
+.cal-key{border-inline-start-color:var(--brand2) !important;
+  background:color-mix(in srgb,var(--brand2) 12%,transparent) !important}
+.cal-tip{border-inline-start-color:var(--brand) !important;
+  background:color-mix(in srgb,var(--brand) 9%,transparent) !important}
+.cal-yes{border-inline-start-color:var(--ok) !important;
+  background:var(--ok-bg) !important}
+.learn-content blockquote.cal h3{margin-top:.2rem}
+
+/* checklists ("צ׳קליסט לפני המבחן") */
+.learn-content li.task{list-style:none;display:flex;align-items:flex-start;gap:.55rem;margin-inline-start:-1rem}
+.learn-content li.task .box{flex:none;width:1.05em;height:1.05em;margin-top:.28em;border-radius:5px;
+  border:2px solid var(--line-strong);background:var(--card2)}
+.learn-content li.task.done .box{background:var(--ok);border-color:var(--ok);position:relative}
+.learn-content li.task.done .box::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;
+  color:var(--brand-ink);font-size:.8em;font-weight:900}
+
+/* MathML, rendered to static markup at build time */
+.math-inline{direction:ltr;unicode-bidi:isolate;display:inline-block;vertical-align:baseline}
+.math-block{display:block;direction:ltr;overflow-x:auto;overflow-y:hidden;
+  margin:1.1rem 0;padding:.85rem .6rem;text-align:center;
+  background:var(--card2);border:1px solid var(--line);border-radius:12px;
+  -webkit-overflow-scrolling:touch}
+.math-block math{font-size:1.16em}
+.math-inline math{font-size:1.04em}
+
+/* edge shadow marking a box whose content runs past its sides. inset shadows are
+   painted against the padding box, so they stay put while the content scrolls. */
+.math-block.scrollable,.tbl-wrap.scrollable{
+  box-shadow:inset 15px 0 11px -12px var(--scroll-hint),
+             inset -15px 0 11px -12px var(--scroll-hint)}
+.learn-content .math-fail{color:var(--bad)}
+
 /* figures */
 .learn-figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem;margin-top:1.4rem}
 .learn-fig{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card2);
@@ -427,6 +534,36 @@ main{max-width:840px;margin:1.6rem auto;padding:0 1rem}
   border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.1rem;cursor:pointer}
 .lightbox-close:hover{border-color:var(--brand)}
 
+/* ---- question peek (opened from a `24S-C-Q7` chip inside a brief) ---- */
+.qpeek{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:1.5rem;
+  background:rgba(4,6,16,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  animation:rise .18s ease both}
+.qpeek-panel{width:min(680px,100%);max-height:88vh;display:flex;flex-direction:column;
+  background:var(--card-solid);border:1px solid var(--line-strong);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden}
+.qpeek-head{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;
+  padding:.9rem 1.1rem;border-bottom:1px solid var(--line);background:var(--card2)}
+.chip.mono{font-family:"Consolas",ui-monospace,monospace;direction:ltr;unicode-bidi:isolate;font-weight:700}
+.qpeek-close{margin-inline-start:auto;width:2.1rem;height:2.1rem;border-radius:50%;flex:none;
+  border:1px solid var(--line);background:transparent;color:var(--ink);font-size:.95rem;cursor:pointer}
+.qpeek-close:hover{border-color:var(--brand);color:var(--brand)}
+.qpeek-body{padding:1.1rem;overflow:auto;flex:1}
+.qpeek-q{font-size:1.02rem;font-weight:700;line-height:1.65;color:var(--ink);margin-bottom:.9rem}
+.qpeek-opts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.qpeek-opts li{display:flex;gap:.6rem;align-items:flex-start;line-height:1.55;
+  padding:.6rem .75rem;border:1px solid var(--line);border-radius:10px;background:var(--card2);font-size:.92rem}
+.qpeek-opts li.right{border-color:transparent;background:var(--ok-bg);
+  box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--ok) 55%,transparent)}
+.qpeek-opts li.right .key{background:var(--ok);color:var(--brand-ink)}
+.qpeek-opts .key{flex:none;width:1.5rem;height:1.5rem;border-radius:7px;display:grid;place-items:center;
+  background:var(--card-solid);border:1px solid var(--line);font-size:.78rem;font-weight:800}
+.qpeek-opts .txt{min-width:0;overflow-wrap:anywhere}
+.qpeek-exp{margin-top:.95rem;padding:.75rem .9rem;border-radius:10px;font-size:.9rem;line-height:1.65;
+  background:var(--card2);border:1px solid var(--line);color:var(--ink)}
+.qpeek-foot{padding:.8rem 1.1rem;border-top:1px solid var(--line);background:var(--card2);
+  display:flex;justify-content:flex-end}
+.qpeek .q-img{max-width:100%;border-radius:10px}
+
 /* ---------------- responsive ---------------- */
 @media(max-width:860px){
   .learn-entry{padding:.45rem .7rem}
@@ -442,6 +579,9 @@ main{max-width:840px;margin:1.6rem auto;padding:0 1rem}
   .learn-toc button{font-size:.92rem;padding:.6rem .8rem}
   /* no overlay drawer on mobile */
   .learn-backdrop{display:none !important}
+  /* title above, full-width drill button below it */
+  .learn-head{gap:.7rem}
+  .learn-drill{width:100%;justify-content:center}
 }
 @media(max-width:560px){
   /* two rows: title on top, [stats + 📖 + 🌙] beneath */
@@ -466,4 +606,20 @@ main{max-width:840px;margin:1.6rem auto;padding:0 1rem}
   .learn-content{padding:1.2rem 1.1rem}
   .learn-content h2.learn-h{font-size:1.3rem}
   .learn-figs{grid-template-columns:1fr}
+  .learn-content h2:not(.learn-h){font-size:1.1rem;margin:1.7rem 0 .6rem}
+  .learn-content h3{font-size:1rem}
+  .learn-content blockquote.cal{padding:.65rem .8rem;margin:.9rem 0}
+  .brief-meta{font-size:.79rem;padding:.6rem .75rem}
+  .math-block{padding:.7rem .45rem;margin:.9rem 0}
+  .math-block math{font-size:1.05em}
+  .tbl-wrap{margin:.9rem 0}
+  .learn-content table{font-size:.8rem}
+  .learn-content th,.learn-content td{padding:.42rem .55rem}
+  /* peek becomes a bottom sheet: reachable by thumb, full width */
+  .qpeek{padding:0;place-items:end stretch}
+  .qpeek-panel{width:100%;max-height:92vh;border-radius:var(--radius) var(--radius) 0 0;
+    border-inline:none;border-bottom:none;animation:sheet .22s ease both}
+  .qpeek-head,.qpeek-body,.qpeek-foot{padding-inline:.9rem}
+  .qpeek-foot .btn{width:100%}
 }
+@keyframes sheet{from{transform:translateY(14%);opacity:.6}to{transform:none;opacity:1}}

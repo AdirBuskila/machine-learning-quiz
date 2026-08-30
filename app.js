@@ -447,17 +447,24 @@ function bindGlobal(){
   let idx = 0, built = false;
 
   function buildToc(){
-    toc.innerHTML = data.map((s,i)=>`<button data-i="${i}">${escapeHtml(s.title)}</button>`).join("");
+    toc.innerHTML = data.map((s,i)=>
+      `<button data-i="${i}"${s.sub?' class="sub"':''}>${escapeHtml(s.title)}</button>`).join("");
     toc.querySelectorAll("button").forEach(b=> b.onclick=()=>{ go(+b.dataset.i); closeDrawer(); });
     built = true;
   }
   function go(i){
     idx = Math.max(0, Math.min(data.length-1, i));
     const s = data[idx];
-    content.innerHTML = `<h2 class="learn-h">${escapeHtml(s.title)}</h2>` + s.html;
+    // each brief is written to be read then drilled, so surface the drill entry point
+    const n = s.topic ? countFor(s.topic, {officialOnly:false, mistakesOnly:false}) : 0;
+    const drill = n ? `<button class="btn primary learn-drill" data-topic="${s.topic}">תרגל נושא זה ▶ <span class="n">${n}</span></button>` : "";
+    content.innerHTML =
+      `<div class="learn-head"><h2 class="learn-h">${escapeHtml(s.title)}</h2>${drill}</div>` + s.html;
     toc.querySelectorAll("button").forEach((b,j)=> b.classList.toggle("active", j===idx));
     const active = toc.querySelector("button.active");
     if(active) active.scrollIntoView({block:"nearest"});
+    // a clipped formula or table reads as broken unless it says it scrolls
+    markScrollable();
     fill.style.width = ((idx+1)/data.length*100) + "%";
     pos.textContent = `${idx+1} / ${data.length}`;
     prevB.disabled = idx===0;
@@ -465,6 +472,19 @@ function bindGlobal(){
     window.scrollTo({top:0, behavior:"smooth"});
     content.focus({preventScroll:true});
   }
+  /* Wide tables and display formulas scroll inside their own box. Flag the ones that
+     actually overflow so CSS can show an edge shadow — recomputed on resize because
+     rotating a phone changes which ones overflow. */
+  function markScrollable(){
+    content.querySelectorAll(".math-block,.tbl-wrap").forEach(el=>
+      el.classList.toggle("scrollable", el.scrollWidth > el.clientWidth + 1));
+  }
+  let rzT;
+  window.addEventListener("resize", ()=>{
+    clearTimeout(rzT);
+    rzT = setTimeout(()=>{ if(!screen.classList.contains("hidden")) markScrollable(); }, 150);
+  });
+
   function openLearn(){ if(!built) buildToc(); show("screen-learn"); go(idx); }
   function setDrawer(open){
     toc.classList.toggle("open", open);
@@ -480,12 +500,55 @@ function bindGlobal(){
   toggle.onclick = ()=> setDrawer(!toc.classList.contains("open"));
   backdrop.onclick = closeDrawer;
 
-  // lightbox: click a figure image to zoom
+  /* ----- question peek: click a `24S-C-Q7` reference inside a brief ----- */
+  const peek     = $("#qpeek");
+  const peekBody = $("#qpeekBody");
+  const peekDrill= $("#qpeekDrill");
+  let peekTopic  = null;
+
+  function openPeek(id){
+    const q = QS.find(x=>x.id===id);
+    if(!q) return;
+    $("#qpeekId").textContent     = q.id;
+    $("#qpeekSource").textContent = q.sourceLabel || (q.source==="exam"?"מבחן":"תרגול");
+    const badge = $("#qpeekBadge");
+    badge.textContent = q.official ? "מחוון רשמי" : "תשובה לא רשמית";
+    badge.className   = "chip " + (q.official ? "official" : "unofficial");
+    // source order with the answer marked — the brief is discussing this exact
+    // question, so shuffling here would only make it harder to follow.
+    peekBody.innerHTML =
+      `<div class="qpeek-q">${escapeHtml(q.question)}</div>` +
+      extrasHtml(q) +
+      `<ol class="qpeek-opts">` + q.options.map((o,i)=>
+        `<li class="${i===q.correctIndex?"right":""}"><span class="key">${HE_KEYS[i]||i+1}</span>`+
+        `<span class="txt">${optionHtml(o)}</span></li>`).join("") + `</ol>` +
+      (q.explanation ? `<div class="qpeek-exp"><strong>הסבר:</strong> ${escapeHtml(q.explanation)}</div>` : "");
+    peekTopic = q.topic;
+    peekDrill.classList.toggle("hidden", !countFor(q.topic,{officialOnly:false,mistakesOnly:false}));
+    peek.classList.remove("hidden");
+    $("#qpeekClose").focus({preventScroll:true});
+  }
+  function closePeek(){ peek.classList.add("hidden"); peekBody.innerHTML = ""; peekTopic = null; }
+  const peekOpen = ()=> !peek.classList.contains("hidden");
+
+  peek.addEventListener("click", e=>{ if(e.target===peek) closePeek(); });
+  $("#qpeekClose").onclick = closePeek;
+  peekDrill.onclick = ()=>{ const t=peekTopic; closePeek(); closeDrawer(); startTopicPractice(t); };
+
   content.addEventListener("click", e=>{
+    // lightbox: click a figure image to zoom
     const img = e.target.closest(".learn-fig img");
-    if(!img) return;
-    lbImg.src = img.src; lbImg.alt = img.alt || "";
-    lb.classList.remove("hidden");
+    if(img){ lbImg.src = img.src; lbImg.alt = img.alt || ""; lb.classList.remove("hidden"); return; }
+    const qref = e.target.closest(".qref");
+    if(qref){ openPeek(qref.dataset.q); return; }
+    const xref = e.target.closest(".xref");
+    if(xref){
+      const j = data.findIndex(c=>c.id===xref.dataset.chapter);
+      if(j>=0) go(j);
+      return;
+    }
+    const drill = e.target.closest(".learn-drill");
+    if(drill){ closeDrawer(); startTopicPractice(drill.dataset.topic); }
   });
   function closeLb(){ lb.classList.add("hidden"); lbImg.src = ""; }
   lb.addEventListener("click", e=>{ if(e.target===lb) closeLb(); });
@@ -493,6 +556,8 @@ function bindGlobal(){
 
   document.addEventListener("keydown", e=>{
     if(!lb.classList.contains("hidden")){ if(e.key==="Escape") closeLb(); return; }
+    // the peek sits above the brief: Escape closes it, and chapter nav stays put
+    if(peekOpen()){ if(e.key==="Escape") closePeek(); return; }
     if(screen.classList.contains("hidden")) return;
     if(e.key==="ArrowLeft") go(idx+1);
     else if(e.key==="ArrowRight") go(idx-1);
@@ -501,16 +566,25 @@ function bindGlobal(){
 })();
 
 /* ---------- deep link ---------- */
-/* A guide page can link to index.html?practice=<topicKey> to jump straight
-   into a free-practice session of that whole topic (e.g. nlp / cleaning / acquisition). */
+/* Jump straight into a free-practice session of one whole topic. Used by
+   index.html?practice=<topicKey> and by the "drill this topic" buttons in the
+   learn section. */
+function startTopicPractice(t){
+  if(!t || !TOPICS.some(([k])=>k===t)) return false;
+  if(countFor(t, {officialOnly:false, mistakesOnly:false})===0) return false;
+  S.mode="practice"; S.topic=t;
+  const r=document.querySelector('input[name=mode][value="practice"]'); if(r) r.checked=true;
+  const off=$("#officialOnly"), mis=$("#mistakesOnly");
+  if(off) off.checked=false;
+  if(mis) mis.checked=false;
+  renderTopicGrid();
+  startSession();
+  return true;
+}
 function autoStartFromURL(){
   let t;
   try{ t = new URLSearchParams(location.search).get("practice"); }catch(e){ return; }
-  if(!t || !TOPICS.some(([k])=>k===t)) return;
-  if(countFor(t, {officialOnly:false, mistakesOnly:false})===0) return;
-  S.mode="practice"; S.topic=t;
-  const r=document.querySelector('input[name=mode][value="practice"]'); if(r) r.checked=true;
-  startSession();
+  startTopicPractice(t);
 }
 
 /* ---------- boot ---------- */

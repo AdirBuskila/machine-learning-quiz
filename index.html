@@ -144,6 +144,22 @@
   <img id="lightboxImg" src="" alt="">
 </div>
 
+<!-- peek at a single question, opened by clicking a question id inside a brief -->
+<div id="qpeek" class="qpeek hidden" role="dialog" aria-modal="true" aria-label="תצוגת שאלה מהמאגר">
+  <div class="qpeek-panel" role="document">
+    <div class="qpeek-head">
+      <span id="qpeekId" class="chip mono"></span>
+      <span id="qpeekSource" class="chip soft"></span>
+      <span id="qpeekBadge" class="chip"></span>
+      <button id="qpeekClose" class="qpeek-close" type="button" aria-label="סגירה">✕</button>
+    </div>
+    <div id="qpeekBody" class="qpeek-body"></div>
+    <div class="qpeek-foot">
+      <button id="qpeekDrill" class="btn primary" type="button">תרגל את הנושא ▶</button>
+    </div>
+  </div>
+</div>
+
 <footer class="appfoot">
   <span id="datasetInfo"></span> ·
   <button id="resetProgress" class="linkbtn">איפוס התקדמות</button>
