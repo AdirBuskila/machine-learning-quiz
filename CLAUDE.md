@@ -115,7 +115,7 @@ of that topic; `verify_dom.js` fails if a chapter names a topic no question uses
   `render_math.js` with `output:"mathml"`, so the site ships no math library, no CSS and no
   web fonts and still works from `file://`. Every `<math>` gets `dir="ltr"` — the page is
   `dir="rtl"` and unmarked math renders scrambled. `verify_dom.js` asserts both.
-- **Every question id cited in a brief must resolve.** The briefs reference all 363 ids in
+- **Every question id cited in a brief must resolve.** The briefs reference 363 ids in
   backticks; the builder turns `<code>23S-A-Q3</code>` into a `.qref` button that peeks at the
   real question, and `verify_dom.js` fails on a dangling one (it would open an empty panel).
 
@@ -144,7 +144,7 @@ so the RTL page doesn't reorder code/output answers.
 
 ## Stale artifacts to be aware of
 
-- `docs/ASK_ADIR.md` says **322 questions**; the current bank is **363**
+- `docs/ASK_ADIR.md` says **322 questions**; the current bank is **383**
   (`tools/build_report.md` is regenerated and accurate).
 - `docs/build_plan.md` describes the original design and states form-0 ⇒ `official=true`;
   the shipped rule is narrower (solutions file only). Prefer the invariants above.

@@ -1,22 +1,22 @@
 # Build report — ML question bank
 
-- Raw items read: **363** from 17 files
+- Raw items read: **383** from 18 files
 - Excluded: **0**  ({})
-- Duplicates merged (content): **23**
-- **Final questions: 363**
+- Duplicates merged (content): **27**
+- **Final questions: 383**
 
 ## By topic
 
-- הערכת מודל (`evaluation`): 72
-- רגרסיה ו-Gradient Descent (`regression`): 49
-- מבוא ומושגי יסוד (`intro`): 43
-- KNN (`knn`): 39
-- עצי החלטה (`trees`): 39
+- הערכת מודל (`evaluation`): 77
+- רגרסיה ו-Gradient Descent (`regression`): 53
+- מבוא ומושגי יסוד (`intro`): 46
+- KNN (`knn`): 42
+- עצי החלטה (`trees`): 40
 - רשתות נוירונים (`neural_nets`): 30
-- נאיב בייס (`naive_bayes`): 25
+- נאיב בייס (`naive_bayes`): 27
 - אשכול (K-Means / היררכי) (`clustering`): 22
-- ניתוח טקסט (NLP) (`text`): 16
-- עיבוד תמונה (`image`): 13
+- ניתוח טקסט (NLP) (`text`): 17
+- עיבוד תמונה (`image`): 14
 - SVM (`svm`): 6
 - MLflow / Flow (`flow`): 5
 - למידת אנסמבל (`ensemble`): 4
@@ -24,6 +24,7 @@
 ## By exam
 
 - 2026 סמסטר ב׳ מועד א׳ (`26B-A`): 20
+- 2026 קיץ מועד א׳ (`26S-A`): 20
 - 2025 סמסטר ב׳ מועד א׳ (`25B-A`): 20
 - 2025 קיץ מועד א׳ (`25S-A`): 20
 - 2024 סמסטר ב׳ מועד א׳ (`24B-A`): 20
@@ -42,5 +43,5 @@
 - תרגול — שאלות לדוגמה (`PRAC-X`): 38
 
 ## By origin
-- exam: 312 · practice: 51
+- exam: 332 · practice: 51
 
