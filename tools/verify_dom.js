@@ -75,6 +75,25 @@ assert(opts.length >= 2, `options rendered: ${opts.length}`);
 // answer the first option, expect feedback to appear
 opts[0].click();
 assert(!$("#feedback").classList.contains("hidden"), "feedback shown after answering");
+// practice history: "back" replays the answered question as it was, "next" returns to where you were
+{
+  const qq = s => [...window.document.querySelectorAll(s)];
+  const snap = () => $("#questionText").textContent + "|" + qq("#optionsList .opt").map(b => b.dataset.oid || b.textContent).join("|");
+  const first = snap(), firstVerdict = $("#feedback .verdict").textContent;
+  assert(!$("#prevBtn").classList.contains("hidden") && $("#prevBtn").disabled, "practice: back button visible but disabled on the first question");
+  $("#nextBtn").click();
+  const second = snap();
+  assert(second !== first && $("#feedback").classList.contains("hidden"), "practice: next shows a fresh, unanswered question");
+  assert(!$("#prevBtn").disabled, "practice: back button enabled after moving on");
+  $("#prevBtn").click();
+  assert(snap() === first, "practice: back shows the previous question with the same option order");
+  assert(!$("#feedback").classList.contains("hidden") && $("#feedback .verdict").textContent === firstVerdict, "practice: previous question is shown as answered, with its feedback");
+  assert(qq("#optionsList .opt").every(b => b.disabled) && !$("#nextBtn").classList.contains("hidden"), "practice: previous question is locked and next is available");
+  $("#nextBtn").click();
+  assert(snap() === second, "practice: next returns to the question you were on, same option order");
+  window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+  assert(snap() === first, "practice: ArrowRight goes back too");
+}
 
 // ---- learn section: open it, render a brief, peek at a cited question ----
 $("#quitBtn").click();                       // leave the practice session
