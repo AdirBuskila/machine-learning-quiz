@@ -95,7 +95,8 @@ def dedup_key(q):
 # Options like "תשובות א ו-ג נכונות" point at their SIBLINGS by printed letter. Shuffling
 # such a question makes the reference land on whatever happens to fall in those slots, so
 # the option becomes meaningless. Those questions keep the source's printed order instead.
-LETTER_REF = re.compile(r"(תשובות|תשובה|סעיפים|סעיף)\s+[אבגדה]['׳]?\s*[,ו]")
+# "תשובות א ו-ג נכונות" and "גם א' וגם ב'" both point at sibling options by printed letter
+LETTER_REF = re.compile(r"(תשובות|תשובה|סעיפים|סעיף)\s+[אבגדה]['׳]?\s*[,ו]|גם\s+[אבגדה]['׳]\s+וגם\s+[אבגדה]['׳]")
 
 
 def locks_order(options):

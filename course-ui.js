@@ -62,7 +62,8 @@
      they open and close inside it; text inside code / formulas / existing isolates is left alone. */
   const INLINE = /^<\/?(b|strong|i|em|u|sub|sup|code)\b[^>]*>$/i;
   const SKIP = /^<(code|bdi|pre)\b|class="[^"]*\b(lesson-formula|qref)\b|\bdir="ltr"/i;
-  const START = /[A-Za-z0-9(\[|√‖Σ∑−]/, END = /[A-Za-z0-9)\]|²³‖%∞'"]/;
+  const START = /[A-Za-z0-9(\[|√‖Σ∑−ŷȳα-ωΔΣθ]/, END = /[A-Za-z0-9)\]|²³‖%∞'"₀-₉ᵢⱼₙₖŷȳ\u0304α-ω]/;
+  const isTag = p => p[0] === "<", chr = p => (isTag(p) || p[0] === "&" && p.length > 1) ? "" : p;
   function isolate(html){
     const toks = String(html).match(/<[^>]+>|[^<]+/g) || [];
     let out = "", run = [], skip = 0;
@@ -70,16 +71,16 @@
       if (!run.length) return;
       const s = run.join("");
       // trim to the first/last "real" character, keeping whole tags; then require balanced tags
-      const parts = s.match(/<[^>]+>|[^<]/g);
+      const parts = s.match(/<[^>]+>|&[#\w]+;|[^<]/g);   // a tag or an entity (&gt;) is one unit
       let a = 0, b = parts.length - 1;
-      while (a <= b && !(parts[a].length === 1 && START.test(parts[a]))) a++;
-      while (b >= a && !(parts[b].length === 1 && END.test(parts[b]))) b--;
+      while (a <= b && !START.test(chr(parts[a]))) a++;
+      while (b >= a && !END.test(chr(parts[b]))) b--;
       // pull in tags hugging the core: <b>3</b> → keep both
-      while (a > 0 && parts[a - 1].length > 1 && !/^<\//.test(parts[a - 1])) a--;
+      while (a > 0 && isTag(parts[a - 1]) && !/^<\//.test(parts[a - 1])) a--;
       while (b < parts.length - 1 && /^<\//.test(parts[b + 1])) b++;
       const core = parts.slice(a, b + 1), st = [];
       let ok = a <= b && /[A-Za-z0-9]/.test(core.join(""));
-      for (const t of core) { if (t.length === 1 || !ok) continue;
+      for (const t of core) { if (!isTag(t) || !ok) continue;
         const m = t.match(/^<(\/?)(\w+)/); if (m[1]) { if (st.pop() !== m[2].toLowerCase()) ok = false; } else st.push(m[2].toLowerCase()); }
       if (ok && st.length) ok = false;
       // a multi-word Latin phrase with no math is fine on its own; isolate when it mixes symbols/digits
