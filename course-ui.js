@@ -17,7 +17,7 @@
              intro: "שלושת המסווגים הקלאסיים של הקורס, מאפס ועד שאלת חישוב בגודל של מבחן: פונקציות מרחק וחיזוי KNN, אנטרופיה ו-Information Gain בעץ החלטה, וחישוב נאיב בייס מטבלה. כל שלב פותח בשיעור קצר שבנוי על המבחנים הקודמים וממשיך בשאלות בסגנון המבחן. כל השלבים פתוחים; שלב נחשב עבור מ-80%." },
     eval:  { name: "הערכת מודל", title: "צריך עזרה בהערכת מודל ומושגי יסוד?", icon: "📊", store: "mlq_crs_eval_v1",
              topics: ["intro", "evaluation"],
-             intro: "הנושא עם הכי הרבה שאלות במבחן: סוגי למידה, train/test, overfitting, מטריצת בלבול, Precision/Recall/F1, ROC, Cross-Validation ו-Bias/Variance. כל שלב פותח בשיעור קצר שבנוי על המבחנים הקודמים וממשיך בשאלות בסגנון המבחן. כל השלבים פתוחים; שלב נחשב עבור מ-80%." },
+             intro: "הנושא עם הכי הרבה שאלות במבחן: סוגי למידה, train/test ו-overfitting, מטריצת בלבול, Precision, Recall ו-F1, macro ו-micro, בחירת מדד, K-fold, סילום ו-PCA. כל שלב פותח בשיעור קצר שבנוי על המבחנים הקודמים וממשיך בשאלות בסגנון המבחן. כל השלבים פתוחים; שלב נחשב עבור מ-80%." },
     reg:   { name: "רגרסיה ורשתות", title: "צריך עזרה ברגרסיה ורשתות נוירונים?", icon: "🧠", store: "mlq_crs_reg_v1",
              topics: ["regression", "neural_nets", "svm"],
              intro: "מקו ישר ועד רשת נוירונים: רגרסיה לינארית, פונקציית מחיר, Gradient Descent וקצב למידה, רגרסיה לוגיסטית, פרספטרון, פונקציות אקטיבציה, Backpropagation ו-SVM. כל שלב פותח בשיעור קצר שבנוי על המבחנים הקודמים וממשיך בשאלות בסגנון המבחן. כל השלבים פתוחים; שלב נחשב עבור מ-80%." },
@@ -52,9 +52,11 @@
   /* ---------- rendering helpers ---------- */
   const QID = /\b((?:\d{2}[ABS]-[ABC])|SAMP-\d|PRAC-[NX])-Q(\d+)\b/g;
   const bankIds = new Set(BANK.map(q => q.id));
-  // exam question ids → peek buttons (only ids that exist in the bank)
+  // exam question ids → peek buttons (only ids that exist in the bank). While a level is played, the
+  // real exam questions it has not asked yet stay plain text: the peek would show their answer.
+  let unasked = new Set();
   function linkRefs(html){
-    return html.replace(QID, m => bankIds.has(m) ? `<button type="button" class="qref" data-q="${m}">${m}</button>` : m);
+    return html.replace(QID, m => bankIds.has(m) && !unasked.has(m) ? `<button type="button" class="qref" data-q="${m}">${m}</button>` : m);
   }
   /* Bidi: the page is RTL, so a formula like "(2, 5) ו-(7, 1)" or "|7−2| = 5" inside Hebrew gets
      its parentheses and operands reordered. Every maximal non-Hebrew run that holds a digit or a
@@ -179,6 +181,7 @@
   }
   function startLevel(L){
     cur = L; run = {};
+    unasked = new Set(L.questions.filter(q => q.ref).map(q => q.ref));
     S.mode = "course"; S._views = null;
     S.pool = L.questions.map(q => engineQ(q, L));
     S.pos = 0; S.hist = []; S.hpos = 0; S.streak = 0;
@@ -186,7 +189,7 @@
     show("screen-quiz");
     renderQuestion();
   }
-  function record(q, ok){ if (run && !(q.id in run)) run[q.id] = ok; }
+  function record(q, ok){ if (q.examId) unasked.delete(q.examId); if (run && !(q.id in run)) run[q.id] = ok; }
 
   function finishLevel(){
     const L = cur; if (!L) return openMap();
@@ -198,6 +201,7 @@
     save();
     const ok = pct >= PASS, LV = C.levels, nextL = LV[LV.indexOf(L) + 1];
     const wrong = qs.filter(q => !(run && run[q.id]));
+    unasked = new Set();
     backToMode();
     $("#crsSum").innerHTML =
       `<div class="q-head" style="justify-content:center"><span class="chip">${escapeHtml(levelName(L))}</span></div>` +
@@ -223,7 +227,7 @@
     });
     view("crsSumView");
   }
-  function exit(){ backToMode(); S.hist = []; S.hpos = 0; cur ? openLesson(cur) : openMap(); }
+  function exit(){ unasked = new Set(); backToMode(); S.hist = []; S.hpos = 0; cur ? openLesson(cur) : openMap(); }
 
   // hand off to the real exam questions of this course's topics (free practice)
   function realExam(){
