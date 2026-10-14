@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>משחק תרגול — למידת מכונה</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 <script>
   // Apply saved theme before first paint to avoid a flash of the wrong theme.
   (function(){ try{ var t=localStorage.getItem("mlq_theme"); if(t==="light"||t==="dark") document.documentElement.dataset.theme=t; }catch(e){} })();
@@ -23,6 +23,7 @@
   </div>
   <div class="topbar-right">
     <div class="topstats" id="topStats"></div>
+    <button id="crsHub" class="btn ghost crs-entry" type="button" title="קורסים מודרכים: מסווגים · הערכת מודל · רגרסיה ורשתות · אשכול, טקסט ותמונה">🎓 צריך עזרה?</button>
     <button id="learnEntry" class="btn ghost learn-entry" type="button">📖 מצב לימוד</button>
     <!-- label kept on all breakpoints for clarity -->
     <button id="themeToggle" class="theme-toggle" type="button" aria-label="החלפת מצב תצוגה (בהיר/כהה)" title="מצב בהיר/כהה"></button>
@@ -32,6 +33,28 @@
 <main id="app">
   <!-- START -->
   <section id="screen-start" class="screen">
+    <div class="crs-promos">
+      <div class="card crs-promo" data-course="cls" role="button" tabindex="0">
+        <span class="big-ico">🌳</span>
+        <div><b>צריך עזרה ב-KNN, עצים ובייס?</b><span class="crs-promo-sub">קורס מודרך, מפונקציית מרחק אחת ועד חישובי אנטרופיה ובייס בגודל של מבחן.</span></div>
+        <span class="btn primary go">להתחיל ⟵</span>
+      </div>
+      <div class="card crs-promo" data-course="eval" role="button" tabindex="0">
+        <span class="big-ico">📊</span>
+        <div><b>צריך עזרה בהערכת מודל?</b><span class="crs-promo-sub">קורס מודרך, ממושגי היסוד ועד מטריצת בלבול, F1, ROC ו-Bias/Variance.</span></div>
+        <span class="btn primary go">להתחיל ⟵</span>
+      </div>
+      <div class="card crs-promo" data-course="reg" role="button" tabindex="0">
+        <span class="big-ico">🧠</span>
+        <div><b>צריך עזרה ברגרסיה ורשתות נוירונים?</b><span class="crs-promo-sub">קורס מודרך, מקו ישר ו-Gradient Descent ועד פרספטרון, רשתות ו-SVM.</span></div>
+        <span class="btn primary go">להתחיל ⟵</span>
+      </div>
+      <div class="card crs-promo" data-course="unsup" role="button" tabindex="0">
+        <span class="big-ico">🧩</span>
+        <div><b>צריך עזרה באשכול, טקסט ותמונה?</b><span class="crs-promo-sub">קורס מודרך: K-Means, אשכול היררכי, TF-IDF, קונבולוציה, אנסמבל ו-Flow.</span></div>
+        <span class="btn primary go">להתחיל ⟵</span>
+      </div>
+    </div>
     <div class="card">
       <h2>בחירת אופן תרגול</h2>
 
@@ -124,6 +147,31 @@
     </div>
   </section>
 
+  <!-- GUIDED COURSE ("צריך עזרה?") -->
+  <section id="screen-course" class="screen hidden">
+    <div id="crsMapView">
+      <div class="card">
+        <div class="crs-head">
+          <div class="grow"><h2 id="crsTitle"></h2><p id="crsIntro" class="sub"></p></div>
+        </div>
+        <div id="crsOverall" class="crs-overall"></div>
+      </div>
+      <div id="crsMap" class="crs-map"></div>
+      <div class="crs-actions"><button id="crsHomeBtn" class="btn ghost">⟵ חזרה לדף הבית</button>
+        <button id="crsResetBtn" class="btn ghost">איפוס התקדמות הקורס</button></div>
+    </div>
+    <div id="crsLessonView" class="hidden">
+      <article id="crsLesson" class="card learn-content crs-lesson"></article>
+      <div class="crs-actions">
+        <button id="crsLessonBack" class="btn ghost">⟵ למפת השלבים</button>
+        <button id="crsLessonGo" class="btn primary">לשאלות ▶</button>
+      </div>
+    </div>
+    <div id="crsSumView" class="hidden">
+      <div id="crsSum" class="card crs-sum"></div>
+    </div>
+  </section>
+
   <!-- RESULTS -->
   <section id="screen-results" class="screen hidden">
     <div class="card">
@@ -173,6 +221,11 @@
 
 <script src="questions.js?v=2"></script>
 <script src="learn.js?v=1"></script>
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
+<script src="courses.js?v=1"></script>
+<!-- COURSE LEVELS -->
+<script src="courses/cls/C01.js?v=1"></script>
+<!-- /COURSE LEVELS -->
+<script src="course-ui.js?v=1"></script>
 </body>
 </html>

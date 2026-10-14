@@ -195,19 +195,21 @@ function renderQuestion(){
   }
   const v=S.current;
 
-  $("#qTopic").textContent = q.topicLabel || q.topic;
-  $("#qSource").textContent = q.sourceLabel || (q.source==="exam"?"מבחן":"תרגול");
+  const crs = q.course;   // a guided-course question ("צריך עזרה?") — see course-ui.js
+  $("#qTopic").textContent = crs ? crs.badge : (q.topicLabel || q.topic);
+  $("#qSource").textContent = crs ? crs.levelTitle : (q.sourceLabel || (q.source==="exam"?"מבחן":"תרגול"));
   const badge=$("#qBadge");
-  badge.textContent = q.official ? "מחוון רשמי" : "תשובה לא רשמית";
-  badge.className = "chip " + (q.official?"official":"unofficial");
+  badge.textContent = crs ? (q.fromExam ? "📝 שאלה ממבחן" : "שאלת תרגול") : q.official ? "מחוון רשמי" : "תשובה לא רשמית";
+  badge.className = "chip " + (crs ? (q.fromExam?"official":"soft") : q.official?"official":"unofficial");
 
-  $("#questionText").textContent = q.question;
+  if(crs) $("#questionText").innerHTML = window.crsRich(q.question);
+  else $("#questionText").textContent = q.question;
   $("#qExtras").innerHTML = extrasHtml(q);
 
   $("#optionsList").innerHTML = v.order.map((origIdx,disp)=>
     `<button class="opt" data-disp="${disp}">
        <span class="key">${HE_KEYS[disp]||disp+1}</span>
-       <span class="txt">${optionHtml(q.options[origIdx])}</span>
+       <span class="txt">${crs && !q.fromExam && /[֐-׿]/.test(q.options[origIdx]) ? window.crsRich(q.options[origIdx]) : optionHtml(q.options[origIdx])}</span>
      </button>`).join("");
   document.querySelectorAll(".opt").forEach(b=> b.onclick=()=>choose(parseInt(b.dataset.disp,10)));
 
@@ -230,14 +232,19 @@ function renderQuestion(){
     $("#prevBtn").disabled = S.pos===0;
     $("#streakBox").textContent = `נענו ${Object.keys(S.exam.answers).length}/${S.pool.length}`;
   } else {
-    $("#quizMeta").textContent = `שאלה ${pos+1}`;
+    $("#quizMeta").textContent = S.mode==="course" ? `שאלה ${pos+1}/${S.pool.length}` : `שאלה ${pos+1}`;
     $("#prevBtn").disabled = S.hpos===0;
     $("#nextBtn").classList.toggle("hidden", !v.answered);   // appears after answering
     $("#submitExamBtn").classList.add("hidden");
     if(v.answered) paintAnswered(v);                        // navigated back to an answered question
-    const a=P.stats.answered,c=P.stats.correct;
-    $("#streakBox").textContent = `רצף נכון: ${S.streak||0} · דיוק כולל ${a?Math.round(c/a*100):0}%`;
+    $("#streakBox").textContent = streakText();
   }
+}
+// practice footer: streak + bank accuracy (a course keeps its own score, so streak only)
+function streakText(){
+  if(S.mode==="course") return `רצף נכון: ${S.streak||0}`;
+  const a=P.stats.answered,c=P.stats.correct;
+  return `רצף נכון: ${S.streak||0} · דיוק כולל ${a?Math.round(c/a*100):0}%`;
 }
 
 function escapeHtml(s){ return String(s).replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m])); }
@@ -245,6 +252,7 @@ function escapeHtml(s){ return String(s).replace(/[&<>]/g,m=>({"&":"&amp;","<":"
 /* code snippet (LTR monospace) and/or figure image attached to a question */
 function extrasHtml(q){
   let h="";
+  if(q.table && window.crsTable) h+=window.crsTable(q.table);
   if(q.code)  h+=`<pre class="q-code" dir="ltr"><code>${escapeHtml(q.code)}</code></pre>`;
   if(q.image) h+=`<figure class="q-fig"><img class="q-img" src="${q.image}" alt="" loading="lazy"></figure>`;
   return h;
@@ -271,12 +279,11 @@ function choose(disp){
   if(v.answered) return;
   v.answered=true; v.chosen=disp; v.correct = disp===v.correctDisplay;
   paintAnswered(v);
-  recordAnswer(q, v.correct);
+  if(S.mode==="course") window.COURSE.record(q, v.correct); else recordAnswer(q, v.correct);
   S.streak = v.correct ? (S.streak||0)+1 : 0;
   $("#nextBtn").focus();
   renderTopStats();
-  const a=P.stats.answered,c=P.stats.correct;
-  $("#streakBox").textContent = `רצף נכון: ${S.streak} · דיוק כולל ${a?Math.round(c/a*100):0}%`;
+  $("#streakBox").textContent = streakText();
 }
 /* Paint an answered practice question: lock the options, mark right/wrong, show the feedback.
    Runs when answering and again when navigating back to an already-answered question. */
@@ -291,6 +298,11 @@ function paintAnswered(v){
   // feedback
   const fb=$("#feedback");
   fb.className = "feedback " + (correct?"good":"bad");
+  if(q.course){
+    fb.innerHTML = `<div class="verdict">${correct?"✓ נכון":"✗ לא נכון"}</div>`+
+      `<div class="expl">${window.crsRich(q.explanation||"")}</div>`+
+      (q.fromExam ? `<span class="note">📝 מתוך ${escapeHtml(q.fromExam)} (<button type="button" class="qref" data-q="${q.examId}">${q.examId}</button>)${q.official?"":" · תשובה לא רשמית"}</span>` : "");
+  } else
   fb.innerHTML = `<div class="verdict">${correct?"✓ נכון":"✗ לא נכון"}</div>`+
     `<div class="expl">${escapeHtml(q.explanation||"")}</div>`+
     (q.official?"":`<span class="note">⚠ תשובה לא רשמית — נגזרה מחומר הקורס.</span>`)+
@@ -316,6 +328,12 @@ function next(){
       S.pool = shuffle(S.pool); S.pos=0;
     } else S.pos++;
     S.hpos++;
+    renderQuestion();
+  } else if(S.mode==="course"){
+    if(!S.current.answered) return;
+    if(S.hpos<S.hist.length-1){ S.hpos++; renderQuestion(); return; }
+    if(S.pos>=S.pool.length-1){ window.COURSE.finishLevel(); return; }   // level done → summary
+    S.pos++; S.hpos++;
     renderQuestion();
   } else {
     if(S.pos<S.pool.length-1){ S.pos++; renderQuestion(); }
@@ -380,12 +398,17 @@ function renderResults(correct, byTopic, review){
 }
 
 /* ---------- controls ---------- */
-function quit(){ clearInterval(S.exam.timer); S._views=null; S.hist=[]; S.hpos=0; S.streak=0; initStart(); show("screen-start"); }
+function quit(){
+  clearInterval(S.exam.timer); S._views=null; S.hist=[]; S.hpos=0; S.streak=0;
+  if(S.mode==="course") S.mode=(document.querySelector('input[name=mode]:checked')||{}).value||"practice";
+  initStart(); show("screen-start");
+  window.dispatchEvent(new window.Event("ml:home"));   // course cards repaint their progress
+}
 function bindGlobal(){
   $("#nextBtn").onclick=next;
   $("#prevBtn").onclick=prev;
   $("#submitExamBtn").onclick=()=>submitExam(false);
-  $("#quitBtn").onclick=()=>{ if(S.mode!=="exam"||confirm("לצאת מהמבחן? ההתקדמות לא תישמר.")) quit(); };
+  $("#quitBtn").onclick=()=>{ if(S.mode==="course"){ window.COURSE.exit(); return; } if(S.mode!=="exam"||confirm("לצאת מהמבחן? ההתקדמות לא תישמר.")) quit(); };
   $("#backHomeBtn").onclick=quit;
   // clicking the brand/title returns to the home (questions) screen
   function goHome(){
@@ -543,6 +566,7 @@ function bindGlobal(){
     peek.classList.remove("hidden");
     $("#qpeekClose").focus({preventScroll:true});
   }
+  window.openQPeek = openPeek;   // the guided courses link exam ids to this peek too
   function closePeek(){ peek.classList.add("hidden"); peekBody.innerHTML = ""; peekTopic = null; }
   const peekOpen = ()=> !peek.classList.contains("hidden");
 

@@ -15,3 +15,6 @@ __pycache__/
 # scratch crops produced while checking figures
 *_tmp.png
 tools/_*.png
+
+# course flow screenshots
+tools/raw/courseflow/
