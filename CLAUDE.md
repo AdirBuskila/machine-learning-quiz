@@ -18,9 +18,10 @@ Run the site: open `index.html` in a browser. Data arrives as globals (`window.Q
 ```bash
 node tools/smoke.js       # data integrity + shuffle/scoring invariant + js≡json sync
 node tools/verify_dom.js  # jsdom: boots index.html, starts a session, answers a question
+node tools/course_check.js  # guided courses: lint + every level file loaded by index.html
 ```
 
-These two are the real test suite and need no browser. `tools/verify_ui.js`,
+These are the real test suite and need no browser. `tools/verify_ui.js`,
 `verify_theme.js`, and `verify_learn.js` drive headless Chrome via puppeteer-core with a
 **hardcoded** `C:\Program Files\Google\Chrome\Application\chrome.exe`; they write screenshots
 to `tools/raw/`. `verify_learn.js` is the mobile guard: it walks all 14 briefs at 390px and
@@ -141,6 +142,17 @@ query them. `index.html` cache-busts assets with `?v=N`; bump it when shipping a
 
 Hebrew is the UI language; option text with no Hebrew characters is force-rendered `dir="ltr"`
 so the RTL page doesn't reorder code/output answers.
+
+## Guided courses ("צריך עזרה?")
+
+Four ground-up courses (`cls`, `eval`, `reg`, `unsup`) that group the 13 topics, ported from the
+databases app: `courses.js` registry, `course-ui.js` screens, one hand-written file per level in
+`courses/<course>/<ID>.js` (these are source, not generated). The quiz runs on the main engine with
+`S.mode="course"`; course answers never touch `mlq_progress_v1`. Levels mix original exam-pattern
+questions with real bank questions by `ref`. Format, content rules and commands: `docs/COURSES.md`.
+After adding a level file run `node tools/course_check.js --sync` (it writes the script tags into
+`index.html`). `tools/course_flow.js` drives every level in headless Chrome (falls back to the
+Playwright Chromium on Linux).
 
 ## Stale artifacts to be aware of
 
