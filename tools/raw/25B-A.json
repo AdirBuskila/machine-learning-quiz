@@ -213,14 +213,14 @@
     "topic": "regression",
     "question": "איזה מדד, מהמדדים הבאים אינו מהווה מדד לשערוך מודל רגרסיה?\nיש לבחור תשובה אחת בלבד (הנכונה ביותר):",
     "options": [
-      "מדד R-square (R^2)",
+      "מדד R-square (R²)",
       "מדד Mean Chebyshev Error",
       "מדד Mean Absolute Error (MAE)",
       "מדד Sum of Square Error (SSE)"
     ],
     "correctIndex": 1,
     "official": true,
-    "explanation": "Mean Chebyshev Error אינו מדד מקובל לשערוך מודל רגרסיה, בניגוד ל-R^2, MAE ו-SSE.",
+    "explanation": "Mean Chebyshev Error אינו מדד מקובל לשערוך מודל רגרסיה, בניגוד ל-R², MAE ו-SSE.",
     "hasImage": false
   },
   {

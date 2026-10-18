@@ -101,7 +101,7 @@ Object.keys(COURSE_TOPICS).forEach(cid => {
 const IDX = path.join(ROOT, "index.html");
 let html = fs.readFileSync(IDX, "utf8");
 const block = files.map(f => `<script src="${f}?v=1"></script>`).join("\n");
-const re = /(<!-- COURSE LEVELS -->\n)([\s\S]*?)(<!-- \/COURSE LEVELS -->)/;
+const re = /(<!-- COURSE LEVELS -->\r?\n)([\s\S]*?)(<!-- \/COURSE LEVELS -->)/;   // \r?: autocrlf checkouts
 if (!re.test(html)) err("index.html has no COURSE LEVELS block");
 else if (args.includes("--sync")) {
   html = html.replace(re, (m, a, b, c) => a + (block ? block + "\n" : "") + c);

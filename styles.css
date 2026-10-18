@@ -492,10 +492,12 @@ main{max-width:840px;margin:1.6rem auto;padding:0 1rem}
 .learn-content blockquote.cal h3{margin-top:.2rem}
 
 /* checklists ("צ׳קליסט לפני המבחן") */
-.learn-content li.task{list-style:none;display:flex;align-items:flex-start;gap:.55rem;margin-inline-start:-1rem}
-.learn-content li.task .box{flex:none;width:1.05em;height:1.05em;margin-top:.28em;border-radius:5px;
+/* block, not flex: in a flex <li> every inline child (<b>, a bidi isolate) became its own flex item,
+   so the sentence lost its inline flow and a nowrap formula overflowed the card */
+.learn-content li.task{list-style:none;display:block;position:relative;padding-inline-start:1.6rem;margin-inline-start:-1rem}
+.learn-content li.task .box{position:absolute;inset-inline-start:0;top:.28em;width:1.05em;height:1.05em;border-radius:5px;
   border:2px solid var(--line-strong);background:var(--card2)}
-.learn-content li.task.done .box{background:var(--ok);border-color:var(--ok);position:relative}
+.learn-content li.task.done .box{background:var(--ok);border-color:var(--ok)}
 .learn-content li.task.done .box::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;
   color:var(--brand-ink);font-size:.8em;font-weight:900}
 
@@ -507,10 +509,12 @@ main{max-width:840px;margin:1.6rem auto;padding:0 1rem}
   -webkit-overflow-scrolling:touch}
 .math-block math{font-size:1.16em}
 .math-inline math{font-size:1.04em}
+/* an inline formula wider than its line (a long list of points) scrolls in its own box, set by markScrollable() */
+.math-inline.wide{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
 
 /* edge shadow marking a box whose content runs past its sides. inset shadows are
    painted against the padding box, so they stay put while the content scrolls. */
-.math-block.scrollable,.tbl-wrap.scrollable{
+.math-block.scrollable,.tbl-wrap.scrollable,.math-inline.wide.scrollable{
   box-shadow:inset 15px 0 11px -12px var(--scroll-hint),
              inset -15px 0 11px -12px var(--scroll-hint)}
 .learn-content .math-fail{color:var(--bad)}

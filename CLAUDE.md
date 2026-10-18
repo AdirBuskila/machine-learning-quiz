@@ -141,7 +141,14 @@ three** blocks. Class names and `--var` names are load-bearing — `app.js` and 
 query them. `index.html` cache-busts assets with `?v=N`; bump it when shipping a CSS/JS change.
 
 Hebrew is the UI language; option text with no Hebrew characters is force-rendered `dir="ltr"`
-so the RTL page doesn't reorder code/output answers.
+so the RTL page doesn't reorder code/output answers. Every other question / option / explanation
+(bank, exam review, peek and courses alike) goes through `richText()` → `crsRich()` in
+`course-ui.js`: `**bold**` plus `isolate()`, which wraps each formula/tuple run inside Hebrew in an
+LTR `<bdi>` and cuts runs at clause boundaries (". " ", " outside brackets, RLM). Learn chapters
+get `crsIsolate()` at render time too. Never set question text with `textContent`/`escapeHtml`
+alone: "(L∞)" then shows as "(∞L)". The render audit catches it:
+`node ../course-factory/scripts/render_audit.js .` (every bank question, chapter and course
+level at 390px; must report 0 findings).
 
 ## Guided courses ("צריך עזרה?")
 

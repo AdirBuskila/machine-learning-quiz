@@ -202,14 +202,13 @@ function renderQuestion(){
   badge.textContent = crs ? (q.fromExam ? "📝 שאלה ממבחן" : "שאלת תרגול") : q.official ? "מחוון רשמי" : "תשובה לא רשמית";
   badge.className = "chip " + (crs ? (q.fromExam?"official":"soft") : q.official?"official":"unofficial");
 
-  if(crs) $("#questionText").innerHTML = window.crsRich(q.question);
-  else $("#questionText").textContent = q.question;
+  $("#questionText").innerHTML = richText(q.question);
   $("#qExtras").innerHTML = extrasHtml(q);
 
   $("#optionsList").innerHTML = v.order.map((origIdx,disp)=>
     `<button class="opt" data-disp="${disp}">
        <span class="key">${HE_KEYS[disp]||disp+1}</span>
-       <span class="txt">${crs && !q.fromExam && /[֐-׿]/.test(q.options[origIdx]) ? window.crsRich(q.options[origIdx]) : optionHtml(q.options[origIdx])}</span>
+       <span class="txt">${optionHtml(q.options[origIdx])}</span>
      </button>`).join("");
   document.querySelectorAll(".opt").forEach(b=> b.onclick=()=>choose(parseInt(b.dataset.disp,10)));
 
@@ -248,6 +247,11 @@ function streakText(){
 }
 
 function escapeHtml(s){ return String(s).replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m])); }
+/* Question / option / explanation text, bank and course alike: escape, **bold**, and the bidi
+   isolates of course-ui.js (window.crsRich). Plain escaped text let the RTL page reorder every
+   formula or tuple inside a Hebrew sentence: "(L∞) 0.438" showed as "(∞L)", "0.238+0.438=0.676"
+   as "0.676=0.438+0.238". Exam options used to skip it even inside the guided courses. */
+function richText(s){ return window.crsRich ? window.crsRich(s) : escapeHtml(s); }
 
 /* code snippet (LTR monospace) and/or figure image attached to a question */
 function extrasHtml(q){
@@ -264,7 +268,7 @@ function optionHtml(opt){
   if(s.startsWith("img:")) return `<img class="opt-img" src="${s.slice(4)}" alt="" loading="lazy">`;
   // options with no Hebrew (code/output answers) must render LTR, or the RTL page reorders them
   if(!/[֐-׿]/.test(s)) return `<span class="opt-ltr" dir="ltr">${escapeHtml(s)}</span>`;
-  return escapeHtml(opt);
+  return richText(s);
 }
 
 /* ---------- answering ---------- */
@@ -304,7 +308,7 @@ function paintAnswered(v){
       (q.fromExam ? `<span class="note">📝 מתוך ${escapeHtml(q.fromExam)} (<button type="button" class="qref" data-q="${q.examId}">${q.examId}</button>)${q.official?"":" · תשובה לא רשמית"}</span>` : "");
   } else
   fb.innerHTML = `<div class="verdict">${correct?"✓ נכון":"✗ לא נכון"}</div>`+
-    `<div class="expl">${escapeHtml(q.explanation||"")}</div>`+
+    `<div class="expl">${richText(q.explanation||"")}</div>`+
     (q.official?"":`<span class="note">⚠ תשובה לא רשמית — נגזרה מחומר הקורס.</span>`)+
     `<span class="note">מקור: ${escapeHtml(q.sourceLabel||"")}</span>`;
   $("#nextBtn").classList.remove("hidden");
@@ -379,7 +383,7 @@ function renderResults(correct, byTopic, review){
   const total=S.pool.length, pct=Math.round(correct/total*100);
   $("#resultsSummary").innerHTML =
     `<div class="scorering" style="--p:${pct}"><span>${pct}%</span></div>`+
-    `<div class="txt"><b>${correct} / ${total}</b> תשובות נכונות<br>`+
+    `<div class="txt"><b><bdi dir="ltr">${correct} / ${total}</bdi></b> תשובות נכונות<br>`+
     `<span style="color:var(--muted)">${pct>=60?"עברת! 🎉":"עוד קצת תרגול 💪"}</span></div>`;
   $("#resultsByTopic").innerHTML = Object.entries(byTopic).map(([t,o])=>{
     const lbl=(TOPICS.find(x=>x[0]===t)||[t,t])[1]; const p=Math.round(o.c/o.n*100);
@@ -389,11 +393,11 @@ function renderResults(correct, byTopic, review){
   $("#resultsReview").innerHTML = review.map(r=>{
     const v=r.q; const chosenTxt = r.chosen!=null ? optionHtml(v.options[r.chosen]) : "— לא נענתה —";
     return `<div class="rev ${r.ok?"ok":"bad"}">
-      <div class="rq">${escapeHtml(v.question)}</div>
+      <div class="rq">${richText(v.question)}</div>
       ${extrasHtml(v)}
       <div class="ra"><span class="${r.ok?"good":"miss"}">תשובתך: ${chosenTxt}</span>`+
       (r.ok?"":` · <span class="good">הנכונה: ${optionHtml(v.options[v.correctIndex])}</span>`)+
-      `<br>${escapeHtml(v.explanation||"")}${v.official?"":" (לא רשמי)"}</div></div>`;
+      `<br>${richText(v.explanation||"")}${v.official?"":" (לא רשמי)"}</div></div>`;
   }).join("");
 }
 
@@ -497,7 +501,9 @@ function bindGlobal(){
     const n = s.topic ? countFor(s.topic, {officialOnly:false, mistakesOnly:false}) : 0;
     const drill = n ? `<button class="btn primary learn-drill" data-topic="${s.topic}">תרגל נושא זה ▶ <span class="n">${n}</span></button>` : "";
     content.innerHTML =
-      `<div class="learn-head"><h2 class="learn-h">${escapeHtml(s.title)}</h2>${drill}</div>` + s.html;
+      `<div class="learn-head"><h2 class="learn-h">${escapeHtml(s.title)}</h2>${drill}</div>` +
+      // formulas and number tuples written as plain text in the brief get LTR isolates (course-ui.js)
+      (window.crsIsolate ? window.crsIsolate(s.html) : s.html);
     toc.querySelectorAll("button").forEach((b,j)=> b.classList.toggle("active", j===idx));
     const active = toc.querySelector("button.active");
     if(active) active.scrollIntoView({block:"nearest"});
@@ -514,7 +520,13 @@ function bindGlobal(){
      actually overflow so CSS can show an edge shadow — recomputed on resize because
      rotating a phone changes which ones overflow. */
   function markScrollable(){
-    content.querySelectorAll(".math-block,.tbl-wrap").forEach(el=>
+    // an inline formula wider than its line can't wrap: make it a scroll box of its own
+    content.querySelectorAll(".math-inline").forEach(el=>{
+      el.classList.remove("wide");
+      const box = el.parentElement;
+      if(box && Math.max(el.getBoundingClientRect().width, el.scrollWidth) > box.clientWidth + 1) el.classList.add("wide");
+    });
+    content.querySelectorAll(".math-block,.tbl-wrap,.math-inline.wide").forEach(el=>
       el.classList.toggle("scrollable", el.scrollWidth > el.clientWidth + 1));
   }
   let rzT;
@@ -555,12 +567,12 @@ function bindGlobal(){
     // source order with the answer marked — the brief is discussing this exact
     // question, so shuffling here would only make it harder to follow.
     peekBody.innerHTML =
-      `<div class="qpeek-q">${escapeHtml(q.question)}</div>` +
+      `<div class="qpeek-q">${richText(q.question)}</div>` +
       extrasHtml(q) +
       `<ol class="qpeek-opts">` + q.options.map((o,i)=>
         `<li class="${i===q.correctIndex?"right":""}"><span class="key">${HE_KEYS[i]||i+1}</span>`+
         `<span class="txt">${optionHtml(o)}</span></li>`).join("") + `</ol>` +
-      (q.explanation ? `<div class="qpeek-exp"><strong>הסבר:</strong> ${escapeHtml(q.explanation)}</div>` : "");
+      (q.explanation ? `<div class="qpeek-exp"><strong>הסבר:</strong> ${richText(q.explanation)}</div>` : "");
     peekTopic = q.topic;
     peekDrill.classList.toggle("hidden", !countFor(q.topic,{officialOnly:false,mistakesOnly:false}));
     peek.classList.remove("hidden");

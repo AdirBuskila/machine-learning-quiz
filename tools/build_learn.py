@@ -84,6 +84,8 @@ def extract_math(text, store):
     for is_code, chunk in split_code_fences(text):
         if is_code:
             out.append(chunk); continue
+        # Obsidian's escaped dollar ("220 K\$") is a literal $, not the start of math
+        chunk = chunk.replace("\\$", "&#36;")
         chunk = DISPLAY_RE.sub(lambda m: take(m.group(1), True), chunk)
         chunk = INLINE_RE.sub(lambda m: take(m.group(1), False), chunk)
         out.append(chunk)
@@ -126,6 +128,20 @@ def wikilinks(md_text, titles):
 
 
 _LIST_RE = re.compile(r"^(\s*)([-*+]|\d+\.)\s+")
+
+
+def quote_fences(md):
+    """A ``` fence inside a > callout is not seen by python-markdown's fenced_code (it showed the
+    backticks as text). Rewrite it as an indented code block inside the quote, which it does parse."""
+    out, in_code = [], False
+    for ln in md.split("\n"):
+        m = re.match(r"^(\s*>\s?)(.*)$", ln)
+        if m and m.group(2).strip().startswith("```"):
+            in_code = not in_code
+            out.append(m.group(1).rstrip())
+            continue
+        out.append(m.group(1) + "    " + m.group(2) if (in_code and m) else ln)
+    return "\n".join(out)
 
 
 def normalize_lists(md):
@@ -255,7 +271,7 @@ def main():
     titles = {cid: title for _, cid, _, _, title, _ in briefs}
 
     for fname, cid, topic, sub, title, body in briefs:
-        prepared = normalize_lists(wikilinks(extract_math(body, store), titles))
+        prepared = normalize_lists(wikilinks(extract_math(quote_fences(body), store), titles))
         staged.append({"id": cid, "title": title, "topic": topic, "sub": sub,
                        "md": prepared})
 
