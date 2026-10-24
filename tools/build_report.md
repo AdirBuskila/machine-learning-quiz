@@ -1,22 +1,22 @@
 # Build report — ML question bank
 
-- Raw items read: **383** from 18 files
+- Raw items read: **404** from 19 files
 - Excluded: **0**  ({})
 - Duplicates merged (content): **27**
-- **Final questions: 383**
+- **Final questions: 404**
 
 ## By topic
 
-- הערכת מודל (`evaluation`): 77
-- רגרסיה ו-Gradient Descent (`regression`): 53
-- מבוא ומושגי יסוד (`intro`): 46
-- KNN (`knn`): 42
-- עצי החלטה (`trees`): 40
+- הערכת מודל (`evaluation`): 81
+- רגרסיה ו-Gradient Descent (`regression`): 60
+- מבוא ומושגי יסוד (`intro`): 48
+- KNN (`knn`): 45
+- עצי החלטה (`trees`): 41
 - רשתות נוירונים (`neural_nets`): 30
-- נאיב בייס (`naive_bayes`): 27
+- נאיב בייס (`naive_bayes`): 29
 - אשכול (K-Means / היררכי) (`clustering`): 22
-- ניתוח טקסט (NLP) (`text`): 17
-- עיבוד תמונה (`image`): 14
+- ניתוח טקסט (NLP) (`text`): 18
+- עיבוד תמונה (`image`): 15
 - SVM (`svm`): 6
 - MLflow / Flow (`flow`): 5
 - למידת אנסמבל (`ensemble`): 4
@@ -36,6 +36,7 @@
 - 2023 קיץ מועד א׳ (`23S-A`): 20
 - 2022 סמסטר ב׳ מועד א׳ (`22B-A`): 20
 - 2022 סמסטר ב׳ מועד ג׳ (`22B-C`): 17
+- המבחן של קלוד 2026 (`CLAUDE-26`): 21
 - מבחן לדוגמה (1) (`SAMP-1`): 25
 - מבחן לדוגמא עם פתרונות (`SAMP-2`): 25
 - מבחן לדוגמה (3) (`SAMP-3`): 25
@@ -43,5 +44,5 @@
 - תרגול — שאלות לדוגמה (`PRAC-X`): 38
 
 ## By origin
-- exam: 332 · practice: 51
+- exam: 353 · practice: 51
 

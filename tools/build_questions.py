@@ -46,6 +46,10 @@ SAMP_LABEL = {
     "SAMP-2": "מבחן לדוגמא עם פתרונות",
     "SAMP-3": "מבחן לדוגמה (3)",
 }
+# Original practice papers written in the style of a real exam (not mined from a source file)
+CUSTOM_LABEL = {
+    "CLAUDE-26": "המבחן של קלוד 2026",
+}
 
 
 def exam_label(code):
@@ -53,6 +57,8 @@ def exam_label(code):
         return PRAC_LABEL[code]
     if code in SAMP_LABEL:
         return SAMP_LABEL[code]
+    if code in CUSTOM_LABEL:
+        return CUSTOM_LABEL[code]
     m = re.match(r"^(\d{2})([ABS])-([ABC])$", code)
     if m:
         yy, s, md = m.groups()
@@ -67,7 +73,7 @@ def source_of(code):
 
 
 def year_of(code):
-    m = re.match(r"^(\d{2})", code)
+    m = re.match(r"^(\d{2})", code) or re.search(r"-(\d{2})$", code)
     return int("20" + m.group(1)) if m else None
 
 
@@ -75,7 +81,7 @@ def priority(code):
     """Lower = more canonical (kept on dedup)."""
     if code.startswith("PRAC"):
         grp = 2
-    elif code.startswith("SAMP"):
+    elif code.startswith("SAMP") or code in CUSTOM_LABEL:
         grp = 1
     else:
         grp = 0
