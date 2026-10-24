@@ -86,7 +86,7 @@ function qNum(q){ const m=String(q.id).match(/-Q(\d+)$/); return m?parseInt(m[1]
    place in the chronology — then real exams oldest→newest, newest at the bottom. */
 function examOrder(code){
   const c=String(code);
-  if(/^CLAUDE/.test(c)) return [-1, 0, c];   // the custom mock exam heads the list
+  if(/^CLAUDE/.test(c)) return [2, 0, c];    // the custom mock exam closes the list
   const practice=/^PRAC/.test(c);
   const sample=/^(SAMP|SP)/.test(c) || /-EX$/.test(c);
   if(sample||practice) return [0, practice?1:0, c];
