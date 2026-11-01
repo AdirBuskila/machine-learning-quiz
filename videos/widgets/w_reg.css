@@ -1,0 +1,103 @@
+/* regression & neural-network widgets (w_reg.py), every class prefixed rg- */
+.rg-stack{display:flex;flex-direction:column;align-items:center;width:100%}
+.rg-row{display:flex;flex-direction:row;align-items:center;justify-content:center;width:100%}
+.rg-en{font-family:"Segoe UI",Arial,sans-serif;direction:ltr;unicode-bidi:isolate}
+.rg-chip{display:inline-block;font-size:30px;font-weight:700;padding:6px 22px;border-radius:999px;white-space:nowrap;
+  background:var(--card2);border:1px solid var(--line);direction:rtl}
+.rg-chip.ok{color:var(--ok);background:rgba(52,211,153,.13);border-color:rgba(52,211,153,.4)}
+.rg-chip.bad{color:var(--bad);background:rgba(251,113,133,.13);border-color:rgba(251,113,133,.4)}
+.rg-chip.info{color:#a5f3fc;border-color:rgba(56,189,248,.5)}
+.rg-chip.warn{color:var(--warn);border-color:rgba(251,191,36,.5)}
+.rg-eq{direction:ltr;text-align:center;line-height:1.3;color:var(--ink)}
+.rg-eq.box{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:10px 28px}
+.rg-swap>div{align-items:center;justify-content:center}
+.rg-qp .qstem{font-size:30px;line-height:1.45}
+.rg-qp .opt{font-size:29px;padding:8px 18px}
+.rg-qp .onote{font-size:24px}
+.rg-big{font-size:46px;font-weight:700}
+.rg-mut{color:var(--muted)}
+.rg-ok{color:var(--ok)}
+.rg-bad{color:var(--bad)}
+.rg-warn{color:var(--warn)}
+.rg-a{color:#38bdf8}
+
+/* table */
+table.rg-tab{border-collapse:separate;border-spacing:0;background:var(--card2);border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;direction:ltr;line-height:1.3}
+.rg-tab th,.rg-tab td{position:static;padding:8px 22px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+.rg-tab thead th{color:var(--muted);font-weight:600}
+.rg-tab tbody tr:last-child>*{border-bottom:none}
+.rg-tab .rg-cv{position:relative}
+.rg-mk{position:absolute;top:3px;bottom:3px;left:3px;right:3px;border-radius:9px;
+  background:rgba(45,212,191,.14);box-shadow:0 0 0 3px var(--brand) inset;pointer-events:none}
+.rg-tab tr{position:relative}
+.rg-tab.sum tbody tr:last-child td{border-top:2px solid var(--muted);font-weight:700}
+.rg-bar{display:inline-block;height:22px;border-radius:6px;vertical-align:middle;background:#38bdf8}
+.rg-bar.neg{background:#fbbf24}
+
+/* plots */
+svg.rg-svg{overflow:visible;display:block}
+.rg-svg .rg-ax{stroke:#9aa0cf;stroke-width:2.6}
+.rg-svg .rg-grid{stroke:rgba(255,255,255,.08);stroke-width:1.5}
+.rg-svg .rg-tl{fill:#9aa0cf;font-size:24px;font-family:"Segoe UI",Arial,sans-serif;text-anchor:middle}
+.rg-svg .rg-axl{fill:#c9cdf0;font-size:26px;font-family:"Segoe UI",Arial,sans-serif;font-style:italic}
+.rg-svg .rg-tx{font-family:"Segoe UI",Arial,sans-serif;stroke:none}
+.rg-svg .rg-tx.b{font-weight:700}
+.rg-svg .rg-dot{stroke:#0a0c18;stroke-width:2.5}
+.rg-svg .rg-ring{fill:none;stroke:#2dd4bf;stroke-width:5}
+.rg-svg .rg-pring{fill:none;stroke:#eaedff;stroke-width:3}
+.rg-svg .rg-ln{fill:none;stroke-linecap:round}
+.rg-svg .rg-ln.dash,.rg-svg .rg-poly.dash{stroke-dasharray:12 9}
+.rg-svg .rg-poly{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.rg-svg .rg-band{fill-opacity:.13;stroke:none}
+.rg-svg .rg-sq{fill-opacity:.18;stroke-width:2}
+.rg-svg .rg-thr{stroke:#fbbf24;stroke-width:3;stroke-dasharray:8 7}
+.rg-svg .k-ink{fill:#eaedff;stroke:#eaedff}
+.rg-svg .k-a{fill:#38bdf8;stroke:#38bdf8}
+.rg-svg .k-b{fill:#fbbf24;stroke:#fbbf24}
+.rg-svg .k-c{fill:#f472b6;stroke:#f472b6}
+.rg-svg .k-ok{fill:#34d399;stroke:#34d399}
+.rg-svg .k-bad{fill:#fb7185;stroke:#fb7185}
+.rg-svg .k-mut{fill:#6b7099;stroke:#6b7099}
+.rg-svg .rg-ln.k-ink,.rg-svg .rg-ln.k-a,.rg-svg .rg-ln.k-b,.rg-svg .rg-ln.k-c,.rg-svg .rg-ln.k-ok,.rg-svg .rg-ln.k-bad,
+.rg-svg .rg-ln.k-mut,.rg-svg .rg-poly.k-ink,.rg-svg .rg-poly.k-a,.rg-svg .rg-poly.k-b,.rg-svg .rg-poly.k-c,
+.rg-svg .rg-poly.k-ok,.rg-svg .rg-poly.k-bad,.rg-svg .rg-poly.k-mut{fill:none}
+.rg-svg .rg-tx.k-ink,.rg-svg .rg-tx.k-a,.rg-svg .rg-tx.k-b,.rg-svg .rg-tx.k-c,.rg-svg .rg-tx.k-ok,.rg-svg .rg-tx.k-bad,
+.rg-svg .rg-tx.k-mut{stroke:none}
+.rg-svg .rg-dot.k-ink,.rg-svg .rg-dot.k-a,.rg-svg .rg-dot.k-b,.rg-svg .rg-dot.k-c,.rg-svg .rg-dot.k-ok,
+.rg-svg .rg-dot.k-bad,.rg-svg .rg-dot.k-mut{stroke:#0a0c18}
+.rg-svg .rg-mk-k-a{fill:#38bdf8}.rg-svg .rg-mk-k-b{fill:#fbbf24}.rg-svg .rg-mk-k-c{fill:#f472b6}
+.rg-svg .rg-mk-k-ok{fill:#34d399}.rg-svg .rg-mk-k-bad{fill:#fb7185}.rg-svg .rg-mk-k-ink{fill:#eaedff}
+
+/* neuron / network */
+.rg-net .rg-node{fill:var(--card);stroke:#c9cdf0;stroke-width:3}
+.rg-net .rg-node.bias{fill:rgba(251,191,36,.10);stroke:#fbbf24}
+.rg-net .rg-node.sum{fill:rgba(56,189,248,.10);stroke:#38bdf8}
+.rg-net .rg-node.out{fill:rgba(45,212,191,.12);stroke:#2dd4bf}
+.rg-net .rg-node-hi{fill:none;stroke:var(--brand);stroke-width:6}
+.rg-net .rg-nlab{font-family:"Segoe UI",Arial,sans-serif;font-size:30px;font-weight:700;fill:var(--ink);text-anchor:middle}
+.rg-net .rg-nlab.bias{fill:#fbbf24}
+.rg-net .rg-edge{stroke:#7d82b0;stroke-width:2.6}
+.rg-net .rg-edge-hi{stroke:var(--brand);stroke-width:6}
+.rg-net .rg-elbg{fill:#12112b;stroke:rgba(255,255,255,.18);stroke-width:1.5}
+.rg-net .rg-elab{font-family:"Segoe UI",Arial,sans-serif;font-size:24px;font-weight:700;fill:#c9cdf0;text-anchor:middle}
+.rg-net .rg-val{font-family:"Segoe UI",Arial,sans-serif;font-size:28px;font-weight:700;fill:#2dd4bf;text-anchor:middle}
+
+/* a row of a sorting list: question · what it is · verdict chip (RTL) */
+.rg-case{display:flex;align-items:center;gap:22px;direction:rtl;width:960px;font-size:32px;background:var(--card2);
+  border:1px solid var(--line);border-radius:14px;padding:12px 24px}
+.rg-case .rg-cq{flex:1}
+.rg-case .rg-mut{font-size:28px}
+.rg-fam{display:flex;align-items:center;gap:24px;direction:rtl;width:980px;background:var(--card2);border:1px solid var(--line);
+  border-radius:14px;padding:14px 24px}
+.rg-fam .rg-chip{min-width:150px;text-align:center}
+.rg-fam .rg-fl{font-size:31px;color:var(--ink)}
+.rg-lane{display:flex;align-items:center;gap:9px;direction:ltr;font-size:30px}
+.rg-lt{width:90px;font-weight:700;color:#38bdf8;font-family:"Segoe UI",Arial,sans-serif}
+.rg-ex{display:inline-flex;width:54px;height:58px;align-items:center;justify-content:center;border-radius:12px;
+  background:var(--card);border:2px solid var(--line);font-size:30px}
+.rg-up{display:inline-block;font-size:21px;font-weight:700;color:#0a0c18;background:var(--brand);border-radius:999px;padding:2px 8px}
+.rg-half{width:510px}
+.rg-half .rg-case{width:100%;box-sizing:border-box;font-size:28px;padding:10px 18px}
+
+.rg-svg .rg-tl.e{text-anchor:end}

@@ -1,0 +1,51 @@
+/* unsup-course video widgets (w_unsup.py): plots, dendrogram, pixel grid, tables, bars, chips. All classes u-*. */
+svg.u-plot{overflow:visible;font-family:"Segoe UI",sans-serif}
+svg.u-plot .u-gl{stroke:rgba(255,255,255,.08);stroke-width:1.5}
+svg.u-plot .u-axis{stroke:#c9cdf0;stroke-width:3}
+svg.u-plot .u-tick{font-size:26px;fill:var(--muted)}
+svg.u-plot .u-pt{stroke:#0a0c18;stroke-width:3}
+svg.u-plot .u-ring{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:6 5}
+svg.u-plot .u-cen{stroke:#fff;stroke-width:4}
+svg.u-plot .u-plab{font-size:28px;fill:var(--ink);font-weight:600}
+svg.u-plot .u-clab{font-size:30px;font-weight:700}
+svg.u-plot .u-slab{font-size:28px;font-weight:700;paint-order:stroke;stroke:#0a0c18;stroke-width:6px}
+svg.u-plot .u-big{font-size:34px;fill:var(--ink);font-weight:700}
+svg.u-plot .u-thr{stroke:var(--warn);stroke-width:4;stroke-dasharray:10 8}
+svg.u-plot .u-dg{fill:none;stroke:var(--brand);stroke-width:5}
+svg.u-plot .u-cut{stroke:var(--warn);stroke-width:4;stroke-dasharray:12 9}
+svg.u-plot .u-leaf{font-size:30px;fill:var(--ink);text-anchor:middle;font-weight:600}
+svg.u-plot .u-bar{opacity:.85}
+svg.u-plot .u-bval{font-size:28px;fill:var(--ink);font-weight:700}
+svg.u-plot .u-cline{stroke:var(--brand);stroke-width:4}
+
+.u-stack{display:flex;flex-direction:column;align-items:center;width:100%}
+.u-row{display:flex;flex-direction:row;align-items:center;justify-content:center;width:100%}
+.u-big{direction:ltr;text-align:center;line-height:1.3}
+.u-note{direction:rtl;text-align:center;line-height:1.4;color:var(--ink)}
+.u-note .m{color:var(--muted)}
+
+.u-gridwrap{position:relative}
+.u-grid{display:grid;gap:0;direction:ltr;border:2px solid var(--line);border-radius:6px;overflow:hidden}
+.u-grid .u-cell{display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-weight:700;
+  border:1px solid rgba(120,120,160,.35);box-sizing:border-box;background:var(--card)}
+.u-hl{position:absolute;box-sizing:border-box;border:5px solid var(--warn);border-radius:6px}
+.u-win{position:absolute;box-sizing:border-box;border:6px solid var(--brand);border-radius:8px;box-shadow:0 0 22px rgba(45,212,191,.6)}
+
+table.u-tab{border-collapse:separate;border-spacing:0;font-size:32px;background:var(--card2);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;direction:ltr}
+table.u-tab th,table.u-tab td{position:relative;padding:7px 22px;text-align:center;border-bottom:1px solid var(--line)}
+table.u-tab thead th{color:var(--muted);font-weight:600}
+table.u-tab tbody th{color:var(--muted);font-weight:600}
+table.u-tab tbody tr:last-child>*{border-bottom:none}
+table.u-tab.sm{font-size:28px}
+table.u-tab.sm th,table.u-tab.sm td{padding:5px 16px}
+table.u-tab.rtl{direction:rtl}
+.u-thl{position:absolute;inset:3px;border-radius:9px;background:rgba(45,212,191,.22);box-shadow:0 0 0 3px var(--brand) inset}
+
+.u-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;direction:rtl;max-width:1000px}
+.u-chips.ltr{direction:ltr}
+.u-chip{position:relative;font-size:34px;padding:6px 18px;border-radius:12px;background:var(--card);border:2px solid var(--line)}
+.u-strike{position:absolute;left:6px;right:6px;top:50%;height:5px;margin-top:-2px;background:var(--bad);border-radius:3px}
+.u-code{font-family:Consolas,monospace;direction:ltr;unicode-bidi:isolate}
+.u-qsm .opt{font-size:28px;padding:8px 18px;line-height:1.35}
+.u-qsm .onote{font-size:24px}
