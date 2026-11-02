@@ -26,7 +26,7 @@ import app_config  # noqa: E402
 
 COURSES = app_config.COURSES      # same order and names as course-ui.js
 _STR = r'''(?:"([^"]+)"|'([^']+)')'''           # a "double" or 'single' quoted literal (titles may hold a ")
-DECL = re.compile(r'^VIDEO\s*=\s*Video\(\s*' + _STR + r'\s*,\s*' + _STR + r'\s*,\s*' + _STR, re.M)
+DECL = re.compile(r'^VIDEO\s*=\s*(?:[\w.]+\(\s*)?Video\(\s*' + _STR + r'\s*,\s*' + _STR + r'\s*,\s*' + _STR, re.M)
 ID_RE = re.compile(r"^([A-Z])(\d+)([a-z]?)$")
 YT_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
 

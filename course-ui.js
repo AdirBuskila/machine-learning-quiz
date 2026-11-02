@@ -186,6 +186,7 @@
     $("#crsLesson").innerHTML =
       `<div class="q-head"><span class="chip">שלב ${L.order} מתוך ${C.levels.length}</span><span class="chip soft">${L.questions.length} שאלות${nReal ? ` · ${nReal} מהמבחנים` : ""}</span></div>` +
       `<h2 class="learn-h">${L.icon || ""} ${isolate(escapeHtml(L.title))}</h2><p class="sub crs-goal">${isolate(escapeHtml(L.goal || ""))}</p>` +
+      (window.VIDEO_UI ? window.VIDEO_UI.lessonButtons(L.id, C.id) : "") +   // video-ui.js: "▶ צפו בסרטון של השלב"
       `<div class="lesson-body">${lessonHtml(L.lesson && L.lesson.html)}</div>`;
     view("crsLessonView");
   }
