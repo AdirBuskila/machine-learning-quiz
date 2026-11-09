@@ -548,7 +548,8 @@ function bindGlobal(){
   });
 
   function openLearn(){ if(!built) buildToc(); show("screen-learn"); go(idx); } 
-  try{ const c=new URLSearchParams(location.search).get("learn"), j=data.findIndex(s=>s.id===c); if(c && j>=0){ idx=j; setTimeout(openLearn,0); } }catch(e){}   // deep link ?learn=<chapterId>
+  window.openLearnAt = c=>{ const j=data.findIndex(s=>s.id===c); if(j<0) return false; idx=j; openLearn(); return true; };   // navurl.js back/forward
+  try{ const c=new URLSearchParams(location.search).get("learn"); if(c && data.some(s=>s.id===c)) setTimeout(()=>window.openLearnAt(c),0); }catch(e){}   // deep link ?learn=<chapterId>
   function setDrawer(open){
     toc.classList.toggle("open", open);
     backdrop.classList.toggle("hidden", !open);
