@@ -33,7 +33,7 @@ let P = loadProgress();
 /* ---------- helpers ---------- */
 const $ = s => document.querySelector(s);
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
-function show(id){ document.querySelectorAll(".screen").forEach(s=>s.classList.add("hidden")); $("#"+id).classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); }
+function show(id){ if(window.navUrl&&(id==="screen-start"||id==="screen-results")) navUrl(null); document.querySelectorAll(".screen").forEach(s=>s.classList.add("hidden")); $("#"+id).classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); }
 /* practice/topic pools de-duplicate questions that recur across exams (policy A);
    whole-exam mode keeps every question so a past test replays in full. */
 function dedupePool(arr){
@@ -146,7 +146,7 @@ function initStart(){
 }
 
 /* ---------- session ---------- */
-function startSession(){
+function startSession(){ if(window.navUrl&&S.mode!=="course") navUrl(S.mode==="practice"&&!selectedExam()&&S.topic?{practice:S.topic}:null);
   S._views=null;
   const opts=selectedOpts();
   const pickedExam = selectedExam();
@@ -506,7 +506,7 @@ function bindGlobal(){
     toc.querySelectorAll("button").forEach(b=> b.onclick=()=>{ go(+b.dataset.i); closeDrawer(); });
     built = true;
   }
-  function go(i){
+  function go(i){ if(window.navUrl){ const c=data[Math.max(0,Math.min(data.length-1,i))]; navUrl(c&&c.id?{learn:c.id}:null); }
     idx = Math.max(0, Math.min(data.length-1, i));
     const s = data[idx];
     // each brief is written to be read then drilled, so surface the drill entry point
@@ -547,7 +547,8 @@ function bindGlobal(){
     rzT = setTimeout(()=>{ if(!screen.classList.contains("hidden")) markScrollable(); }, 150);
   });
 
-  function openLearn(){ if(!built) buildToc(); show("screen-learn"); go(idx); }
+  function openLearn(){ if(!built) buildToc(); show("screen-learn"); go(idx); } 
+  try{ const c=new URLSearchParams(location.search).get("learn"), j=data.findIndex(s=>s.id===c); if(c && j>=0){ idx=j; setTimeout(openLearn,0); } }catch(e){}   // deep link ?learn=<chapterId>
   function setDrawer(open){
     toc.classList.toggle("open", open);
     backdrop.classList.toggle("hidden", !open);
